@@ -31,3 +31,4 @@ const Icons = {
     line: require("../assets/images/project/Vector 8.png"),
   cancel: require("../assets/images/project/Vector.png"),
 };
+export default Icons;
