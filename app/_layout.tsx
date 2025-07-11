@@ -8,15 +8,13 @@ import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
 
 const Stack = createNativeStackNavigator();
-
-const [fontsLoaded] = useFonts({
-  "GeneralSans-Regular": require("./assets/fonts/GeneralSans-Regular.otf"),
-  "GeneralSans-Bold": require("../Src/assets/fonts/GeneralSans-Bold.otf"),
-  "GeneralSans-Medium": require("../Src/assets/fonts/GeneralSans-Medium.otf"),
-});
-
-
 export default function RootLayout() {
+  const [fontsLoaded] = useFonts({
+    "GeneralSans-Regular": require("./assets/fonts/GeneralSans-Regular.otf"),
+    "Bold": require("../Src/assets/fonts/Bold.otf"),
+    "GeneralSans-Medium": require("../Src/assets/fonts/GeneralSans-Medium.otf"),
+  });
+    if (!fontsLoaded) return null;
   return (
     <NavigationIndependentTree>
       <NavigationContainer>

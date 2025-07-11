@@ -51,11 +51,8 @@ export const Sizes = {
 export const Fonts = {
     // custom fonts
     regular: "GeneralSans-Regular",
-    medium: "Poppins-Medium",
-    semiBold: "Poppins-SemiBold",
-    bold: "Poppins-Bold",
-    light: "Poppins-Light",
-    extraLight: "Poppins-ExtraLight",
+    bold: "GeneralSans-Bold",
+    medium: "GeneralSans-Medium",
 }
 
 const appTheme = [Colors, Sizes, Fonts];
