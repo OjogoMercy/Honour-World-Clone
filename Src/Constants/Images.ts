@@ -1,10 +1,7 @@
 const Images = {
-  logo: require("../assets/images/project/hw logo.png"),
-  background: require("../assets/images/background.jpg"),
   icon: require("../assets/images/icon.png"),
   questionMark: require("../assets/images/project/_.png"),
   email: require("../assets/images/project/8-Email.png"),
-  profile: require("../assets/images/project/9-Profile.png"),
   contact: require("../assets/images/project/basil_contacts-solid.png"),
   budpay: require("../assets/images/project/BudPay-Logo3 1.png"),
   calendar: require("../assets/images/project/calendar.png"),

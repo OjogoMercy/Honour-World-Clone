@@ -1,4 +1,5 @@
-import { Text, View } from "react-native";
+import { Text, View, Image } from "react-native";
+import Images from "../Src/Constants/Images";
 
 export default function Index() {
   return (
@@ -10,6 +11,7 @@ export default function Index() {
       }}
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Image source={Images.Gmail} style={{height:100,width:100}}/>
     </View>
   );
 }
