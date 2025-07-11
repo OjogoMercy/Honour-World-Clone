@@ -51,7 +51,7 @@ export const Sizes = {
 export const Fonts = {
     // custom fonts
     regular: "GeneralSans-Regular",
-    bold: "GeneralSans-Bold",
+    bold: "bold",
     medium: "GeneralSans-Medium",
 }
 
