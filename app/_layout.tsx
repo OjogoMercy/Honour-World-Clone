@@ -3,7 +3,8 @@ import {
   NavigationIndependentTree,
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import index from "./index";
+import SplashScreen from "@/Src/Screens/AutScreen/SplashScreen";
+import IntroSlider from "@/Src/Screens/AutScreen/IntroSlider";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,7 +13,8 @@ export default function RootLayout() {
     <NavigationIndependentTree>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="Index">
-          <Stack.Screen name="Index" component={index} />
+          <Stack.Screen name="SplashScreen" component={SplashScreen} />
+          <Stack.Screen name="IntroSlder" component = {IntroSlider}/>
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>
