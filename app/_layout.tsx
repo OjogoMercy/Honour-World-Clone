@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import index from "./index";
 import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
+import React from "react";
 
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
