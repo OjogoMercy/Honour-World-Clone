@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Homescreen = () => {
+const Airtime = () => {
   return (
     <View>
-      <Text>Homescreen</Text>
+      <Text>Airtime</Text>
     </View>
   )
 }
 
-export default Homescreen
+export default Airtime
 
 const styles = StyleSheet.create({})

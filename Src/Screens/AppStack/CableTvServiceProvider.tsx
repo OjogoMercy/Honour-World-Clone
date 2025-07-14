@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Homescreen = () => {
+const CableTvServiceProvider = () => {
   return (
     <View>
-      <Text>Homescreen</Text>
+      <Text>CableTvServiceProvider</Text>
     </View>
   )
 }
 
-export default Homescreen
+export default CableTvServiceProvider
 
 const styles = StyleSheet.create({})
