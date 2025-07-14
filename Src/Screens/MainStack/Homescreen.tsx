@@ -1,4 +1,5 @@
 import general from "@/Src/Constants/General";
+import Icons from "@/Src/Constants/Icons";
 import Images from "@/Src/Constants/Images";
 import { Colors, Sizes } from "@/Src/Constants/Theme";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
@@ -51,23 +52,19 @@ const Homescreen = () => {
           </Text>
           <Ionicons name="copy-outline" size={15} color="white" />
         </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Text
-            style={{
-              fontSize: Sizes.h1,
-              color: "white",
-              margin: Sizes.base,
-              fontWeight: "bold",
-            }}
-          >
-            {show ? "N5,400.00" : "******"}
-          </Text>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View style={{ flex: 1 }}>
+            <Text
+              style={{
+                fontSize: Sizes.h1,
+                color: "white",
+                fontWeight: "bold",
+                margin: Sizes.base,
+              }}
+            >
+              {show ? "N5,400.00" : "******"}
+            </Text>
+          </View>
           <TouchableOpacity onPress={toggle}>
             <Ionicons
               name={show ? "eye" : "eye-off"}
@@ -76,7 +73,13 @@ const Homescreen = () => {
             />
           </TouchableOpacity>
         </View>
-      </LinearGradient>
+          </LinearGradient>
+          <View>
+              <View style={{borderRadius:Sizes.radius}}>
+                  <Image source={Icons.dollar} style={[general.profile,{backgroundColor:'gray'}]} />
+                  <Text>Data Transfer</Text>
+              </View>
+          </View>
     </View>
   );
 };
