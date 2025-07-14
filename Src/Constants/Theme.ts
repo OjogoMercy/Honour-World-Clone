@@ -1,9 +1,8 @@
 import { Dimensions } from "react-native";
-const { width, height } = Dimensions.get("window")
-import * as Font from "expo-font";
+const { width, height } = Dimensions.get("window");
 
 const screenWidth = Math.round(Dimensions.get("window").width);
-const screenHeight = Math.round(Dimensions.get("window").height)
+const screenHeight = Math.round(Dimensions.get("window").height);
 
 export const SCREEN_WIDTH = Dimensions.get("window").width;
 export const SCREEN_HEIGHT = Dimensions.get("window").height;
@@ -19,7 +18,10 @@ export const Sizes = {
   base: screenHeight * 0.01, //for margin
   font: screenHeight * 0.0175, //basic font size
   radius: 5, //fixed borderRadius
-  padding: screenHeight * 0.03, //for padding
+  padding: screenHeight * 0.02, //for padding
+  profileBorder: screenHeight * 0.5,
+  profileHeight: screenHeight * 0.06,
+  profileWidth: screenWidth * 0.13,
 
   // font sizes
   navTitle: screenHeight * 0.04375,
@@ -46,17 +48,17 @@ export const Sizes = {
   height,
 };
 
+// default colors
 
+// export const Fontfamilies = {
+//     // custom fonts
+//     regular: "GeneralSans-Regular",
+//     medium: "Poppins-Medium",
+//     semiBold: "Poppins-SemiBold",
+//     bold: "Bold",
+//     light: "Poppins-Light",
+//     extraLight: "Poppins-ExtraLight",
+// }
 
-export const Fonts = {
-    // custom fonts
-    regular: "GeneralSans-Regular",
-    medium: "Poppins-Medium",
-    semiBold: "Poppins-SemiBold",
-    bold: "Bold",
-    light: "Poppins-Light",
-    extraLight: "Poppins-ExtraLight",
-}
-
-const appTheme = [Colors, Sizes, Fonts];
+const appTheme = [Colors, Sizes];
 export default appTheme;
