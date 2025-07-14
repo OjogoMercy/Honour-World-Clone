@@ -12,9 +12,9 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="Index">
-          <Stack.Screen name="SplashScreen" component={SplashScreen} />
-          <Stack.Screen name="IntroSlder" component = {IntroSlider}/>
+        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="SplashScreen">
+          <Stack.Screen name="SplashScreen" component = {SplashScreen} />
+          <Stack.Screen name="IntroSlider" component = {IntroSlider}/>
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

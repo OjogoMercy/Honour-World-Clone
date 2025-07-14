@@ -1,5 +1,5 @@
 const Images = {
-  icon: require("../assets/images/icon.png"),
+  icon: require("../assets/images/project/logo.png"),
   questionMark: require("../assets/images/project/_.png"),
   email: require("../assets/images/project/8-Email.png"),
   contact: require("../assets/images/project/basil_contacts-solid.png"),
