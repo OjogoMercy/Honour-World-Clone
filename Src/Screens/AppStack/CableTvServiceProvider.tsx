@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const AirtimeCashBank = () => {
+const CableTvServiceProvider = () => {
   return (
     <View>
-      <Text>AirtimeCashBank</Text>
+      <Text>CableTvServiceProvider</Text>
     </View>
   )
 }
 
-export default AirtimeCashBank
+export default CableTvServiceProvider
 
 const styles = StyleSheet.create({})
