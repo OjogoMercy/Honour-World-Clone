@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import index from "./index";
 import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
+import BottomTab from "@/Src/Navigation/BottomTab";
 
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
@@ -18,8 +19,9 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="Index">
+        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="BottomTab">
           <Stack.Screen name="Index" component={index} />
+          <Stack.Screen name="BottomTab" component={BottomTab} />
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>
