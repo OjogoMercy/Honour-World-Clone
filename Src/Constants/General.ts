@@ -15,7 +15,8 @@ const general = StyleSheet.create({
     row: {
         flexDirection: 'row',
         padding:Sizes.padding,
-        justifyContent:'space-between'
+        justifyContent: 'space-between',
+        alignItems:'center'
     },
     profile: {
         height: Sizes.profileHeight,
@@ -23,9 +24,19 @@ const general = StyleSheet.create({
         borderRadius:Sizes.profileBorder
     },
     tinyText: {
-        fontSize: Sizes.body5,
+        fontSize: Sizes.tinyText,
         color:'gray'
     },
-
+    card: {
+        width: '100%',
+        height: '25%',
+        borderRadius: Sizes.base,
+        backgroundColor: Colors.primary,
+        padding:Sizes.padding
+    },
+    text: {
+        fontSize: Sizes.body4,
+        color:'white'
+    }
 });
 export default general

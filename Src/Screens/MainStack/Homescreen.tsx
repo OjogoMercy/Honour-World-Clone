@@ -1,31 +1,102 @@
-import { StatusBar, StyleSheet, Text, View ,Image} from 'react-native'
-import React from 'react'
-import general from '@/Src/Constants/General'
-import Images from '@/Src/Constants/Images'
-import Icons from '@/Src/Constants/Icons'
-import { Sizes } from '@/Src/Constants/Theme'
+import general from "@/Src/Constants/General";
+import Images from "@/Src/Constants/Images";
+import { Colors, Sizes } from "@/Src/Constants/Theme";
+import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import React, { useState } from "react";
+import {
+  Image,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const Homescreen = () => {
+  const [show, dontShow] = useState(true);
+  const toggle = () => {
+    dontShow(!show);
+  };
   return (
-      <View style={general.container}>
-          <StatusBar backgroundColor={'transparent'} translucent barStyle={'dark-content'} />
-          <View style={general.row}>
-              <Image source={Images.profile} style={general.profile} />
-              <View>
-                  <Text style={general.bigText}>Hi, Mercy</Text>
-                  <Text style={general.tinyText}>What bill would you like to pay today?</Text>
-              </View>
-              <Image source={Icons.bell} style={styles.bell} />
-          </View>
+    <View style={general.container}>
+      <StatusBar
+        backgroundColor={"transparent"}
+        translucent
+        barStyle={"dark-content"}
+      />
+      <View style={general.row}>
+        <Image source={Images.profile} style={general.profile} />
+        <View style={{ marginLeft: -40 }}>
+          <Text style={general.bigText}>Hi, Mercy</Text>
+          <Text style={general.tinyText}>
+            What bill would you like to pay today?
+          </Text>
+        </View>
+        <TouchableOpacity>
+          <FontAwesome name="bell" size={20} color={Colors.primary} />
+          <View style={styles.dot} />
+        </TouchableOpacity>
+      </View>
+      <LinearGradient
+        colors={[Colors.lightBlue, Colors.secondary]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={general.card}
+      >
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={general.text}>Wallet Balance</Text>
+          <Text style={[general.text, { marginLeft: 50 }]}>
+            ID: 53868281736
+          </Text>
+          <Ionicons name="copy-outline" size={15} color="white" />
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: Sizes.h1,
+              color: "white",
+              margin: Sizes.base,
+              fontWeight: "bold",
+            }}
+          >
+            {show ? "N5,400.00" : "******"}
+          </Text>
+          <TouchableOpacity onPress={toggle}>
+            <Ionicons
+              name={show ? "eye" : "eye-off"}
+              size={20}
+              color={"white"}
+            />
+          </TouchableOpacity>
+        </View>
+      </LinearGradient>
     </View>
-  )
-}
+  );
+};
 
-export default Homescreen
+export default Homescreen;
 
 const styles = StyleSheet.create({
-    bell: {
-        height: Sizes.body2,
-        width:Sizes.body2
-    },
-})
+  bell: {
+    height: Sizes.body2,
+    width: Sizes.body2,
+    tintColor: "#007AFF",
+  },
+  dot: {
+    height: 10,
+    width: 10,
+    backgroundColor: "red",
+    borderRadius: 10,
+    top: -18,
+    left: 10,
+    borderWidth: 1,
+    borderColor: "white",
+  },
+});
