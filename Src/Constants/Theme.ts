@@ -28,6 +28,7 @@ export const Sizes = {
   tinyIcon: screenHeight * 0.025,
   bigRadius: screenHeight * 0.01,
   smallPadding: screenHeight * 0.007,
+  
 
   // font sizes
   navTitle: screenHeight * 0.04375,

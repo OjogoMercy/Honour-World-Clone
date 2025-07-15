@@ -5,6 +5,7 @@ import { Colors, Sizes } from "@/Src/Constants/Theme";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
+import { SCREEN_WIDTH,SCREEN_HEIGHT } from "@/Src/Constants/Theme";
 import {
   Image,
   StatusBar,
@@ -19,11 +20,12 @@ const Homescreen = ({navigation}) => {
   const [show, dontShow] = useState(true);
 
   const quickActions = [
-    { label: "Airtime", icon: Icons.phone2, color: "#A259FF" },
+    { label: "Airtime", icon: Icons.phone2, color: "#FF9800" },
     { label: "Data", icon: Icons.network, color: "#0E86E1" },
-    { label: "Cable TV", icon: "tv", color: "#00BCD4" },
-    { label: "More", icon: "dots-horizontal", color: "#4CAF50" },
+    { label: "Cable TV", icon: Icons.tv, color: "#00BCD4" },
+    { label: "More", icon:Icons.more, color: "#4CAF50" },
   ];
+  const dots = [1, 2, 3];
   const toggle = () => {
     dontShow(!show);
   };
@@ -106,9 +108,22 @@ const Homescreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </LinearGradient>
-      <Text style={{marginTop:20}}>Quick Actions</Text>
-      <View>
-
+      <Text style={{ marginTop: 20 }}>Quick Actions</Text>
+      <View style={[general.row, { padding: Sizes.smallPadding }]}>
+        {quickActions.map((action) => (
+          <TouchableOpacity key={action.label} style={styles.item}>
+            <View style={[styles.iconContainer]}>
+              <Image source={action.icon} style={[styles.iconBox]} />
+            </View>
+            <Text style={styles.boxText}>{action.label}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+      <Image source={Images.buyData} style={styles.image} />
+      <View style={{ flexDirection: "row", alignSelf: "center" }}>
+        {dots.map((index, _) => (
+          <View key={index} style={styles.activity}></View>
+        ))}
       </View>
     </View>
   );
@@ -138,8 +153,8 @@ const styles = StyleSheet.create({
     borderRadius: Sizes.radius,
     justifyContent: "center",
     alignItems: "center",
-    // marginRight: Sizes.base,
-    backgroundColor:Colors.secondary,
+    backgroundColor: Colors.secondary,
+    resizeMode: "contain",
   },
   cover: {
     borderRadius: Sizes.bigRadius,
@@ -152,5 +167,44 @@ const styles = StyleSheet.create({
     height: Sizes.tinyIcon,
     width: Sizes.tinyIcon,
   },
-  
+  item: {
+    alignItems: "center",
+    backgroundColor: "white",
+    borderRadius: Sizes.smallPadding,
+    elevation: 2,
+    padding: Sizes.smallPadding,
+    height: SCREEN_HEIGHT * 0.1,
+    width: SCREEN_WIDTH * 0.2,
+    justifyContent: "center",
+  },
+  iconContainer: {
+    backgroundColor: "white",
+  },
+  iconBox: {
+    height: SCREEN_HEIGHT * 0.032,
+    width: SCREEN_WIDTH * 0.07,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  boxText: {
+    fontSize: Sizes.body5,
+    color: "gray",
+    alignSelf: "center",
+    marginTop: 10,
+  },
+  image: {
+    width: SCREEN_WIDTH * 0.9,
+    height: SCREEN_HEIGHT * 0.2,
+    borderRadius: Sizes.radius,
+    marginTop: Sizes.padding,
+  },
+  activity: {
+    height: Sizes.body5,
+    width: Sizes.body5,
+    borderRadius: Sizes.bigRadius,
+    borderWidth: 1,
+    borderColor: "black",
+    margin:2
+    
+  },
 });
