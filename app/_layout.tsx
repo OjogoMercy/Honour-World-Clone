@@ -4,6 +4,7 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import index from "./index";
+import FundWallet from "@/Src/Screens/MainStack/FundWallet";
 import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
 
@@ -18,8 +19,9 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="Index">
+        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="FundWallet">
           <Stack.Screen name="Index" component={index} />
+          <Stack.Screen name="FundWallet" component={FundWallet} />
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>
