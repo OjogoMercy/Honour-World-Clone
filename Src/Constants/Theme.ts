@@ -11,8 +11,7 @@ export const Colors = {
   primary: "#2F75FD", //blue
   secondary: "#0F48B8", //dark-blue
   green: "#27ae60",
-  lightBlue: "#5f97fe", //light blue
-  Background: "#F5F5F5", //light gray
+  lightBlue:'#5f97fe' //light blue
 };
 
 export const Sizes = {
@@ -44,7 +43,7 @@ export const Sizes = {
   body5: screenHeight * 0.015,
   body6: screenHeight * 0.01,
   intro: screenHeight * 0.04,
-  tinyText: screenHeight * 0.012,
+  tinyText:screenHeight * 0.012,
 
   // app dimensions
   width,
