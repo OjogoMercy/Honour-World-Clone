@@ -1,11 +1,15 @@
 import general from "@/Src/Constants/General";
 import Icons from "@/Src/Constants/Icons";
 import Images from "@/Src/Constants/Images";
-import { Colors, Sizes } from "@/Src/Constants/Theme";
+import {
+  Colors,
+  SCREEN_HEIGHT,
+  SCREEN_WIDTH,
+  Sizes,
+} from "@/Src/Constants/Theme";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
-import { SCREEN_WIDTH,SCREEN_HEIGHT } from "@/Src/Constants/Theme";
 import {
   Image,
   StatusBar,
@@ -15,15 +19,14 @@ import {
   View,
 } from "react-native";
 
-
-const Homescreen = ({navigation}) => {
+const Homescreen = ({ navigation }) => {
   const [show, dontShow] = useState(true);
 
   const quickActions = [
     { label: "Airtime", icon: Icons.phone2, color: "#FF9800" },
     { label: "Data", icon: Icons.network, color: "#0E86E1" },
     { label: "Cable TV", icon: Icons.tv, color: "#00BCD4" },
-    { label: "More", icon:Icons.more, color: "#4CAF50" },
+    { label: "More", icon: Icons.more, color: "#4CAF50" },
   ];
   const dots = [1, 2, 3];
   const toggle = () => {
@@ -86,7 +89,7 @@ const Homescreen = ({navigation}) => {
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <TouchableOpacity
             style={styles.cover}
-            onPress={() => navigation.navigate("FundWallet")}
+            onPress={() => navigation.navigate("MainNavigator", {screen:"FundWallet"})}
           >
             <View style={styles.box}>
               <Image source={Icons.dollar} style={styles.icon} />
@@ -97,7 +100,11 @@ const Homescreen = ({navigation}) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.cover}
-            onPress={() => navigation.navigate("TransferBalance")}
+            onPress={() =>
+              navigation.navigate("MainNavigator", {
+                screen: "TransfarBalance",
+              })
+            }
           >
             <View style={styles.box}>
               <Image source={Icons.transferUp} style={styles.icon} />
@@ -125,6 +132,7 @@ const Homescreen = ({navigation}) => {
           <View key={index} style={styles.activity}></View>
         ))}
       </View>
+      <Text style={{fontSize:39, fontFamily:'bold'}}>cwehbcjnkweniuygwehgbjncdihuysgvm hcfnbdkjvuhygtrehb\ujfnkjriuyg</Text>
     </View>
   );
 };
@@ -204,7 +212,6 @@ const styles = StyleSheet.create({
     borderRadius: Sizes.bigRadius,
     borderWidth: 1,
     borderColor: "black",
-    margin:2
-    
+    margin: 2,
   },
 });

@@ -10,7 +10,8 @@ const general = StyleSheet.create({
     },
     bigText: {
         fontSize: Sizes.h3,
-        fontWeight:'bold'
+        fontWeight: 'bold',
+        fontFamily:'bold'
     },
     row: {
         flexDirection: 'row',
