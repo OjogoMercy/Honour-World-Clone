@@ -14,8 +14,16 @@ import {
   View,
 } from "react-native";
 
-const Homescreen = () => {
+
+const Homescreen = ({navigation}) => {
   const [show, dontShow] = useState(true);
+
+  const quickActions = [
+    { label: "Airtime", icon: Icons.phone2, color: "#A259FF" },
+    { label: "Data", icon: Icons.network, color: "#0E86E1" },
+    { label: "Cable TV", icon: "tv", color: "#00BCD4" },
+    { label: "More", icon: "dots-horizontal", color: "#4CAF50" },
+  ];
   const toggle = () => {
     dontShow(!show);
   };
@@ -74,21 +82,34 @@ const Homescreen = () => {
           </TouchableOpacity>
         </View>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <View style={styles.cover}>
+          <TouchableOpacity
+            style={styles.cover}
+            onPress={() => navigation.navigate("FundWallet")}
+          >
             <View style={styles.box}>
               <Image source={Icons.dollar} style={styles.icon} />
             </View>
-            <Text style={{ fontSize: Sizes.body5, marginLeft:5 }}>Fund Wallet</Text>
-          </View>
-          <View style={styles.cover}>
+            <Text style={{ fontSize: Sizes.body5, marginLeft: 5 }}>
+              Fund Wallet
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.cover}
+            onPress={() => navigation.navigate("TransferBalance")}
+          >
             <View style={styles.box}>
               <Image source={Icons.transferUp} style={styles.icon} />
             </View>
-            <Text style={{ fontSize: Sizes.body5, marginLeft:5 }}>Transfer Balance</Text>
-          </View>
+            <Text style={{ fontSize: Sizes.body5, marginLeft: 5 }}>
+              Transfer Balance
+            </Text>
+          </TouchableOpacity>
         </View>
       </LinearGradient>
-      <View></View>
+      <Text style={{marginTop:20}}>Quick Actions</Text>
+      <View>
+
+      </View>
     </View>
   );
 };

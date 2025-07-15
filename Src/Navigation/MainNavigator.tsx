@@ -9,6 +9,7 @@ export default function MainNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="FundWallet" component={FundWallet} />
       <Stack.Screen name="TransferBalance" component={TransferBalance} />
+      
     </Stack.Navigator>
   );
 }

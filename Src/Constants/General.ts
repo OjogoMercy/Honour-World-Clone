@@ -29,8 +29,8 @@ const general = StyleSheet.create({
     },
     card: {
         width: '100%',
-        height: '25%',
-        borderRadius: Sizes.base,
+        height: '23%',
+        borderRadius: Sizes.radius,
         backgroundColor: Colors.primary,
         padding:Sizes.padding
     },
