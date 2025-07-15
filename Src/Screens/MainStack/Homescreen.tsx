@@ -73,13 +73,22 @@ const Homescreen = () => {
             />
           </TouchableOpacity>
         </View>
-          </LinearGradient>
-          <View>
-              <View style={{borderRadius:Sizes.radius}}>
-                  <Image source={Icons.dollar} style={[general.profile,{backgroundColor:'gray'}]} />
-                  <Text>Data Transfer</Text>
-              </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <View style={styles.cover}>
+            <View style={styles.box}>
+              <Image source={Icons.dollar} style={styles.icon} />
+            </View>
+            <Text style={{ fontSize: Sizes.body5, marginLeft:5 }}>Fund Wallet</Text>
           </View>
+          <View style={styles.cover}>
+            <View style={styles.box}>
+              <Image source={Icons.transferUp} style={styles.icon} />
+            </View>
+            <Text style={{ fontSize: Sizes.body5, marginLeft:5 }}>Transfer Balance</Text>
+          </View>
+        </View>
+      </LinearGradient>
+      <View></View>
     </View>
   );
 };
@@ -102,4 +111,25 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "white",
   },
+  box: {
+    height: Sizes.profileHeight,
+    width: Sizes.profileWidth,
+    borderRadius: Sizes.radius,
+    justifyContent: "center",
+    alignItems: "center",
+    // marginRight: Sizes.base,
+    backgroundColor:Colors.secondary,
+  },
+  cover: {
+    borderRadius: Sizes.bigRadius,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Colors.veryLight,
+    padding: Sizes.smallPadding,
+  },
+  icon: {
+    height: Sizes.tinyIcon,
+    width: Sizes.tinyIcon,
+  },
+  
 });
