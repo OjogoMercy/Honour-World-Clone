@@ -21,7 +21,6 @@ import {
 
 const Homescreen = ({ navigation }) => {
   const [show, dontShow] = useState(true);
-
   const quickActions = [
     { label: "Airtime", icon: Icons.phone2, color: "#FF9800" },
     { label: "Data", icon: Icons.network, color: "#0E86E1" },
@@ -73,6 +72,7 @@ const Homescreen = ({ navigation }) => {
                 color: "white",
                 fontWeight: "bold",
                 margin: Sizes.base,
+                fontFamily:'Bold',
               }}
             >
               {show ? "N5,400.00" : "******"}
@@ -132,7 +132,10 @@ const Homescreen = ({ navigation }) => {
           <View key={index} style={styles.activity}></View>
         ))}
       </View>
-      <Text style={{fontSize:39, fontFamily:'bold'}}>cwehbcjnkweniuygwehgbjncdihuysgvm hcfnbdkjvuhygtrehb\ujfnkjriuyg</Text>
+      <View style={general.row}>
+        <Text>Recents</Text>
+        <Text style={{textDecorationLine:'underline'}}>See All ></Text>
+    </View>
     </View>
   );
 };

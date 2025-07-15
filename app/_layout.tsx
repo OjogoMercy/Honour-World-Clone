@@ -17,8 +17,8 @@ export default function RootLayout() {
     const loadFonts = async () => {
       await Font.loadAsync({
         "Regular": require("../Src/assets/fonts/GeneralSans-Regular.otf"),
-        "GeneralSans-Bold": require("../Src/assets/fonts/Bold.otf"),
-        "GeneralSans-Medium": require("../Src/assets/fonts/GeneralSans-Medium.otf"),
+        "Bold": require("../Src/assets/fonts/Bold.otf"),
+        "Medium": require("../Src/assets/fonts/GeneralSans-Medium.otf"),
       });
     };
     loadFonts();
