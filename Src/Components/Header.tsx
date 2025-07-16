@@ -2,6 +2,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Colors from '../Constants/Colors';
+import Themes, { Fonts } from '../Constants/Theme'
 
 const Header = () => {
   return (
@@ -13,7 +14,7 @@ const Header = () => {
       </View>
 
     <View>
-      <Text style={{color:Colors.primary, fontSize:}}>Airtime</Text>
+      <Text style={{color:Colors.primary, }}>Airtime</Text>
       </View>
     </View>
 
