@@ -25,7 +25,7 @@ const Homescreen = ({ navigation }) => {
     { label: "Airtime", icon: Icons.phone2, color: "#FF9800",Navigate:'Airtime' },
     { label: "Data", icon: Icons.network, color: "#0E86E1" ,Navigate:'Data'},
     { label: "Cable TV", icon: Icons.tv, color: "#00BCD4",Navigate:'CableTV' },
-    { label: "More", icon: Icons.more, color: "#4CAF50",Navigate:'More' },
+    { label: "More", icon: Icons.more, color: "#4CAF50",Navigate:'Services' },
   ];
   const dots = [1, 2, 3];
   const toggle = () => {
@@ -121,7 +121,7 @@ const Homescreen = ({ navigation }) => {
       <Text style={{ marginTop: 20 }}>Quick Actions</Text>
       <View style={[general.row, { padding: Sizes.smallPadding }]}>
         {quickActions.map((action) => (
-          <TouchableOpacity key={action.label} style={general.item} activeOpacity={0.1} >
+          <TouchableOpacity key={action.label} style={general.item} activeOpacity={0.1} onPress={()=> navigation.navigate('MainNavigator',{screen:action.Navigate})}>
             <View style={[general.iconContainer]}>
               <Image source={action.icon} style={[general.iconBox]} />
             </View>
