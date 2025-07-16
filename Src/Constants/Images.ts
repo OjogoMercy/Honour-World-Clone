@@ -39,6 +39,8 @@ const Images = {
     thumbsUp: require("../assets/images/project/Thumbs Up.png"),
     waec: require("../assets/images/project/Waec_logo 1.png"),
     check: require("../assets/images/project/XMLID_1_.png"),
+    profile:require("../assets/images/project/Profile.jpg"),
+    wallet:require("../assets/images/project/Wallet.png"),
    
     
 };
