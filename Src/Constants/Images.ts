@@ -19,7 +19,7 @@ const Images = {
   prime: require("../assets/images/project/Frame 379 (3).png"),
   starTimes: require("../assets/images/project/Frame 379 (4).png"),
   jos: require("../assets/images/project/Frame 379.png"),
-  moniepoint: require("../assets/images/project/Group (4).png"),
+  moniepoint: require("../assets/images/project/Subtract.png"),
   arrowC: require("../assets/images/project/Group (5).png"),
   instagram: require("../assets/images/project/Group (6).png"),
   whatsApp: require("../assets/images/project/Group (7).png"),
