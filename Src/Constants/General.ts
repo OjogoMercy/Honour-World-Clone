@@ -75,8 +75,8 @@ const general = StyleSheet.create({
     marginTop: 10,
   },
   image: {
-    width: SCREEN_WIDTH * 0.5,
-    height: SCREEN_HEIGHT * 0.5,
+    width: SCREEN_WIDTH * 0.9,
+    height: SCREEN_HEIGHT * 0.2,
     borderRadius: Sizes.radius,
     marginTop: Sizes.padding,
   },
