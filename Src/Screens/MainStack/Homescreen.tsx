@@ -1,7 +1,12 @@
 import general from "@/Src/Constants/General";
 import Icons from "@/Src/Constants/Icons";
 import Images from "@/Src/Constants/Images";
-import { Colors, Sizes } from "@/Src/Constants/Theme";
+import {
+  Colors,
+  SCREEN_HEIGHT,
+  SCREEN_WIDTH,
+  Sizes,
+} from "@/Src/Constants/Theme";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
@@ -11,11 +16,18 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View,ScrollView
 } from "react-native";
 
-const Homescreen = () => {
+const Homescreen = ({ navigation }) => {
   const [show, dontShow] = useState(true);
+  const quickActions = [
+    { label: "Airtime", icon: Icons.phone2, color: "#FF9800",Navigate:'Airtime' },
+    { label: "Data", icon: Icons.network, color: "#0E86E1" ,Navigate:'Data'},
+    { label: "Cable TV", icon: Icons.tv, color: "#00BCD4",Navigate:'CableTV' },
+    { label: "More", icon: Icons.more, color: "#4CAF50",Navigate:'Services' },
+  ];
+  const dots = [1, 2, 3];
   const toggle = () => {
     dontShow(!show);
   };
@@ -27,14 +39,16 @@ const Homescreen = () => {
         barStyle={"dark-content"}
       />
       <View style={general.row}>
-        <Image source={Images.profile} style={general.profile} />
+        <TouchableOpacity activeOpacity={0.3} onPress={()=> navigation.navigate('MainNavigator', {screen:'ProfileInfo'})}>
+  <Image source={Images.profile} style={general.profile} />
+        </TouchableOpacity>
         <View style={{ marginLeft: -40 }}>
           <Text style={general.bigText}>Hi, Mercy</Text>
           <Text style={general.tinyText}>
             What bill would you like to pay today?
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.3} onPress={() => navigation.navigate("MainNavigator", {screen:"Notification"})}>
           <FontAwesome name="bell" size={20} color={Colors.primary} />
           <View style={styles.dot} />
         </TouchableOpacity>
@@ -60,6 +74,7 @@ const Homescreen = () => {
                 color: "white",
                 fontWeight: "bold",
                 margin: Sizes.base,
+                fontFamily:'Bold',
               }}
             >
               {show ? "N5,400.00" : "******"}
@@ -73,13 +88,62 @@ const Homescreen = () => {
             />
           </TouchableOpacity>
         </View>
-          </LinearGradient>
-          <View>
-              <View style={{borderRadius:Sizes.radius}}>
-                  <Image source={Icons.dollar} style={[general.profile,{backgroundColor:'gray'}]} />
-                  <Text>Data Transfer</Text>
-              </View>
-          </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <TouchableOpacity
+            style={general.cover}
+            onPress={() => navigation.navigate("MainNavigator", {screen:"FundWallet"})}
+          >
+            <View style={styles.box}>
+              <Image source={Icons.dollar} style={general.icon} />
+            </View>
+            <Text style={{ fontSize: Sizes.body5, marginLeft: 5 }}>
+              Fund Wallet
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={general.cover}
+            onPress={() =>
+              navigation.navigate("MainNavigator", {
+                screen: "TransfarBalance",
+              })
+            }
+          >
+            <View style={styles.box}>
+              <Image source={Icons.transferUp} style={general.icon} />
+            </View>
+            <Text style={{ fontSize: Sizes.body5, marginLeft: 5 }}>
+              Transfer Balance
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </LinearGradient>
+        <ScrollView showsVerticalScrollIndicator={false}>
+      <Text style={{ marginTop: 20 }}>Quick Actions</Text>
+      <View style={[general.row, { padding: Sizes.smallPadding }]}>
+        {quickActions.map((action) => (
+          <TouchableOpacity key={action.label} style={general.item} activeOpacity={0.1} onPress={()=> navigation.navigate('MainNavigator',{screen:action.Navigate})}>
+            <View style={[general.iconContainer]}>
+              <Image source={action.icon} style={[general.iconBox]} />
+            </View>
+            <Text style={general.boxText}>{action.label}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+      <Image source={Images.buyData} style={general.image} />
+      <View style={{ flexDirection: "row", alignSelf: "center" }}>
+        {dots.map((index, _) => (
+          <View key={index} style={general.activity}></View>
+        ))}
+      </View>
+      <View style={general.row}>
+        <Text style={{fontFamily:'Medium'}}>Recents</Text>
+        <Text style={{textDecorationLine:'underline',fontFamily:'Regular'}} onPress={() => navigation.navigate("MainNavigator", {screen:"Transactions"})} >See All ></Text>
+        </View>
+        <Image source={Images.wallet} style={ general.wallet} />
+        <Text style={{ fontFamily: 'Medium', fontSize: Sizes.h2, fontWeight: 'bold', alignSelf: 'center' }}>No Transaction</Text>
+<Text style={general.normalText}>Your recent transactions will appear 
+here when they are available</Text>
+    </ScrollView>
     </View>
   );
 };
@@ -102,4 +166,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "white",
   },
+  box: {
+    height: Sizes.profileHeight,
+    width: Sizes.profileWidth,
+    borderRadius: Sizes.radius,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Colors.secondary,
+    resizeMode: "contain",
+  },
+ 
 });

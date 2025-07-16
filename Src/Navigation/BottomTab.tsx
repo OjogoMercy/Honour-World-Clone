@@ -24,8 +24,8 @@ export default function BottomTab() {
                 <Image
                   source={iconName}
                   style={{
-                    width: 24,
-                    height: 24,
+                    width: 20,
+                    height: 20,
                     tintColor: focused ? "#007AFF" : "#8e8e93",
                   }}
                 />
