@@ -16,16 +16,16 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View,ScrollView
 } from "react-native";
 
 const Homescreen = ({ navigation }) => {
   const [show, dontShow] = useState(true);
   const quickActions = [
-    { label: "Airtime", icon: Icons.phone2, color: "#FF9800" },
-    { label: "Data", icon: Icons.network, color: "#0E86E1" },
-    { label: "Cable TV", icon: Icons.tv, color: "#00BCD4" },
-    { label: "More", icon: Icons.more, color: "#4CAF50" },
+    { label: "Airtime", icon: Icons.phone2, color: "#FF9800",Navigate:'Airtime' },
+    { label: "Data", icon: Icons.network, color: "#0E86E1" ,Navigate:'Data'},
+    { label: "Cable TV", icon: Icons.tv, color: "#00BCD4",Navigate:'CableTV' },
+    { label: "More", icon: Icons.more, color: "#4CAF50",Navigate:'More' },
   ];
   const dots = [1, 2, 3];
   const toggle = () => {
@@ -39,14 +39,16 @@ const Homescreen = ({ navigation }) => {
         barStyle={"dark-content"}
       />
       <View style={general.row}>
-        <Image source={Images.profile} style={general.profile} />
+        <TouchableOpacity activeOpacity={0.3} onPress={()=> navigation.navigate('MainNavigator', {screen:'ProfileInfo'})}>
+  <Image source={Images.profile} style={general.profile} />
+        </TouchableOpacity>
         <View style={{ marginLeft: -40 }}>
           <Text style={general.bigText}>Hi, Mercy</Text>
           <Text style={general.tinyText}>
             What bill would you like to pay today?
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.3} onPress={() => navigation.navigate("MainNavigator", {screen:"Notification"})}>
           <FontAwesome name="bell" size={20} color={Colors.primary} />
           <View style={styles.dot} />
         </TouchableOpacity>
@@ -88,18 +90,18 @@ const Homescreen = ({ navigation }) => {
         </View>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <TouchableOpacity
-            style={styles.cover}
+            style={general.cover}
             onPress={() => navigation.navigate("MainNavigator", {screen:"FundWallet"})}
           >
             <View style={styles.box}>
-              <Image source={Icons.dollar} style={styles.icon} />
+              <Image source={Icons.dollar} style={general.icon} />
             </View>
             <Text style={{ fontSize: Sizes.body5, marginLeft: 5 }}>
               Fund Wallet
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.cover}
+            style={general.cover}
             onPress={() =>
               navigation.navigate("MainNavigator", {
                 screen: "TransfarBalance",
@@ -107,7 +109,7 @@ const Homescreen = ({ navigation }) => {
             }
           >
             <View style={styles.box}>
-              <Image source={Icons.transferUp} style={styles.icon} />
+              <Image source={Icons.transferUp} style={general.icon} />
             </View>
             <Text style={{ fontSize: Sizes.body5, marginLeft: 5 }}>
               Transfer Balance
@@ -115,27 +117,33 @@ const Homescreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </LinearGradient>
+        <ScrollView showsVerticalScrollIndicator={false}>
       <Text style={{ marginTop: 20 }}>Quick Actions</Text>
       <View style={[general.row, { padding: Sizes.smallPadding }]}>
         {quickActions.map((action) => (
-          <TouchableOpacity key={action.label} style={styles.item}>
-            <View style={[styles.iconContainer]}>
-              <Image source={action.icon} style={[styles.iconBox]} />
+          <TouchableOpacity key={action.label} style={general.item} activeOpacity={0.1} >
+            <View style={[general.iconContainer]}>
+              <Image source={action.icon} style={[general.iconBox]} />
             </View>
-            <Text style={styles.boxText}>{action.label}</Text>
+            <Text style={general.boxText}>{action.label}</Text>
           </TouchableOpacity>
         ))}
       </View>
-      <Image source={Images.buyData} style={styles.image} />
+      <Image source={Images.buyData} style={general.image} />
       <View style={{ flexDirection: "row", alignSelf: "center" }}>
         {dots.map((index, _) => (
-          <View key={index} style={styles.activity}></View>
+          <View key={index} style={general.activity}></View>
         ))}
       </View>
       <View style={general.row}>
-        <Text>Recents</Text>
-        <Text style={{textDecorationLine:'underline'}}>See All ></Text>
-    </View>
+        <Text style={{fontFamily:'Medium'}}>Recents</Text>
+        <Text style={{textDecorationLine:'underline',fontFamily:'Regular'}} onPress={() => navigation.navigate("MainNavigator", {screen:"Transactions"})} >See All ></Text>
+        </View>
+        <Image source={Images.wallet} style={ general.wallet} />
+        <Text style={{ fontFamily: 'Medium', fontSize: Sizes.h2, fontWeight: 'bold', alignSelf: 'center' }}>No Transaction</Text>
+<Text style={general.normalText}>Your recent transactions will appear 
+here when they are available</Text>
+    </ScrollView>
     </View>
   );
 };
@@ -167,54 +175,5 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.secondary,
     resizeMode: "contain",
   },
-  cover: {
-    borderRadius: Sizes.bigRadius,
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: Colors.veryLight,
-    padding: Sizes.smallPadding,
-  },
-  icon: {
-    height: Sizes.tinyIcon,
-    width: Sizes.tinyIcon,
-  },
-  item: {
-    alignItems: "center",
-    backgroundColor: "white",
-    borderRadius: Sizes.smallPadding,
-    elevation: 2,
-    padding: Sizes.smallPadding,
-    height: SCREEN_HEIGHT * 0.1,
-    width: SCREEN_WIDTH * 0.2,
-    justifyContent: "center",
-  },
-  iconContainer: {
-    backgroundColor: "white",
-  },
-  iconBox: {
-    height: SCREEN_HEIGHT * 0.032,
-    width: SCREEN_WIDTH * 0.07,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  boxText: {
-    fontSize: Sizes.body5,
-    color: "gray",
-    alignSelf: "center",
-    marginTop: 10,
-  },
-  image: {
-    width: SCREEN_WIDTH * 0.9,
-    height: SCREEN_HEIGHT * 0.2,
-    borderRadius: Sizes.radius,
-    marginTop: Sizes.padding,
-  },
-  activity: {
-    height: Sizes.body5,
-    width: Sizes.body5,
-    borderRadius: Sizes.bigRadius,
-    borderWidth: 1,
-    borderColor: "black",
-    margin: 2,
-  },
+ 
 });
