@@ -1,4 +1,8 @@
 const Icons = {
+  chevron: require("../assets/images/project/chevron.png"),
+  eye: require("../assets/images/project/eye.png"),
+  headset: require("../assets/images/project/Headset.png"),
+  setting: require("../assets/images/project/setting.png"),
   phone: require("../assets/images/project/default.png"),
   mark: require("../assets/images/project/Frame (1).png"),
   eyeClosed: require("../assets/images/project/Frame 4.png"),
