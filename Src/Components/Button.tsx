@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Colors from '../Constants/Colors';  
-import Ionicons from '@expo/vector-icons/Ionicons';
+
 
 
 const Button = () => {
@@ -11,7 +11,7 @@ const Button = () => {
       <Text style={{color:'white'}}>Make Payment</Text>
     </View>
 
-<Ionicons name="chevron-back-sharp" size={24} color="black" />
+
 
     </View>
   )
