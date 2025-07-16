@@ -1,20 +1,14 @@
-<<<<<<< Updated upstream
-import { Stack } from "expo-router";
-=======
 import {
   NavigationContainer,
   NavigationIndependentTree,
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ProfileScreen from '../app/ProfileScreen'
+import index from "./index";
 import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
->>>>>>> Stashed changes
 
+const Stack = createNativeStackNavigator();
 export default function RootLayout() {
-<<<<<<< Updated upstream
-  return <Stack />;
-=======
   const [fontsLoaded] = useFonts({
     // "GeneralSans-Regular": require("./assets/fonts/GeneralSans_Complete/OTF/GeneralSans-BoldItalic.otf"),
     "Bold": require("../Src/assets/fonts/Bold.otf"),
@@ -24,11 +18,10 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="ProfileScreen">
-          <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="Index">
+          <Stack.Screen name="Index" component={index} />
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>
   );
->>>>>>> Stashed changes
 }

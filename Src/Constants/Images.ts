@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream
-=======
 const Images = {
-  boy: require("../assets/images/project/boy.png.png"),
   icon: require("../assets/images/icon.png"),
   questionMark: require("../assets/images/project/_.png"),
   email: require("../assets/images/project/8-Email.png"),
@@ -46,4 +43,3 @@ const Images = {
     
 };
 export default Images;
->>>>>>> Stashed changes
