@@ -3,23 +3,23 @@ import Icons from "@/Src/Constants/Icons";
 import Images from "@/Src/Constants/Images";
 import {
   Colors,
-  SCREEN_HEIGHT,
-  SCREEN_WIDTH,
-  Sizes,
+  Sizes
 } from "@/Src/Constants/Theme";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
 import {
   Image,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,ScrollView
+  View
 } from "react-native";
 
 const Homescreen = ({ navigation }) => {
+  const name="Mercy"
   const [show, dontShow] = useState(true);
   const quickActions = [
     { label: "Airtime", icon: Icons.phone2, color: "#FF9800",Navigate:'Airtime' },
@@ -43,7 +43,7 @@ const Homescreen = ({ navigation }) => {
   <Image source={Images.profile} style={general.profile} />
         </TouchableOpacity>
         <View style={{ marginLeft: -40 }}>
-          <Text style={general.bigText}>Hi, Mercy</Text>
+          <Text style={general.bigText}>Hi, {name}</Text>
           <Text style={general.tinyText}>
             What bill would you like to pay today?
           </Text>
@@ -120,8 +120,14 @@ const Homescreen = ({ navigation }) => {
         <ScrollView showsVerticalScrollIndicator={false}>
       <Text style={{ marginTop: 20 }}>Quick Actions</Text>
       <View style={[general.row, { padding: Sizes.smallPadding }]}>
-        {quickActions.map((action) => (
-          <TouchableOpacity key={action.label} style={general.item} activeOpacity={0.1} onPress={()=> navigation.navigate('MainNavigator',{screen:action.Navigate})}>
+        {quickActions.map((action,index) => (
+          <TouchableOpacity key={action.label} style={general.item} activeOpacity={0.1}  onPress={() => {
+      if (index === 3) {
+        navigation.navigate('Services'); // Screen outside MainNavigator
+      } else {
+        navigation.navigate('MainNavigator', { screen: action.Navigate }); // Screen inside MainNavigator
+      }
+    }}>
             <View style={[general.iconContainer]}>
               <Image source={action.icon} style={[general.iconBox]} />
             </View>
