@@ -1,32 +1,47 @@
-import { StyleSheet, Text, View,TextInput, } from 'react-native'
-import React from 'react'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import React from 'react';
+import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons'; // or use react-native-vector-icons
+ 
 
-const FormInputs = () => {
+const PhoneNumberInput = ({ value, onChangeText, onIconPress }) => {
   return (
-    <View>
-    
-        <TextInput
-            style={{height:35,width:300, borderColor: 'gray', borderRadius:6, paddingLeft:10,backgroundColor: "#f9f9f9",}}
-            placeholder="Enter Phone Number" />
-           
-        
-            
-            
-            </View>
-
-
-
-       
-
-      
-    
-  )
-}
-
-export default FormInputs
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Phone Number"
+        placeholderTextColor="#999"
+        keyboardType="phone-pad"
+        value={value}
+        onChangeText={onChangeText}
+      />
+      <TouchableOpacity onPress={onIconPress}>
+        <MaterialIcons name="person" size={20} color="#4285F4" />
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
+  container: {
+    width:300,
+    height:50,
+    backgroundColor: '#f5faff',
+    // borderBottomWidth: 2,
+    // borderBottomColor: 'green',
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  input: {
+    flex: 1,
+    fontSize: 14,
+    color: '#000',
     
 
-})
+    
+  },
+});
+
+export default PhoneNumberInput;
