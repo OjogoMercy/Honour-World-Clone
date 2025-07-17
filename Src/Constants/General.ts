@@ -4,7 +4,7 @@ import { Colors, SCREEN_HEIGHT, SCREEN_WIDTH, Sizes } from "./Theme";
 const general = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "fff",
+    backgroundColor: "#fff",
     padding: Sizes.padding,
   },
   bigText: {
@@ -73,7 +73,7 @@ const general = StyleSheet.create({
     color: "gray",
     alignSelf: "center",
     marginTop: 10,
-    textAlign:'center'
+    textAlign: "center",
   },
   image: {
     width: SCREEN_WIDTH * 0.9,
@@ -106,5 +106,16 @@ const general = StyleSheet.create({
     fontFamily: "Regular",
     textAlign: "center",
   },
+  airtimeContainer: {
+    backgroundColor: Colors.extraLight,
+    height: SCREEN_HEIGHT * 0.1,
+    width: SCREEN_WIDTH * 0.2,
+    padding: Sizes.smallPadding,
+    margin: SCREEN_HEIGHT * 0.007,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: Sizes.radius,
+  },
+  regularBold: { fontFamily: "Bold", marginTop: SCREEN_HEIGHT * 0.01 },
 });
 export default general;

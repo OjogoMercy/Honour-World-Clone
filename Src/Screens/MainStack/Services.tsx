@@ -15,7 +15,7 @@ const Services = ({ navigation }) => {
   return (
     <View style={general.container}>
       <Text>Services</Text>
-      <Text style={[general.normalText, { fontSize: Sizes.body4 }]}>
+      <Text style={[general.normalText, { fontSize: Sizes.body4,color:'black' }]}>
         Enjoy our range of services designed to simplify your life{" "}
       </Text>
       <FlatList
@@ -23,7 +23,6 @@ const Services = ({ navigation }) => {
         numColumns={3}
         contentContainerStyle={{
           paddingHorizontal: 16,
-          // marginTop: SCREEN_HEIGHT * 0.1,
         }}
         columnWrapperStyle={{
           justifyContent: "space-between",
