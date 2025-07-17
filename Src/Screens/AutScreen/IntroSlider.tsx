@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import Colors from '@/Src/Constants/Colors';
 import Images from '@/Src/Constants/Images';
 import { useNavigation } from 'expo-router';
+import { StatusBar } from 'react-native';
 import { Sizes, SCREEN_WIDTH, SCREEN_HEIGHT } from "../../Constants/Theme";
 import styles from '@/Src/Constants/Styles';
 
@@ -64,6 +65,7 @@ const IntroSlider = () => {
 
   return (
     <View style={styles.container}>
+       <StatusBar backgroundColor={Colors.primary} barStyle="light-content"/>
       <View style={styles.backgroundBox}>{renderSlideContent()}</View>
 
       <View style={styles.inter}>
