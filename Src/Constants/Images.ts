@@ -1,4 +1,7 @@
 const Images = {
+  slide1:require("../assets/images/project/Slide1.png"),
+  slide2:require("../assets/images/project/slide2.png"),
+  slide3:require("../assets/images/project/slide3.png"),
   gotv:require("../assets/images/project/gotv.png"),
   phedc:require("../assets/images/project/phedc.png"),
   icon: require("../assets/images/project/logo.png"),
