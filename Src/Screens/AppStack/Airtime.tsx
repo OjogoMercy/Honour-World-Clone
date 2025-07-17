@@ -1,11 +1,17 @@
+import Header from "@/Src/Components/Header";
 import general from "@/Src/Constants/General";
 import Images from "@/Src/Constants/Images";
 import { SCREEN_HEIGHT, SCREEN_WIDTH ,Sizes,Colors} from "@/Src/Constants/Theme";
-import { MaterialIcons } from "@expo/vector-icons";
-import React from "react";
+import { MaterialIcons, FontAwesome6 } from "@expo/vector-icons";
+import React, { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import FormInput from "@/Src/Components/FormInputs";
+import CustomButton from "@/Src/Components/CustomButton";
 
-const Airtime = () => {
+const Airtime = ({ navigation }) => {
+  const change = () => {
+   setToggle(!toggle)
+  }
    const airtime = [
      { id: 1, label: "MTN", source: Images.MTN },
      { id: 2, label: "Airtel", source: Images.airtel },
@@ -19,12 +25,17 @@ const Airtime = () => {
      "₦500.00",
      "₦1000.00",
      "₦2000.00",
-   ];
+  ];
+  const [phoneNumber,setPhoneNumber] = useState('')
+  const [amount, setAmount] = useState("");
+  const [toggle, setToggle] = useState(false);
   return (
     <View style={general.container}>
-      <Text>Airtime</Text>
+      <Header title={"Airtime"} customStyle={undefined} />
       <Text style={general.regularBold}>Services</Text>
-      <View style={{ flexDirection: "row" ,paddingHorizontal:Sizes.smallPadding}}>
+      <View
+        style={{ flexDirection: "row", paddingHorizontal: Sizes.smallPadding }}
+      >
         {airtime.map((action) => (
           <TouchableOpacity
             activeOpacity={0.3}
@@ -47,9 +58,13 @@ const Airtime = () => {
         ))}
       </View>
       <Text style={general.regularBold}>Phone Number</Text>
-      <View style={styles.input}>
-        <TextInput />
-      </View>
+      <FormInput
+        value={phoneNumber}
+        onChangeText={setPhoneNumber}
+        onPress={undefined}
+        iconSource={Images.contact}
+        placeHolder={"Enter Phone Number"}
+      />
       <View style={[general.row, { justifyContent: "space-between" }]}>
         <MaterialIcons name="error-outline" color={"red"} size={20} />
         <Text style={general.tinyText}>
@@ -69,8 +84,28 @@ const Airtime = () => {
           <TouchableOpacity key={index} style={styles.box} activeOpacity={0.3}>
             <Text style={styles.text}>{value}</Text>
           </TouchableOpacity>
-        ))} 
+        ))}
       </View>
+      <FormInput
+        placeHolder={"Enter Recharge Amount"}
+        value={amount}
+        onChangeText={setAmount}
+      />
+      <View style={styles.input}>
+        <Text >Save as Beneficiary</Text>
+        <TouchableOpacity onPress={change}>
+          <FontAwesome6 name={toggle ? "toggle-off" : "toggle-on"} size={ 24} color={Colors.primary} />
+        </TouchableOpacity>
+      </View>
+      <CustomButton
+        title={"Make Transaction"}
+        onPress={() =>
+          navigation.navigate("MainNavigator", {
+            screen: "AirtimeConfirmation",
+          })
+        }
+        style={undefined}
+      />
     </View>
   );
 };
@@ -81,6 +116,8 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: Colors.extraLight,
     borderRadius: Sizes.radius,
+    padding: SCREEN_HEIGHT * 0.02,marginBottom:20,flexDirection:'row',justifyContent:'space-between'
+    
   },
   container: {
     flexWrap: "wrap",

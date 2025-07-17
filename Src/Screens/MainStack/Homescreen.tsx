@@ -1,3 +1,4 @@
+import CustomButton from "@/Src/Components/CustomButton";
 import general from "@/Src/Constants/General";
 import Icons from "@/Src/Constants/Icons";
 import Images from "@/Src/Constants/Images";
@@ -149,6 +150,7 @@ const Homescreen = ({ navigation }) => {
         <Text style={{ fontFamily: 'Medium', fontSize: Sizes.h2, fontWeight: 'bold', alignSelf: 'center' }}>No Transaction</Text>
 <Text style={general.normalText}>Your recent transactions will appear 
 here when they are available</Text>
+<CustomButton title={'Start a Transaction'} onPress={()=> navigation.navigate('MainNavigator', {screen:'Transactions'})}/>
     </ScrollView>
     </View>
   );

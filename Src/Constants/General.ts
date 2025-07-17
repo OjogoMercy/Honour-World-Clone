@@ -39,7 +39,7 @@ const general = StyleSheet.create({
     color: "white",
   },
   cover: {
-    borderRadius: Sizes.bigRadius,
+    borderRadius: Sizes.radius,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: Colors.veryLight,
