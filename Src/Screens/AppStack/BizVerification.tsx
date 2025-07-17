@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Biz = () => {
+const BizVerification = () => {
   return (
     <View>
-      <Text>Biz</Text>
+      <Text>BizVerification</Text>
     </View>
   )
 }
 
-export default Biz
+export default BizVerification
 
 const styles = StyleSheet.create({})
