@@ -9,6 +9,8 @@ import { useFonts } from 'expo-font';
 import BottomTab from "@/Src/Navigation/BottomTab";
 import MainNavigator from "@/Src/Navigation/MainNavigator";
 import { useEffect } from "react";
+import SplashScreen from "@/Src/Screens/AutScreen/SplashScreen"; 
+import IntroSlider from "@/Src/Screens/AutScreen/IntroSlider";
 
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
@@ -27,10 +29,9 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="BottomTab">
-          <Stack.Screen name="Index" component={index} />
-          <Stack.Screen name="BottomTab" component={BottomTab} />
-          <Stack.Screen name="MainNavigator" component={MainNavigator} />
+        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="SplashScreen">
+          <Stack.Screen name="SplashScreen" component={SplashScreen} />
+          <Stack.Screen name="IntroSlider" component={IntroSlider} />
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

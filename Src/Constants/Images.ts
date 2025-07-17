@@ -1,4 +1,6 @@
 const Images = {
+  gotv:require("../assets/images/project/gotv.png"),
+  phedc:require("../assets/images/project/phedc.png"),
   icon: require("../assets/images/project/logo.png"),
   questionMark: require("../assets/images/project/_.png"),
   email: require("../assets/images/project/8-Email.png"),
