@@ -8,7 +8,7 @@ const Icons = {
   sync: require("../assets/images/project/Frame 478.png"),
   education: require("../assets/images/project/Frame 481.png"),
   tick: require("../assets/images/project/Frame 484 (1).png"),
-  shop: require("../assets/images/project/Frame 484.png"),
+  cart: require("../assets/images/project/Frame 484.png"),
   wallet: require("../assets/images/project/Frame 487.png"),
   reverse: require("../assets/images/project/Frame.png"),
   greenCheck: require("../assets/images/project/green check (1).png"),
@@ -30,5 +30,10 @@ const Icons = {
     twitter: require("../assets/images/project/Vector (4).png"),
     line: require("../assets/images/project/Vector 8.png"),
   cancel: require("../assets/images/project/Vector.png"),
+  home:require("../assets/images/project/navigation/home.png"),
+  shop:require("../assets/images/project/navigation/Shop.png"),
+  walletIcon: require("../assets/images/project/navigation/wallet.png"),
+  tv: require("../assets/images/project/Frame 472.png"),
+  more: require("../assets/images/project/Frame 472 (1).png"),
 };
 export default Icons;

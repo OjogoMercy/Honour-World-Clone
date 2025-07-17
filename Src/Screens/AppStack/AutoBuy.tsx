@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Education = () => {
+const AutoBuy = () => {
   return (
     <View>
-      <Text>Education</Text>
+      <Text>AutoBuy</Text>
     </View>
   )
 }
 
-export default Education
+export default AutoBuy
 
 const styles = StyleSheet.create({})
