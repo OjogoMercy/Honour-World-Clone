@@ -1,49 +1,23 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Colors from '../Constants/Colors';
-import Themes, { Fonts } from '../Constants/Theme'
+import { View, Text,TouchableOpacity } from 'react-native'
+import React from 'react'
+import { Ionicons } from '@expo/vector-icons'
+import { useNavigation } from 'expo-router'
+import Colors from '../Constants/Colors'
 
-const Header = () => {
+export default function Header({}) {
+  const navigation = useNavigation();
   return (
-    <View style={styles.page}>
-      <View style={styles.all}>
-      <View style={styles.back}>
-    <Ionicons name="chevron-back-sharp" size={24} color="black" />
-      <Text style={{color:Colors.secondary}}>Back</Text>
+    <View style={{padding:10,flexDirection:'row',marginTop:10,width:'100%'}}>
+      <TouchableOpacity onPress={() => navigation.goBack()} style={{alignSelf:'flex-end',flexDirection:'row' ,width:'10%',}}>
+      <Ionicons name="chevron-back" size={16} color={'black'} style={{paddingTop:2,}} />
+      <Text style={{paddingLeft:10}}>Back</Text>
+       </TouchableOpacity>
+      <View style={{alignItems:'center',width:'90%'}}>
+      <Text style={{color:Colors.primary, fontWeight:'bold', fontSize:15}}>Airtime</Text>
       </View>
-
-    <View>
-      <Text style={{color:Colors.primary, }}>Airtime</Text>
-      </View>
-    </View>
-
-
-
     </View>
   )
-  
 }
 
-export default Header
 
-const styles = StyleSheet.create({
-  page:{
-    flex:1,
 
-  },
-  all:{
-    flexDirection:'row',
-    alignItems:'center',
-    padding:10,
-  },
-  back:{
-    flexDirection:'row',
-    alignItems:'center',
-    
-    
-
-    
-  }
-
-})
