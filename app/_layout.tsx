@@ -7,7 +7,7 @@ import index from "./index";
 import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
 import React from "react";
-import FormInputs from  '../Src/Components/FormInputs'
+import Button from  '../Src/Components/Button'
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -19,8 +19,8 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="FormInputs">
-          <Stack.Screen name="FormInputs" component={FormInputs} />
+        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="Button">
+          <Stack.Screen name="Button" component={Button} />
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>
