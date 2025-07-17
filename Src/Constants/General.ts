@@ -53,7 +53,7 @@ const general = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
     borderRadius: Sizes.smallPadding,
-    elevation: 2,
+    elevation: 1,
     padding: Sizes.smallPadding,
     height: SCREEN_HEIGHT * 0.1,
     width: SCREEN_WIDTH * 0.2,
@@ -73,6 +73,7 @@ const general = StyleSheet.create({
     color: "gray",
     alignSelf: "center",
     marginTop: 10,
+    textAlign:'center'
   },
   image: {
     width: SCREEN_WIDTH * 0.9,
