@@ -225,15 +225,22 @@ const IntroSlider = () => {
                    </View>
                    <Text style = {{fontSize:Sizes.h4, fontWeight:"bold", marginVertical:7}}>Sender Number</Text>
                    <View style = {{height:30, width:159, backgroundColor:"#F8FCFF"}}>
-                    <View style = {{height:30, width:70}}><Text style = {{fontSize:10}}>Enter phone number</Text></View>
+                   <View style = {{height:30, width:70}}>
+                      <Text style={{fontSize: 10}}>Enter phone number</Text>
+                    </View>
+
                    </View>
 
                    <Text style = {{fontSize:Sizes.h4, fontWeight:"bold"}}>Sender Bank</Text>
                     <View style = {{height:30, width:159, backgroundColor:"#F8FCFF"}}>
-                    <View style = {{height:30, width:70}}><Text style = {{fontSize:10}}>Access bank</Text></View>
+                    <View style = {{height:30, width:70}}>
+                      <Text style = {{fontSize:10}}>Access bank</Text>
+                      </View>
                    </View>
                     <View style = {{height:30, width:159, backgroundColor:"#F8FCFF", marginVertical:6}}>
-                    <View style = {{height:30, width:80}}><Text style = {{fontSize:10}}>Enter your account number</Text></View>
+                    <View style = {{height:30, width:80}}>
+                      <Text style = {{fontSize:10}}>Enter your account number</Text>
+                      </View>
                    </View>
                    
                   
@@ -347,9 +354,10 @@ const IntroSlider = () => {
         <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
           <Text style={styles.nextText}>Next</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.getStartedButton} onPress={() =>navigation.navigate('')}>
-          <Text style={styles.startedText}>Get Started</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.getStartedButton}>
+  <Text style={styles.startedText}>Get Started</Text>
+</TouchableOpacity>
+
       </View>
     </View>
   );
@@ -398,11 +406,11 @@ const styles = StyleSheet.create({
   },
   nextText: {
     color: Colors.primary,
-    fontWeight: '600',
+    fontWeight: 600,
   },
   startedText: {
     color: '#fff',
-    fontWeight: '600',
+    fontWeight: 600,
   },
  backgroundBox: {
   position: 'absolute',
