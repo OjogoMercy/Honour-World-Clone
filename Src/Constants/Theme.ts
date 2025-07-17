@@ -1,18 +1,24 @@
-
 import { Dimensions } from "react-native";
+import FormInputs from "../Components/FormInputs";
 const { width, height } = Dimensions.get("window");
 
-const screenWidth = Math.round(Dimensions.get("window").width);
-const screenHeight = Math.round(Dimensions.get("window").height);
+// const screenWidth = Math.round(Dimensions.get("window").width);
+// const screenHeight = Math.round(Dimensions.get("window").height);
+const screenWidth = Math.round(width);
+const screenHeight = Math.round(height);
 
-export const SCREEN_WIDTH = Dimensions.get("window").width;
-export const SCREEN_HEIGHT = Dimensions.get("window").height;
+// export const SCREEN_WIDTH = Dimensions.get("window").width;
+export const SCREEN_WIDTH =width;
+export const SCREEN_HEIGHT =height;
 
 export const Colors = {
   primary: "#2F75FD", //blue
   secondary: "#0F48B8", //dark-blue
   green: "#27ae60",
-  lightBlue:'#5f97fe' //light blue
+  lightBlue:'#5f97fe', //light blue
+  white: "#FFFFFF", //white
+  black: "#000000", //black
+  gray: "#808080", //gray
 };
 
 export const Sizes = {
@@ -24,6 +30,11 @@ export const Sizes = {
   profileBorder: screenHeight * 0.5,
   profileHeight: screenHeight * 0.06,
   profileWidth: screenWidth * 0.13,
+  IconsSizeHeight: screenHeight * 0.08, //for icons height
+  IconsSizeWidth: screenHeight * 0.11,
+  FormInputsRadius: screenHeight * 0.013, //for form inputs border radius\
+  buttonRadius: screenHeight *0.04,
+
 
   // font sizes
   navTitle: screenHeight * 0.04375,
@@ -35,6 +46,9 @@ export const Sizes = {
   h3a: screenHeight * 0.0235,
   h4: screenHeight * 0.0175,
   h5: screenHeight * 0.015,
+  h6: screenHeight * 0.0135,
+  h7: screenHeight * 0.0125,
+  h8: screenHeight * 0.0115,
   body1: screenHeight * 0.0355,
   body2: screenHeight * 0.025,
   body3: screenHeight * 0.02,
@@ -53,16 +67,15 @@ export const Sizes = {
 
 // default colors
 
-// export const Fontfamilies = {
-//     // custom fonts
-//     regular: "GeneralSans-Regular",
-//     medium: "Poppins-Medium",
-//     semiBold: "Poppins-SemiBold",
-//     bold: "Bold",
-//     light: "Poppins-Light",
-//     extraLight: "Poppins-ExtraLight",
-// }
+export const Fontfamilies = {
+    // custom fonts
+    regular: "GeneralSans-Regular",
+    medium: "Poppins-Medium",
+    semiBold: "Poppins-SemiBold",
+    bold: "Bold",
+    light: "Poppins-Light",
+    extraLight: "Poppins-ExtraLight",
+}
 
 const appTheme = [Colors, Sizes];
 export default appTheme;
-

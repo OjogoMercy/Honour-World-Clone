@@ -22,9 +22,11 @@ const Homescreen = () => {
   return (
     <View style={general.container}>
       <StatusBar
-        backgroundColor={"transparent"}
-        translucent
-        barStyle={"dark-content"}
+        backgroundColor="white"
+        barStyle="dark-content"
+        translucent={false}
+        hidden={false}
+        networkActivityIndicatorVisible={true}
       />
       <View style={general.row}>
         <Image source={Images.profile} style={general.profile} />
