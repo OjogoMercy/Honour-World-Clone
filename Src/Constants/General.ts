@@ -117,5 +117,13 @@ const general = StyleSheet.create({
     borderRadius: Sizes.radius,
   },
   regularBold: { fontFamily: "Bold", marginTop: SCREEN_HEIGHT * 0.01 },
+  backButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "20%",
+  },
+  backText: {
+    paddingLeft: 5,
+  },
 });
 export default general;

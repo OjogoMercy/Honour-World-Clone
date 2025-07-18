@@ -1,14 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Colors, SCREEN_WIDTH, Sizes } from "../Constants/Theme";
-const CustomButton = ({ title, onPress, style }) => {
+const CustomButton = ({ title, onPress, style,textStyle }) => {
   return (
     <TouchableOpacity
       style={[styles.button, style]}
       onPress={onPress}
       activeOpacity={0.5}
     >
-      <Text style={{ color: "white", fontSize: Sizes.body3 }}>{title}</Text>
+      <Text style={[styles.text, textStyle]}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -22,6 +22,10 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     alignItems: "center",
+  },
+  text: {
+    color: "white",
+    fontSize: Sizes.body3,
   },
 });
 

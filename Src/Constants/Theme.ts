@@ -21,7 +21,7 @@ export const Sizes = {
   base: screenHeight * 0.01, //for margin
   font: screenHeight * 0.0175, //basic font size
   radius: screenHeight * 0.02, //fixed borderRadius
-  padding: screenHeight * 0.02, //for padding
+  padding: screenHeight * 0.025, //for padding
   profileBorder: screenHeight * 0.5,
   profileHeight: screenHeight * 0.05,
   profileWidth: screenWidth * 0.11,
