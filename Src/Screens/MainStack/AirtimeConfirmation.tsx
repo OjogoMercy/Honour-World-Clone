@@ -5,17 +5,9 @@ import CustomButton from "@/Src/Components/CustomButton";
 import general from "@/Src/Constants/General";
 import { Colors, SCREEN_HEIGHT, Sizes } from "@/Src/Constants/Theme";
 import Feather from "@expo/vector-icons/Feather";
+import { transaction } from "@/Src/Constants/Data";
 
 const AirtimeConfirmation = ({navigation}) => {
-  const transaction = {
-    phone: "08076749945",
-    network: "MTN",
-    amount: "₦2,000.00",
-    vendType: "VTU",
-    commission: "₦5.00",
-    date: "06/05/2023 09:27:07am",
-  };
-
   return (
     <View style={general.container}>
       <StatusBar backgroundColor={"white"} barStyle={"dark-content"} />

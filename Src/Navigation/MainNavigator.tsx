@@ -17,7 +17,7 @@ import BizVerification from '../Screens/AppStack/BizVerification'
 import AutoBuy from '../Screens/AppStack/AutoBuy'
 import AirtimeConfirmation from '../Screens/MainStack/AirtimeConfirmation'
 import EnterPin from '../Screens/MainStack/EnterPin'
-
+import TransactionSuccesful from '../Screens/MainStack/TransactionSuccesful'
 const Stack = createNativeStackNavigator()
 export default function MainNavigator() {
   return (
@@ -37,8 +37,12 @@ export default function MainNavigator() {
       <Stack.Screen name="Electricity" component={Electricity} />
       <Stack.Screen name="CGWallet" component={CGWallet} />
       <Stack.Screen name="AirtimetoCash" component={AirtimetoCash} />
-      <Stack.Screen name="AirtimeConfirmation" component={AirtimeConfirmation} />
+      <Stack.Screen
+        name="AirtimeConfirmation"
+        component={AirtimeConfirmation}
+      />
       <Stack.Screen name="EnterPin" component={EnterPin} />
+      <Stack.Screen name="TransactionSuccesful" component={TransactionSuccesful} />
     </Stack.Navigator>
   );
 }

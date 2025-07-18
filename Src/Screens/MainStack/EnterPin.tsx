@@ -6,9 +6,8 @@ import { useNavigation } from 'expo-router'
 import OTPInputView from "react-native-otp-input";
 import {Entypo,Ionicons } from "@expo/vector-icons";
 import CustomButton from '@/Src/Components/CustomButton'
-const EnterPin = () => {
+const EnterPin = ({navigation}) => {
       const [pin, setPin] = useState("");
-    const navigation = useNavigation()
   return (
     <View
       style={[general.container, { paddingVertical: SCREEN_HEIGHT * 0.05 }]}
@@ -36,15 +35,19 @@ const EnterPin = () => {
         />
       </View>
       <TouchableOpacity style={styles.fingerprint}>
-        <Entypo name="fingerprint" size={45} color={'black'} />
+        <Entypo name="fingerprint" size={45} color={"black"} />
       </TouchableOpacity>
-      <Text style={[styles.title,{textDecorationLine:'underline'}]}>
+      <Text style={[styles.title, { textDecorationLine: "underline" }]}>
         Forgot PIN?
       </Text>
       <CustomButton
         title="Proceed"
-        onPress={undefined}
-        style={{marginTop:SCREEN_HEIGHT*0.05}}
+        onPress={() =>
+          navigation.navigate("MainNavigator", {
+            screen: "TransactionSuccesful",
+          })
+        }
+        style={{ marginTop: SCREEN_HEIGHT * 0.05 }}
         textStyle={undefined}
       />
     </View>

@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: Colors.extraLight,
     borderRadius: Sizes.radius,
-    paddingV: SCREEN_HEIGHT * 0.02,marginBottom:20,flexDirection:'row',justifyContent:'space-between'
+    padding: SCREEN_HEIGHT * 0.02,marginBottom:20,flexDirection:'row',justifyContent:'space-between'
     
   },
   container: {
