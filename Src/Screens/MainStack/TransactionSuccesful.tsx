@@ -14,6 +14,7 @@ import CustomButton from "@/Src/Components/CustomButton";
 import Images from "@/Src/Constants/Images";
 import { StatusBar } from "react-native";
 import CustomModal from "@/Src/Components/CustomModal";
+import TransactionReceipt from "@/Src/Components/TransactionReciept";
 
 const TransactionSuccesful = () => {
   const formatKey = (key) => {
@@ -39,14 +40,7 @@ const TransactionSuccesful = () => {
       <Text style={[general.regularBold, { alignSelf: "center" }]}>
         Transaction Succesful
       </Text>
-      <View style={styles.card}>
-        {Object.entries(transaction).map(([key, value]) => (
-          <View key={key} style={styles.row}>
-            <Text style={styles.key}>{formatKey(key)}</Text>
-            <Text style={styles.value}>{value}</Text>
-          </View>
-        ))}
-      </View>
+      <TransactionReceipt transaction={transaction}/>
       <View
         style={{
           width: "100%",

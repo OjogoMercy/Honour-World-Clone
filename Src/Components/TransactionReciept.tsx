@@ -1,7 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import general from "@/Src/Constants/General";
-import Icons from "@/Src/Constants/Icons";
 import { transaction } from "@/Src/Constants/Data";
 import {
   Sizes,
@@ -10,14 +8,54 @@ import {
   SCREEN_WIDTH,
 } from "@/Src/Constants/Theme";
 
-const TransactionReciept = () => {
+type TransactionProps = {
+  transaction: Record<string, string>; // Or define a stricter type if needed
+};
+
+const TransactionReceipt = ({ transaction }: TransactionProps) => {
+  const formatKey = (key: string) => {
+    return key
+      .replace(/([A-Z])/g, " $1")
+      .replace(/^./, (str) => str.toUpperCase());
+  };
+
   return (
-    <View>
-      <Text>TransactionReciept</Text>
+    <View style={styles.card}>
+      {Object.entries(transaction).map(([key, value]) => (
+        <View key={key} style={styles.row}>
+          <Text style={styles.key}>{formatKey(key)}</Text>
+          <Text style={styles.value}>{value}</Text>
+        </View>
+      ))}
     </View>
-  )
-}
+  );
+};
 
-export default TransactionReciept
+export default TransactionReceipt;
 
-const styles = StyleSheet.create({})
+
+const styles = StyleSheet.create({
+   card: {
+    backgroundColor: Colors.extraLight,
+    padding: Sizes.padding,
+    borderRadius: 10,
+    marginVertical: 30,
+    marginBottom: SCREEN_HEIGHT * 0.1,
+  },
+  title: {
+    fontSize: Sizes.body2,
+    fontWeight: "bold",
+    color: Colors.primary,
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginVertical: 4,
+  },
+  
+  value: {
+    color: "#333",
+  },
+})
