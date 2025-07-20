@@ -7,10 +7,8 @@ import CustomButton from "@/Src/Components/CustomButton";
 import Icons from "@/Src/Constants/Icons";
 import { Sizes } from "@/Src/Constants/Theme";
 import FormInput from "@/Src/Components/FormInputs";
-import { useNavigation } from "expo-router";
 
 const BizVerification = ({navigation}) => {
-  const navigation = useNavigation()
   const [name,setName] = useState('')
   return (
     <View style={general.container}>
