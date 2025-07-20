@@ -1,14 +1,48 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import Header from "@/Src/Components/Header";
+import general from "@/Src/Constants/General";
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import FormInput from "@/Src/Components/FormInputs";
+import CustomButton from "@/Src/Components/CustomButton";
+import Icons from "@/Src/Constants/Icons";
+import { Sizes } from "@/Src/Constants/Theme";
+import FormInput from "@/Src/Components/FormInputs";
+import { useNavigation } from "expo-router";
 
-const BizVerification = () => {
+const BizVerification = ({navigation}) => {
+  const navigation = useNavigation()
+  const [name,setName] = useState('')
   return (
-    <View>
-      <Text>BizVerification</Text>
+    <View style={general.container}>
+      <Header title={"BizVerification"} customStyle={undefined} />
+      <Text style={[general.normalText, { fontSize: Sizes.body1 }]}>
+        Do Your Due Dilligence
+      </Text>
+      <Text style={general.normalText}>
+        Check the legitimacy of businesses before dealing with them for just
+        #100.00.
+      </Text>
+      <Text style={general.regularBold}>Business Name</Text>
+      <FormInput
+        value={name}
+        onChangeText={setName}
+        onPress={undefined}
+        iconSource={Icons.copy}
+        placeHolder={undefined}
+      />
+      <CustomButton
+        title={"Verify Business"}
+        onPress={undefined}
+        style={undefined}
+        textStyle={undefined}
+      />
+      <Text onPress={() => navigation.navigate("Transactions")}>
+        Check History {">"}
+      </Text>
     </View>
-  )
-}
+  );
+};
 
-export default BizVerification
+export default BizVerification;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
