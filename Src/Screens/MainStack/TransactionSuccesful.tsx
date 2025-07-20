@@ -1,26 +1,36 @@
-import { StyleSheet, Text, View,Image,Modal } from 'react-native'
-import React, { useState } from 'react'
-import Header from '@/Src/Components/Header'
-import general from '@/Src/Constants/General'
-import Icons from '@/Src/Constants/Icons'
-import { transaction } from '@/Src/Constants/Data'
-import { Sizes,Colors,SCREEN_HEIGHT,SCREEN_WIDTH } from '@/Src/Constants/Theme'
-import CustomButton from '@/Src/Components/CustomButton'
-import Images from '@/Src/Constants/Images'
-import { StatusBar } from 'react-native'
+import { StyleSheet, Text, View, Image, Modal } from "react-native";
+import React, { useState } from "react";
+import Header from "@/Src/Components/Header";
+import general from "@/Src/Constants/General";
+import Icons from "@/Src/Constants/Icons";
+import { transaction } from "@/Src/Constants/Data";
+import {
+  Sizes,
+  Colors,
+  SCREEN_HEIGHT,
+  SCREEN_WIDTH,
+} from "@/Src/Constants/Theme";
+import CustomButton from "@/Src/Components/CustomButton";
+import Images from "@/Src/Constants/Images";
+import { StatusBar } from "react-native";
+import CustomModal from "@/Src/Components/CustomModal";
 
 const TransactionSuccesful = () => {
-    const formatKey = (key) => {
-      // Optional: format keys to look nicer
-      return key
-        .replace(/([A-Z])/g, " $1")
-        .replace(/^./, (str) => str.toUpperCase());
-    };
-     const [visible, setVisible] = useState(false);
+  const formatKey = (key) => {
+    // Optional: format keys to look nicer
+    return key
+      .replace(/([A-Z])/g, " $1")
+      .replace(/^./, (str) => str.toUpperCase());
+  };
+  const [visible, setVisible] = useState(false);
 
   return (
-      <View style={general.container}>
-          <StatusBar backgroundColor={'transparent'} translucent barStyle={'dark-content'}/>
+    <View style={general.container}>
+      <StatusBar
+        backgroundColor={"transparent"}
+        translucent
+        barStyle={"dark-content"}
+      />
       <Header title={""} />
       <Image
         source={Icons.greenCheck}
@@ -61,51 +71,24 @@ const TransactionSuccesful = () => {
           onPress={() => setVisible(true)}
         />
       </View>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={visible}
-        onRequestClose={() => setVisible(false)}
-      >
-        <View style={styles.overlay}>
-          <View style={styles.modalContainer}>
-            <Image source={Images.emoji} style={general.profile} />
-            <Text style={general.regularBold}>That was Easy</Text>
-            <Text style={general.normalText}>
-              That was easy! Love our app? Show us some love by leaving a ⭐⭐⭐⭐⭐on Play Store!
-            </Text>
-            <View
-              style={{
-                width: "100%",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                padding: Sizes.padding,
-              }}
-            >
-              <CustomButton
-                title={"Go Home"}
-                style={{
-                  width: "40%",
-                  backgroundColor: "white",
-                  borderWidth: 1,
-                  borderColor: "black",
-                }}
-                textStyle={{ color: "black" }}
-              />
-              <CustomButton
-                title={"Rate Us"}
-                style={{ width: "40%" }}
-                onPress={() => setVisible(false)}
-              />
-            </View>
-          </View>
-        </View>
-      </Modal>
+      <CustomModal
+        ImageSource={Images.emoji}
+        BoldText={"That was Easy"}
+        NormalText={
+          "That was easy! Love our app? Show us some love by leaving a ⭐⭐⭐⭐⭐on Play Store!"
+        }
+        LeftButton={"Go Home"}
+        onPressLeft={undefined}
+        CloseModalText={'Rate us'}
+        state={visible}
+        setStateTrue={() =>  setVisible(true)}
+        setStateFalse={()=> setVisible(false)}
+      />
     </View>
   );
-}
+};
 
-export default TransactionSuccesful
+export default TransactionSuccesful;
 
 const styles = StyleSheet.create({
   card: {
@@ -140,7 +123,7 @@ const styles = StyleSheet.create({
     borderRadius: Sizes.bigRadius,
     justifyContent: "center",
     alignItems: "center",
-    width:'80%'
+    width: "80%",
   },
   overlay: {
     flex: 1,
