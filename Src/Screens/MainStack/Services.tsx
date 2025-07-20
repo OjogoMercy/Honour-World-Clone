@@ -15,9 +15,7 @@ const Services = ({ navigation }) => {
   return (
     <View style={general.container}>
       <Text>Services</Text>
-      <Text style={[general.normalText, { fontSize: Sizes.body4,color:'black' }]}>
-        Enjoy our range of services designed to simplify your life{" "}
-      </Text>
+      <Text style={[general.normalText, { fontSize: Sizes.body4,color:'black' }]}>Enjoy our range of services designed to simplify your life</Text>
       <FlatList
         data={services}
         numColumns={3}

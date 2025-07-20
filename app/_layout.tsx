@@ -8,7 +8,8 @@ import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
 import BottomTab from "@/Src/Navigation/BottomTab";
 import MainNavigator from "@/Src/Navigation/MainNavigator";
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
+import CableTv from "@/Src/Screens/AppStack/CableTv";
 
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
