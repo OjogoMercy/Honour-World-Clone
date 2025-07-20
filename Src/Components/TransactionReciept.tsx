@@ -5,11 +5,10 @@ import {
   Sizes,
   Colors,
   SCREEN_HEIGHT,
-  SCREEN_WIDTH,
 } from "@/Src/Constants/Theme";
 
 type TransactionProps = {
-  transaction: Record<string, string>; // Or define a stricter type if needed
+  transaction: Record<string, string>; 
 };
 
 const TransactionReceipt = ({ transaction }: TransactionProps) => {
