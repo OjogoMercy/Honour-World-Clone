@@ -32,6 +32,7 @@ export default function RootLayout() {
           <Stack.Screen name="Index" component={index} />
           <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="MainNavigator" component={MainNavigator} />
+          <Stack.Screen name="CableTv" component={CableTv} />
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

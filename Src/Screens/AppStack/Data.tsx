@@ -24,7 +24,7 @@ const Data = () => {
   ];
   
 const DataBundleCard = ({ size, duration, price }) => (
-  <TouchableOpacity style={styles.card}>
+  <TouchableOpacity style={styles.card} activeOpacity={0.5}>
     <Text style={styles.size}>{size}</Text>
     <Text style={styles.duration}>{duration}</Text>
     <Text style={styles.price}>{price}</Text>

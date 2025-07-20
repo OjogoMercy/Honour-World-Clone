@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
-import Theme, { Sizes, Colors } from "../Constants/Theme";
+import  { Sizes, Colors } from "../Constants/Theme";
 import general from "../Constants/General";
 
 export default function Header({
@@ -36,7 +36,7 @@ export default function Header({
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    paddingVertical: 10,
     flexDirection: "row",
     alignItems: "center",
     width: "100%",

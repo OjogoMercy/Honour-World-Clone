@@ -20,7 +20,7 @@ export const services = [
     label: "Cable TV",
     icon: Icons.tv,
     color: "#00BCD4",
-    Navigate: "CableTv",
+    Navigate:"CableTv",
   },
   {
     id: 4,

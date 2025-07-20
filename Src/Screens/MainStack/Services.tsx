@@ -1,6 +1,6 @@
-import services from "@/Src/Constants/Data";
 import general from "@/Src/Constants/General";
 import { SCREEN_HEIGHT, SCREEN_WIDTH, Sizes } from "@/Src/Constants/Theme";
+import { services } from "@/Src/Constants/Data";
 import React from "react";
 import {
   FlatList,
