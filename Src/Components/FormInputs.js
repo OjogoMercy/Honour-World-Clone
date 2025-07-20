@@ -31,6 +31,8 @@ const FormInputs = ({ image, image1, image2, placeHolder, keyboard }) => {
         autoCorrect={false}
         returnKeyType="next"
         textContentType="none"
+        value={value}
+        onChangeText={item=>setValue(item)}
 
         // onChangeText={onChangeText}
         // value={value}
