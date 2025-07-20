@@ -1,15 +1,14 @@
+import CustomButton from "@/Src/Components/CustomButton";
+import FormInput from "@/Src/Components/FormInputs";
 import Header from "@/Src/Components/Header";
 import general from "@/Src/Constants/General";
-import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import FormInput from "@/Src/Components/FormInputs";
-import CustomButton from "@/Src/Components/CustomButton";
 import Icons from "@/Src/Constants/Icons";
 import { Sizes } from "@/Src/Constants/Theme";
-import FormInput from "@/Src/Components/FormInputs";
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
-const BizVerification = ({navigation}) => {
-  const [name,setName] = useState('')
+const BizVerification = ({ navigation }) => {
+  const [name, setName] = useState("");
   return (
     <View style={general.container}>
       <Header title={"BizVerification"} customStyle={undefined} />

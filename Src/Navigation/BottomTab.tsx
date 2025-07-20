@@ -16,7 +16,7 @@ export default function BottomTab() {
               let iconName;
           if (route.name === 'Home') iconName = Icons.home;
           else if (route.name === 'Services') iconName = Icons.shop;
-          else if (route.name === 'FundWallet') iconName = Icons.walletIcon;
+          else if (route.name === 'Transactions') iconName = Icons.walletIcon;
               else if (route.name === 'Profile') iconName = Icons.user;
               return (
                 <Image
