@@ -4,15 +4,16 @@
     "jsx": "react",
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
+    "expo-env.d.ts",
+    "Src/Constants/Theme.js",
+    "app/index.js",
+    "Src/Components/FormInputs.js"
+, "Src/Constants/Images.js", "Src/Constants/Icons.js", "Src/Components/ButtonCom.js"  ]
 }

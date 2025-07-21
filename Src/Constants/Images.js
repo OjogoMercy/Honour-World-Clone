@@ -1,10 +1,5 @@
 const Images = {
-  slide1:require("../assets/images/project/Slide1.png"),
-  slide2:require("../assets/images/project/slide2.png"),
-  slide3:require("../assets/images/project/slide3.png"),
-  gotv:require("../assets/images/project/gotv.png"),
-  phedc:require("../assets/images/project/phedc.png"),
-  icon: require("../assets/images/project/logo.png"),
+  icon: require("../assets/images/icon.png"),
   questionMark: require("../assets/images/project/_.png"),
   email: require("../assets/images/project/8-Email.png"),
   contact: require("../assets/images/project/basil_contacts-solid.png"),
@@ -45,7 +40,6 @@ const Images = {
     waec: require("../assets/images/project/Waec_logo 1.png"),
     check: require("../assets/images/project/XMLID_1_.png"),
     profile:require("../assets/images/project/Profile.jpg"),
-    wallet:require("../assets/images/project/Wallet.png"),
    
     
 };

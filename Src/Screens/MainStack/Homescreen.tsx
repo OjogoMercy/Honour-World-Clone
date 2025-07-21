@@ -35,9 +35,11 @@ const Homescreen = ({ navigation }) => {
   return (
     <View style={general.container}>
       <StatusBar
-        backgroundColor={"transparent"}
-        translucent
-        barStyle={"dark-content"}
+        backgroundColor="white"
+        barStyle="dark-content"
+        translucent={false}
+        hidden={false}
+        networkActivityIndicatorVisible={true}
       />
       <View style={general.row}>
         <TouchableOpacity activeOpacity={0.3} onPress={()=> navigation.navigate('MainNavigator', {screen:'ProfileInfo'})}>
