@@ -5,7 +5,7 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import index from "./index";
 import * as Font from 'expo-font';
-import { useFonts } from 'expo-font';
+import React, { useFonts } from 'expo-font';
 import BottomTab from "@/Src/Navigation/BottomTab";
 import MainNavigator from "@/Src/Navigation/MainNavigator";
 import { useEffect } from "react";
