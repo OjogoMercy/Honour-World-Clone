@@ -75,6 +75,11 @@ const DataBundleCard = ({ size, duration, price }) => (
       <FlatList
         data={DATA_BUNDLES}
         keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        // columnWrapperStyle={{
+        //   width: SCREEN_WIDTH * 0.25,
+        //   height: SCREEN_HEIGHT * 0.12,
+        // }}
         numColumns={3}
         renderItem={({ item }) => (
           <DataBundleCard

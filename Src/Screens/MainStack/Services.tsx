@@ -10,11 +10,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import Header from "@/Src/Components/Header";
 
 const Services = ({ navigation }) => {
   return (
     <View style={general.container}>
-      <Text>Services</Text>
+      <Header title={'Services'} customStyle={undefined} />
       <Text style={[general.normalText, { fontSize: Sizes.body4,color:'black' }]}>Enjoy our range of services designed to simplify your life</Text>
       <FlatList
         data={services}

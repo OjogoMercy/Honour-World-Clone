@@ -6,8 +6,12 @@ import general from "@/Src/Constants/General";
 import { Colors, SCREEN_HEIGHT, Sizes } from "@/Src/Constants/Theme";
 import Feather from "@expo/vector-icons/Feather";
 import { transaction } from "@/Src/Constants/Data";
+import TransactionReceipt from "@/Src/Components/TransactionReciept";
 
-const AirtimeConfirmation = ({navigation}) => {
+const AirtimeConfirmation = ({ navigation }) => {
+  const data = [
+    
+  ]
   return (
     <View style={general.container}>
       <StatusBar backgroundColor={"white"} barStyle={"dark-content"} />

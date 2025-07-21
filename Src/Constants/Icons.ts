@@ -1,4 +1,7 @@
 const Icons = {
+  dropdown: require("../assets/images/project/dropdown.png"),
+  check: require("../assets/images/project/check.png"),
+  circle: require("../assets/images/project/uncheck.png"),
   phone: require("../assets/images/project/default.png"),
   mark: require("../assets/images/project/Frame (1).png"),
   eyeClosed: require("../assets/images/project/Frame 4.png"),

@@ -105,14 +105,14 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: Colors.extraLight,
     borderRadius: Sizes.radius,
-    padding: SCREEN_HEIGHT * 0.02,marginBottom:20,flexDirection:'row',justifyContent:'space-between'
+    padding: SCREEN_HEIGHT * 0.02,marginBottom:SCREEN_HEIGHT*0.01,flexDirection:'row',justifyContent:'space-between'
     
   },
   container: {
     flexWrap: "wrap",
     flexDirection: "row",
     justifyContent: "space-around",
-    padding: 20,
+    padding: Sizes.padding,
   },
   box: {
     width: "30%",
