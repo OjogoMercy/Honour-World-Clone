@@ -1,4 +1,7 @@
 const Icons = {
+  dropdown: require("../assets/images/project/dropdown.png"),
+  check: require("../assets/images/project/check.png"),
+  circle: require("../assets/images/project/uncheck.png"),
   phone: require("../assets/images/project/default.png"),
   go: require("../assets/images/project/Livello_1.png"),
   card: require("../assets/images/project/Card.png"),
@@ -37,5 +40,6 @@ const Icons = {
   walletIcon: require("../assets/images/project/navigation/wallet.png"),
   tv: require("../assets/images/project/Frame 472.png"),
   more: require("../assets/images/project/Frame 472 (1).png"),
+  copy:require("../assets/images/project/Copy.png")
 };
 export default Icons;

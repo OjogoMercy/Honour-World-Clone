@@ -39,12 +39,9 @@ export default function FundwalletPaymentOptions() {
         
         <Image source={method.logo} style={{width: 35, height: 35}}/>      
       </View>
-      <TouchableOpacity style={{width: 120, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: "#fff", borderRadius: Sizes.radius, opacity: 0.5, height: 40}}>
-
+      <TouchableOpacity style={{width: 110, flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: "#fff", borderRadius: Sizes.radius, opacity: 0.5, height: 40, marginLeft: 20, padding: 10}}>
           <Text style={{color: "#fff", fontSize: Sizes.body3a}}>8028110604</Text>
           <Image source={Images.copy} style={{width: 15, height: 15, marginTop: 10}} />
-        
-        
       </TouchableOpacity>
      </ImageBackground>
       {/* <Image source={method.banner} style={{width: "auto" , height: 200, marginVertical: 20, borderRadius: Sizes.radius}} /> */}
