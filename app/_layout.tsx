@@ -9,6 +9,10 @@ import { useFonts } from 'expo-font';
 import BottomTab from "@/Src/Navigation/BottomTab";
 import MainNavigator from "@/Src/Navigation/MainNavigator";
 import { useEffect } from "react";
+import buyscreen from "./buyscreen";
+import Transaction from "./Transaction";
+import Business from "./Business";
+import successful from "./successful";
 
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
@@ -27,10 +31,15 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="BottomTab">
+        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="successful">
           <Stack.Screen name="Index" component={index} />
           <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="MainNavigator" component={MainNavigator} />
+           <Stack.Screen name="buyscreen" component={buyscreen} />
+           <Stack.Screen name="Transaction" component={Transaction} />
+           <Stack.Screen name="Business" component={Business} />
+          <Stack.Screen name="successful" component={successful} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

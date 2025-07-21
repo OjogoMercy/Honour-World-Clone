@@ -1,14 +1,14 @@
-import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import FundWallet from '../Screens/MainStack/FundWallet'
-import TransferBalance from '../Screens/MainStack/TransferBalance'
-import Transactions from '../Screens/AppStack/Transactions'
+import React from 'react'
+import Airtime from '../Screens/AppStack/Airtime'
+import CableTv from '../Screens/AppStack/CableTv'
+import Data from '../Screens/AppStack/Data'
 import Notification from '../Screens/AppStack/Notification'
 import ProfileInfo from '../Screens/AppStack/ProfileInfo'
-import Airtime from '../Screens/AppStack/Airtime'
-import Data from '../Screens/AppStack/Data'
-import CableTv from '../Screens/AppStack/CableTv'
+import Transactions from '../Screens/AppStack/Transactions'
+import FundWallet from '../Screens/MainStack/FundWallet'
 import Services from '../Screens/MainStack/Services'
+import TransferBalance from '../Screens/MainStack/TransferBalance'
 
 const Stack = createNativeStackNavigator()
 export default function MainNavigator() {
