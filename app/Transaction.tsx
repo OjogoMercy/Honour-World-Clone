@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View,TouchableOpacity,TextInput, } from 'react-native'
 import React, {useState} from 'react'
+import Icons from '@/Src/Constants/Icons'
 
 
 const Transaction = () => {

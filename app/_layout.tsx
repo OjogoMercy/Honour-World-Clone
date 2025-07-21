@@ -8,7 +8,7 @@ import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
 import BottomTab from "@/Src/Navigation/BottomTab";
 import MainNavigator from "@/Src/Navigation/MainNavigator";
-import { useEffect } from "react";
+import React,{ useEffect } from "react";
 import buyscreen from "./buyscreen";
 import Transaction from "./Transaction";
 import Business from "./Business";
@@ -31,7 +31,7 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="successful">
+        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="BottomTab">
           <Stack.Screen name="Index" component={index} />
           <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="MainNavigator" component={MainNavigator} />

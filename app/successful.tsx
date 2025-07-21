@@ -1,12 +1,12 @@
-import Images from '@/Src/Constants/Images'
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
+import Icons from '@/Src/Constants/Icons'
 
 const successful = () => {
   return (
     <View style={styles.page}>
       <View style={styles.mark}>
-       <Image source={Images.chat} style={styles.icon}/>
+       <Image source={Icons.greenCheck} style={styles.icon}/>
         <Text style={styles.successful}>Transaction successful</Text>
       </View>
     </View>
