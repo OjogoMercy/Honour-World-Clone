@@ -2,7 +2,6 @@ import { StyleSheet, Text, View ,TouchableOpacity} from 'react-native'
 import React, { useState} from 'react'
 import general from '@/Src/Constants/General'
 import { SCREEN_HEIGHT, SCREEN_WIDTH, Sizes, Colors } from '@/Src/Constants/Theme'
-import { useNavigation } from 'expo-router'
 import OTPInputView from "react-native-otp-input";
 import {Entypo,Ionicons } from "@expo/vector-icons";
 import CustomButton from '@/Src/Components/CustomButton'
