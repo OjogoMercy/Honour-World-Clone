@@ -11,14 +11,7 @@ import {
 import { Colors, Sizes } from "../Constants/Theme";
 const { width, height } = Dimensions.get("window");
 
-const FloatingMenu = ({
-  image1,
-  image2,
-  image3,
-  PopText1,
-  PopText2,
-  PopText3,
-}) => {
+const FloatingMenu = ({ image1, image2, image3, PopText1,PopText2,PopText3 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const animation = useRef(new Animated.Value(0)).current;
 
@@ -98,10 +91,10 @@ const FloatingMenu = ({
                   color: Colors.secondary,
                   textAlign: "center",
                   fontWeight: "bold",
-                  fontFamily: "GeneralSans-regular",
+                   fontFamily: "GeneralSans-regular",
                 }}
               >
-                {PopText1}
+                 {PopText1}
               </Text>
             </View>
             <TouchableOpacity
@@ -137,7 +130,7 @@ const FloatingMenu = ({
                   color: Colors.secondary,
                   textAlign: "center",
                   fontWeight: "bold",
-                  fontFamily: "GeneralSans-regular",
+                   fontFamily: "GeneralSans-regular",
                 }}
               >
                 {PopText2}
@@ -168,6 +161,7 @@ const FloatingMenu = ({
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: 30,
+                
               }}
             >
               <Text

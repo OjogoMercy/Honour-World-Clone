@@ -168,6 +168,8 @@ const SignIn = () => {
   // Navigate to SignIn screen when the component mounts
   const [uncheck, setCheck] = useState(false);
   return (
+    <>
+      {/* Main SignUp Page */}
     <View style={styles.Page}>
       <Image
         source={require("../../assets/images/project/hwB logo.png")}
@@ -259,7 +261,12 @@ const SignIn = () => {
       </View>
       <ButtonCom onPress={validate} text={"Sign Up"} />
 
-      <FloatingMenu
+     
+      {/* <TouchableOpacity style={styles.QueIcon}>
+        <Image source={Images.questionMark} style={{ width: 15, height: 25 }} />
+      </TouchableOpacity> */}
+    </View>
+     <FloatingMenu
         image1={Icons.whiteWhatsapp}
         image2={Icons.phone}
         image3={Icons.chatbot}
@@ -267,10 +274,7 @@ const SignIn = () => {
         PopText2={" Call"}
         PopText3={"Mail"}
       />
-      {/* <TouchableOpacity style={styles.QueIcon}>
-        <Image source={Images.questionMark} style={{ width: 15, height: 25 }} />
-      </TouchableOpacity> */}
-    </View>
+      </>
   );
 };
 

@@ -1,6 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as LocalAuthentication from "expo-local-authentication";
 import { useNavigation } from "expo-router";
+import * as SecureStore from "expo-secure-store";
 import { useEffect, useState } from "react";
 import {
   Alert,
@@ -16,7 +17,7 @@ import FormInputs from "../../Components/FormInputs";
 import Icons from "../../Constants/Icons";
 import Images from "../../Constants/Images";
 import { Colors, Sizes } from "../../Constants/Theme";
-import * as SecureStore from "expo-secure-store";
+import { StatusBar } from "expo-status-bar";
 // SignIn component for user authentication
 // It includes input fields for phone number and password
 // and a checkbox for terms and conditions
@@ -71,17 +72,14 @@ const SignIn = () => {
       ) {
         console.log("Login successful");
         // After successful login
-await AsyncStorage.setItem("isLoggedInOnce", "true");
-await SecureStore.setItemAsync("isLoggedInOnce", "true");
-
-
-
+        await AsyncStorage.setItem("isLoggedInOnce", "true");
+        await SecureStore.setItemAsync("isLoggedInOnce", "true");
 
         // Clear the input values from AsyncStorage
         await AsyncStorage.removeItem("tempPhone");
         await AsyncStorage.removeItem("tempPwd");
-
-        setPhone(""); // also clear from UI
+        // also clear from UI
+        setPhone("");
         setPwd("");
 
         navigation.replace("Homescreen");
@@ -93,49 +91,45 @@ await SecureStore.setItemAsync("isLoggedInOnce", "true");
       console.log("Error during login: ", error);
       Alert.alert("Login Error", error.message || "Something went wrong.");
     }
-    
   };
   useEffect(() => {
-  const checkLoginHistory = async () => {
-    const loggedInBefore = await AsyncStorage.getItem("isLoggedInOnce");
-    setShowFingerprint(loggedInBefore === "true");
-  };
-  checkLoginHistory();
-}, []);
+    const checkLoginHistory = async () => {
+      const loggedInBefore = await AsyncStorage.getItem("isLoggedInOnce");
+      setShowFingerprint(loggedInBefore === "true");
+    };
+    checkLoginHistory();
+  }, []);
   // Function to handle biometric authentication
   // It checks if the user has logged in before and if biometrics are available
   // If successful, it retrieves user data and navigates to the home screen
 
-const checkBiometrics = async () => {
-  const hasLoggedInBefore = await SecureStore.getItemAsync("isLoggedInOnce");
+  const checkBiometrics = async () => {
+    const hasLoggedInBefore = await SecureStore.getItemAsync("isLoggedInOnce");
 
-  if (hasLoggedInBefore === "true") {
-    const compatible = await LocalAuthentication.hasHardwareAsync();
-    const enrolled = await LocalAuthentication.isEnrolledAsync();
+    if (hasLoggedInBefore === "true") {
+      const compatible = await LocalAuthentication.hasHardwareAsync();
+      const enrolled = await LocalAuthentication.isEnrolledAsync();
 
-    if (compatible && enrolled) {
-      const result = await LocalAuthentication.authenticateAsync({
-        promptMessage: "Authenticate with Fingerprint",
-        fallbackLabel: "Enter Password",
-      });
+      if (compatible && enrolled) {
+        const result = await LocalAuthentication.authenticateAsync({
+          promptMessage: "Authenticate with Fingerprint",
+          fallbackLabel: "Enter Password",
+        });
 
-      if (result.success) {
-        // Load user data
-        const jsonValue = await SecureStore.getItemAsync("userData");
-        if (jsonValue != null) {
-          const user = JSON.parse(jsonValue);
-          // Navigate to Home or Dashboard
-          navigation.replace("Homescreen");
+        if (result.success) {
+          // Load user data
+          const jsonValue = await SecureStore.getItemAsync("userData");
+          if (jsonValue != null) {
+            const userData = JSON.parse(jsonValue);
+            // Navigate to Home or Dashboard
+            navigation.replace("Homescreen");
+          }
         }
       }
     }
-  }
-};
+  };
 
-useEffect(() => {
-  checkBiometrics();
-}, []);
-
+  
   // Biometric Validation
   const handleBiometricAuth = async () => {
     const compatible = await LocalAuthentication.hasHardwareAsync();
@@ -178,6 +172,12 @@ useEffect(() => {
   const [pwd, setPwd] = useState("");
   return (
     <View style={styles.Page}>
+      <StatusBar
+        style="dark"
+        backgroundColor={Colors.secondary}
+        translucent={false}
+      />
+        
       <Image
         source={require("../../assets/images/project/hwB logo.png")}
         style={{
@@ -252,7 +252,7 @@ useEffect(() => {
               height: 70,
               width: 70,
               marginTop: Sizes.height * 0.01,
-              zindex: 1
+              zindex: 1,
             }}
           />
         </TouchableOpacity>
@@ -271,6 +271,7 @@ useEffect(() => {
           </Text>
         </Text>
       </View>
+
       <FloatingMenu
         image1={Icons.whiteWhatsapp}
         image2={Icons.phone}
@@ -279,6 +280,7 @@ useEffect(() => {
         PopText2={" Call"}
         PopText3={"Mail"}
       />
+
       {/* <TouchableOpacity style={styles.QueIcon}>
         <Image source={Images.questionMark} style={{ width: 15, height: 25 }} />
       </TouchableOpacity> */}
