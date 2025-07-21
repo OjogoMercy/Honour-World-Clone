@@ -1,5 +1,10 @@
 const Images = {
-  icon: require("../assets/images/icon.png"),
+  slide1:require("../assets/images/project/Slide1.png"),
+  slide2:require("../assets/images/project/slide2.png"),
+  slide3:require("../assets/images/project/slide3.png"),
+  gotv:require("../assets/images/project/gotv.png"),
+  phedc:require("../assets/images/project/phedc.png"),
+  icon: require("../assets/images/project/logo.png"),
   questionMark: require("../assets/images/project/_.png"),
   email: require("../assets/images/project/8-Email.png"),
   contact: require("../assets/images/project/basil_contacts-solid.png"),
