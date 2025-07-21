@@ -32,6 +32,7 @@ export default function RootLayout() {
         <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="FundWallet">
           <Stack.Screen name="Index" component={index} />
           <Stack.Screen name="FundWallet" component={FundWallet} />
+          <Stack.Screen name="FundwalletPaymentOptions" component={FundwalletPaymentOptions} />
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

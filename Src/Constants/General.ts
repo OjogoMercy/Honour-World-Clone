@@ -5,7 +5,8 @@ const general = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "fff",
-        padding: Sizes.padding
+        paddingHorizontal: 15,
+        paddingTop:40
         
     },
     bigText: {
@@ -118,7 +119,7 @@ const general = StyleSheet.create({
     },
     FundWalletText: {
         fontSize: Sizes.h3a,
-        fontFamily: Fonts.semiBold,
+        fontFamily: 'regular',
         fontWeight: "bold",
         textAlign: "center",
         marginTop: Sizes.base * 2,
@@ -126,10 +127,11 @@ const general = StyleSheet.create({
     },
     subFundwalletText: {
         fontSize: Sizes.body3,
-        fontFamily: Fonts.regular,
+        fontFamily:  'regular',
         textAlign: "center",
         marginTop: Sizes.base,
-        color: "#000"  
+        color:  '#000'
+        // fontWeight: "bold",
     },
     option: {
     flexDirection: 'row',
@@ -157,8 +159,10 @@ const general = StyleSheet.create({
 
     FundName: { 
         fontSize: Sizes.body3,
-        fontFamily: Fonts.regular,
-     }
+        fontFamily: 'regular',
+     },
+     
+
 
 })
 
