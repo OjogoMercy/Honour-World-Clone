@@ -1,4 +1,5 @@
 const Icons = {
+  arrow: require("../assets/images/project/Layer_1 (6).png"),
   chevron: require("../assets/images/project/chevron.png"),
   eye: require("../assets/images/project/eye.png"),
   headset: require("../assets/images/project/Headset.png"),

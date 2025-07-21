@@ -1,134 +1,110 @@
-import { StyleSheet} from "react-native";
-import { Sizes } from "./Theme";
+import { StyleSheet } from "react-native";
+import { Colors,Sizes ,SCREEN_HEIGHT,SCREEN_WIDTH} from "./Theme";
+
 const general = StyleSheet.create({
-    page: {
-            flex: 1,
-            backgroundColor: "#fff",
-            alignItems: "center",
-            padding: Sizes.padding,
-            margin: Sizes.base
-        },
-        root: {
-        fontSize:Sizes.h3,
-        color: "#0057FF",
-        fontWeight: 500,
-        marginLeft:Sizes.base,
-        textAlign: 'center',
+    container: {
+        flex: 1,
+        backgroundColor: "fff",
+        padding: Sizes.padding
+        
     },
-
-    hint:  {
-  color: '#777',
-  textAlign: 'center',
-  fontWeight: 600,
-  lineHeight: 18,
-  marginTop: Sizes.base,
-  marginBottom: Sizes.base,
-  fontSize:Sizes.h5,
+    bigText: {
+        fontSize: Sizes.h3,
+        fontWeight: 'bold',
+        fontFamily:'bold'
     },
-
-    imageWrapper: {
-    position: 'relative',
-    width: 90,
-    borderWidth: 2,
-    borderColor: '#2F80ED', // blue border
-    borderRadius: 50,
-    marginTop: Sizes.base,
+    row: {
+        flexDirection: 'row',
+        padding:Sizes.padding,
+        justifyContent: 'space-between',
+        alignItems:'center'
+    },
+    profile: {
+        height: Sizes.profileHeight,
+        width: Sizes.profileWidth,
+        borderRadius:Sizes.profileBorder
+    },
+    tinyText: {
+        fontSize: Sizes.tinyText,
+        color:'gray'
+    },
+    card: {
+        width: '100%',
+        height: '23%',
+        borderRadius: Sizes.radius,
+        backgroundColor: Colors.primary,
+        padding:Sizes.padding
+    },
+    text: {
+        fontSize: Sizes.body4,
+        color:'white'
+    },
+     cover: {
+    borderRadius: Sizes.bigRadius,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Colors.veryLight,
+    padding: Sizes.smallPadding,
   },
-
-    profileimage: {
-      height: 60,
-      width: 60,
-      borderRadius: 30,
-      marginTop: Sizes.base,
-      alignItems: "center",
-    },
-
-    cameraicon: {
-       position: 'absolute',
-    bottom: 0,
-    right: 0,
-    width: 25,
-    height: 25,
-    backgroundColor: '#007bff',
-    borderRadius: 14,
-    borderWidth: 2,
-    borderColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    },
-
-    root1: {
-      fontSize:Sizes.h3,
-        color: "black",
-        fontWeight: 500,
-        marginLeft:Sizes.base,
-        textAlign: 'center',
-    },
-
-    item: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 40,
-  },
-
   icon: {
-    width: 20,
-    height: 20,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignSelf:"center",
-  
-    marginRight: Sizes.base,
-     },
-
-     right: {
-    width: 20,
-    height: 20,
-     },
-  
-  // icon2: {
-  // width: 20,
-  // height: 20,
-  // resizeMode: 'contain',
-  //   fontSize: Sizes.h3,
-  // },
-
-   textBox: {
-    flex: 1,
+    height: Sizes.tinyIcon,
+    width: Sizes.tinyIcon,
   },
-
-  title: {
-    fontSize: Sizes.h5,
-    fontWeight: '600',
+  item: {
+    alignItems: "center",
+    backgroundColor: "white",
+    borderRadius: Sizes.smallPadding,
+    elevation: 2,
+    padding: Sizes.smallPadding,
+    height: SCREEN_HEIGHT * 0.1,
+    width: SCREEN_WIDTH * 0.2,
+    justifyContent: "center",
   },
-
-  subtitle: {
-    fontSize: Sizes.h4,
-    color: '#777',
-    marginTop: Sizes.base,
+  iconContainer: {
+    backgroundColor: "white",
   },
-
-  upgradeButton: {
-  backgroundColor: '#0057FF',
-  paddingVertical: 14,
-  paddingHorizontal: 30,
-  borderRadius: 30,
-  alignItems: 'center',
-  justifyContent: 'center',
-  alignSelf: 'center',
-  width: '60%',
-},
-
-upgradeButtonText: {
-  color: '#fff',
-  fontSize: Sizes.h3,
-  fontWeight: '600',
-},
-
-})
-
-
-
-
-
-export default general;
+  iconBox: {
+    height: SCREEN_HEIGHT * 0.032,
+    width: SCREEN_WIDTH * 0.07,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  boxText: {
+    fontSize: Sizes.body5,
+    color: "gray",
+    alignSelf: "center",
+    marginTop: 10,
+  },
+  image: {
+    width: SCREEN_WIDTH * 0.9,
+    height: SCREEN_HEIGHT * 0.2,
+    borderRadius: Sizes.radius,
+    marginTop: Sizes.padding,
+  },
+  activity: {
+    height: Sizes.body5,
+    width: Sizes.body5,
+    borderRadius: Sizes.bigRadius,
+    borderWidth: 1,
+    borderColor: "black",
+    margin: 2,
+  },
+  wallet: {
+    width: SCREEN_WIDTH * 0.2,
+    height: SCREEN_HEIGHT * 0.2,
+    borderRadius: Sizes.radius,
+    marginTop: Sizes.padding,
+    alignSelf: "center",
+    resizeMode: "contain",
+  },
+  normalText: {
+    fontSize: Sizes.body3,
+    color: "gray",
+    alignSelf: "center",
+    marginTop: Sizes.padding,
+    width: SCREEN_WIDTH * 0.6,
+    fontFamily: 'Regular',
+    textAlign:'center'
+  },
+});
+export default general

@@ -9,6 +9,7 @@ import { useFonts } from 'expo-font';
 import BottomTab from "@/Src/Navigation/BottomTab";
 import MainNavigator from "@/Src/Navigation/MainNavigator";
 import { useEffect } from "react";
+import Login from "./Login";
 
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
@@ -28,7 +29,6 @@ export default function RootLayout() {
     <NavigationIndependentTree>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="BottomTab">
-          <Stack.Screen name="Index" component={index} />
           <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="MainNavigator" component={MainNavigator} />
         </Stack.Navigator>
