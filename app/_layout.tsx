@@ -5,13 +5,12 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import index from "./index";
 import * as Font from 'expo-font';
-import React, { useFonts } from 'expo-font';
+import  { useFonts } from 'expo-font';
 import BottomTab from "@/Src/Navigation/BottomTab";
 import MainNavigator from "@/Src/Navigation/MainNavigator";
-import { useEffect } from "react";
 import SplashScreen from "@/Src/Screens/AutScreen/SplashScreen"; 
 import IntroSlider from "@/Src/Screens/AutScreen/IntroSlider";
-import React, { useEffect } from "react";
+import React,{ useEffect } from "react";
 import CableTv from "@/Src/Screens/AppStack/CableTv";
 
 const Stack = createNativeStackNavigator();
@@ -34,7 +33,6 @@ export default function RootLayout() {
         <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="SplashScreen">
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="IntroSlider" component={IntroSlider} />
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="BottomTab">
           <Stack.Screen name="Index" component={index} />
           <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="MainNavigator" component={MainNavigator} />
