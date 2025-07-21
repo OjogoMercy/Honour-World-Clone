@@ -10,9 +10,9 @@ import { Colors, Sizes } from "../../Constants/Theme";
 // SignIn component for user authentication
 // It includes input fields for phone number and password
 // and a checkbox for terms and conditions
-const SignIn = () => {
+const SignUp = () => {
   const navigation = useNavigation();
-  // Navigate to SignIn screen when the component mounts
+  // Navigate to SignUp screen when the component mounts
   const [uncheck, setCheck] = useState(false);
   return (
     <View style={styles.Page}>
@@ -119,7 +119,7 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
 
 const styles = StyleSheet.create({
   Page: {

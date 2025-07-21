@@ -7,6 +7,7 @@ import FormInputs from "../../Components/FormInputs";
 import Icons from "../../Constants/Icons";
 import Images from "../../Constants/Images";
 import { Colors, Sizes } from "../../Constants/Theme";
+import CustomButton from "@/Src/Components/CustomButton";
 // SignIn component for user authentication
 // It includes input fields for phone number and password
 // and a checkbox for terms and conditions
@@ -74,7 +75,7 @@ const SignIn = () => {
           Forgot Password?
         </Text>
       </View>
-      <ButtonCom text={"Sign In"} />
+      <CustomButton title={'Sign In'} onPress={()=> navigation.navigate('BottomTab')}/>
       <View style={{ alignItems: "center", marginTop: Sizes.height * 0.02 }}>
         <Text style={[styles.belowText, { fontWeight: "600" }]}>
           Login with fingerPrint
@@ -94,7 +95,7 @@ const SignIn = () => {
           Don't have an account?-{" "}
     
             {" "}
-            <Text onPress={()=>navigation.navigate("SignUp") }
+            <Text onPress={()=>navigation.navigate("BottomTab") }
               style={{
                 color: Colors.primary,
                 fontWeight: "bold",

@@ -4,7 +4,7 @@ import Colors from '@/Src/Constants/Colors';
 import Images from '@/Src/Constants/Images';
 import { useNavigation } from 'expo-router';
 import { StatusBar } from 'react-native';
-import { Sizes, SCREEN_WIDTH, SCREEN_HEIGHT } from "../../Constants/Theme";
+import { Sizes,} from "../../Constants/Theme";
 import styles from '@/Src/Constants/Styles';
 
 const slides = [
@@ -64,7 +64,7 @@ const IntroSlider = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-       <StatusBar backgroundColor={Colors.primary} barStyle="light-content"/>
+      <StatusBar backgroundColor={Colors.primary} barStyle="light-content" />
       <View style={styles.backgroundBox}>{renderSlideContent()}</View>
 
       <View style={styles.inter}>
@@ -92,7 +92,10 @@ const IntroSlider = ({navigation}) => {
         <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
           <Text style={styles.nextText}>Next</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.getStartedButton} onPress={()=> navigation.navigate('BottomTab')}>
+        <TouchableOpacity
+          style={styles.getStartedButton}
+          onPress={() => navigation.navigate("SignUp")}
+        >
           <Text style={styles.startedText}>Get Started</Text>
         </TouchableOpacity>
       </View>

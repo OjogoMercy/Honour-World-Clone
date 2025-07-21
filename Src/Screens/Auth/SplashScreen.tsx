@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
-import Colors from '@/Src/Constants/Colors'
-import Images from '@/Src/Constants/Images'
 import { useEffect } from 'react'
+import Images from '../../Constants/Images'
+import { Colors } from '../../Constants/Theme'
 
 const SplashScreen = ({navigation}) => {
     useEffect(() => {
