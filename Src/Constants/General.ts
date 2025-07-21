@@ -1,46 +1,45 @@
 import { StyleSheet } from "react-native";
-import { Colors,Sizes ,SCREEN_HEIGHT,SCREEN_WIDTH} from "./Theme";
+import { Colors, SCREEN_HEIGHT, SCREEN_WIDTH, Sizes } from "./Theme";
 
 const general = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "fff",
-        padding: Sizes.padding
-        
-    },
-    bigText: {
-        fontSize: Sizes.h3,
-        fontWeight: 'bold',
-        fontFamily:'bold'
-    },
-    row: {
-        flexDirection: 'row',
-        padding:Sizes.padding,
-        justifyContent: 'space-between',
-        alignItems:'center'
-    },
-    profile: {
-        height: Sizes.profileHeight,
-        width: Sizes.profileWidth,
-        borderRadius:Sizes.profileBorder
-    },
-    tinyText: {
-        fontSize: Sizes.tinyText,
-        color:'gray'
-    },
-    card: {
-        width: '100%',
-        height: '23%',
-        borderRadius: Sizes.radius,
-        backgroundColor: Colors.primary,
-        padding:Sizes.padding
-    },
-    text: {
-        fontSize: Sizes.body4,
-        color:'white'
-    },
-     cover: {
-    borderRadius: Sizes.bigRadius,
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    padding: Sizes.padding,
+  },
+  bigText: {
+    fontSize: Sizes.h3,
+    fontWeight: "bold",
+    fontFamily: "bold",
+  },
+  row: {
+    flexDirection: "row",
+    padding: Sizes.padding,
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  profile: {
+    height: Sizes.profileHeight,
+    width: Sizes.profileWidth,
+    borderRadius: Sizes.profileBorder,
+  },
+  tinyText: {
+    fontSize: Sizes.tinyText,
+    color: "gray",
+  },
+  card: {
+    width: "100%",
+    height: "23%",
+    borderRadius: Sizes.radius,
+    backgroundColor: Colors.primary,
+    padding: Sizes.padding,
+  },
+  text: {
+    fontSize: Sizes.body4,
+    color: "white",
+  },
+  cover: {
+    borderRadius: Sizes.radius,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: Colors.veryLight,
@@ -54,7 +53,7 @@ const general = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
     borderRadius: Sizes.smallPadding,
-    elevation: 2,
+    elevation: 1,
     padding: Sizes.smallPadding,
     height: SCREEN_HEIGHT * 0.1,
     width: SCREEN_WIDTH * 0.2,
@@ -74,6 +73,7 @@ const general = StyleSheet.create({
     color: "gray",
     alignSelf: "center",
     marginTop: 10,
+    textAlign: "center",
   },
   image: {
     width: SCREEN_WIDTH * 0.9,
@@ -103,8 +103,27 @@ const general = StyleSheet.create({
     alignSelf: "center",
     marginTop: Sizes.padding,
     width: SCREEN_WIDTH * 0.6,
-    fontFamily: 'Regular',
-    textAlign:'center'
+    fontFamily: "Regular",
+    textAlign: "center",
+  },
+  airtimeContainer: {
+    backgroundColor: Colors.extraLight,
+    height: SCREEN_HEIGHT * 0.1,
+    width: SCREEN_WIDTH * 0.2,
+    padding: Sizes.smallPadding,
+    margin: SCREEN_HEIGHT * 0.007,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: Sizes.radius,
+  },
+  regularBold: { fontFamily: "Bold", marginTop: SCREEN_HEIGHT * 0.01 },
+  backButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "20%",
+  },
+  backText: {
+    paddingLeft: 5,
   },
 });
-export default general
+export default general;
