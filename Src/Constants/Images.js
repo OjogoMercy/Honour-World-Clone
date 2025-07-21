@@ -1,7 +1,7 @@
 const Images = {
   icon: require("../assets/images/icon.png"),
   questionMark: require("../assets/images/project/_.png"),
-  email: require("../assets/images/project/8-Email.png"),
+  email: require("../assets/images/project/Email.png"),
   contact: require("../assets/images/project/basil_contacts-solid.png"),
   budpay: require("../assets/images/project/BudPay-Logo3 1.png"),
   calendar: require("../assets/images/project/calendar.png"),
@@ -41,6 +41,6 @@ const Images = {
   waec: require("../assets/images/project/Waec_logo 1.png"),
   check: require("../assets/images/project/XMLID_1_.png"),
   profile: require("../assets/images/project/Profile.jpg"),
-  
+  PersonIcon:require("../assets/images/project/Group.png")
 };
 export default Images;

@@ -15,10 +15,11 @@ export const Colors = {
   primary: "#2F75FD", //blue
   secondary: "#0F48B8", //dark-blue
   green: "#27ae60",
-  lightBlue:'#5f97fe', //light blue
+  lightBlue:'rgba(153, 179, 228,0.7)', //light blue
   white: "#FFFFFF", //white
   black: "#000000", //black
   gray: "#808080", //gray
+  red:"#b40c0cff"
 };
 
 export const Sizes = {

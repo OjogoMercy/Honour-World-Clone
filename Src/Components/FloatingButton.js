@@ -1,17 +1,24 @@
 import { useRef, useState } from "react";
 import {
   Animated,
+  Dimensions,
   Image,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Dimensions
 } from "react-native";
-const { width, height } = Dimensions.get('window');
 import { Colors, Sizes } from "../Constants/Theme";
+const { width, height } = Dimensions.get("window");
 
-const FloatingMenu = ({ image1, image2, image3 }) => {
+const FloatingMenu = ({
+  image1,
+  image2,
+  image3,
+  PopText1,
+  PopText2,
+  PopText3,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const animation = useRef(new Animated.Value(0)).current;
 
@@ -32,7 +39,7 @@ const FloatingMenu = ({ image1, image2, image3 }) => {
 
   const menuOpacity = animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [0,1], // Fade in
+    outputRange: [0, 1], // Fade in
   });
   const overlayOpacity = animation.interpolate({
     inputRange: [0, 1],
@@ -40,8 +47,7 @@ const FloatingMenu = ({ image1, image2, image3 }) => {
   });
 
   return (
-     <View style={StyleSheet.absoluteFill}>
-
+    <View style={StyleSheet.absoluteFill}>
       {/* Overlay */}
       {isOpen && (
         <TouchableOpacity
@@ -49,7 +55,9 @@ const FloatingMenu = ({ image1, image2, image3 }) => {
           activeOpacity={1}
           onPress={toggleMenu}
         >
-          <Animated.View style={[styles.overlay, { opacity: overlayOpacity }]} />
+          <Animated.View
+            style={[styles.overlay, { opacity: overlayOpacity }]}
+          />
         </TouchableOpacity>
       )}
 
@@ -64,31 +72,129 @@ const FloatingMenu = ({ image1, image2, image3 }) => {
             },
           ]}
         >
-          <TouchableOpacity
-            style={styles.menuItem}
-            onPress={() => console.log("Option 1")}
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
           >
-            <Image source={image1} style={styles.Img} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.menuItem}
-            onPress={() => console.log("Option 2")}
+            <View
+              style={{
+                backgroundColor: Colors.lightBlue,
+                padding: 5,
+                borderRadius: 5,
+                marginRight: Sizes.width * 0.05,
+                height: 50,
+                width: 150,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 30,
+              }}
+            >
+              <Text
+                style={{
+                  width: 100,
+                  color: Colors.secondary,
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontFamily: "GeneralSans-regular",
+                }}
+              >
+                {PopText1}
+              </Text>
+            </View>
+            <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => console.log("Option 1")}
+            >
+              <Image source={image1} style={styles.Img} />
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
           >
-            <Image source={image2} style={styles.Img} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.menuItem}
-            onPress={() => console.log("Option 3")}
+            <View
+              style={{
+                backgroundColor: Colors.lightBlue,
+                padding: 5,
+                borderRadius: 5,
+                marginRight: Sizes.width * 0.05,
+                height: 50,
+                width: 100,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 30,
+              }}
+            >
+              <Text
+                style={{
+                  width: 100,
+                  color: Colors.secondary,
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontFamily: "GeneralSans-regular",
+                }}
+              >
+                {PopText2}
+              </Text>
+            </View>
+            <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => console.log("Option 1")}
+            >
+              <Image source={image2} style={styles.Img} />
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
           >
-            <Image source={image3} style={styles.Img} />
-          </TouchableOpacity>
+            <View
+              style={{
+                backgroundColor: Colors.lightBlue,
+                padding: 5,
+                borderRadius: 5,
+                marginRight: Sizes.width * 0.05,
+                height: 50,
+                width: 100,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 30,
+              }}
+            >
+              <Text
+                style={{
+                  width: 100,
+                  color: Colors.secondary,
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontFamily: "GeneralSans-regular",
+                }}
+              >
+                {PopText3}
+              </Text>
+            </View>
+            <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => console.log("Option 1")}
+            >
+              <Image source={image3} style={styles.Img} />
+            </TouchableOpacity>
+          </View>
         </Animated.View>
 
-
-      <TouchableOpacity style={styles.fab} onPress={() => toggleMenu()}>
-        <Text style={styles.fabText}>{isOpen ? "×" : "?"}</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity style={styles.fab} onPress={() => toggleMenu()}>
+          <Text style={styles.fabText}>{isOpen ? "×" : "?"}</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -142,16 +248,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#333",
   },
-   overlay: {
-    position: 'absolute',
+  overlay: {
+    position: "absolute",
     width: width,
     height: height,
-    backgroundColor:Colors.white,
+    backgroundColor: Colors.white,
     zIndex: 1,
   },
-  Img:{
-    height:30,
-    width:30,
-    tintColor:Colors.white
-  }
+  Img: {
+    height: 30,
+    width: 30,
+    tintColor: Colors.white,
+  },
 });

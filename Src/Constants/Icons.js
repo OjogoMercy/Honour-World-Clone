@@ -1,7 +1,7 @@
 const Icons = {
   phone: require("../assets/images/project/default.png"),
   mark: require("../assets/images/project/Frame (1).png"),
-  eyeClosed: require("../assets/images/project/Frame 4.png"),
+  eyeClosed: require("../assets/images/project/EyeClosed.png"),
   charge: require("../assets/images/project/Frame 379 (5).png"),
   phone2: require("../assets/images/project/Frame 466.png"),
   network: require("../assets/images/project/Frame 469 (1).png"),
@@ -37,6 +37,8 @@ const Icons = {
   eyeOpen: require("../assets/images/project/EyeOpen.png"),
   checkBox: require("../assets/images/project/checkBox.png"),
   checkedBox: require("../assets/images/project/Checked Box.png"),
-  chatbot:require("../assets/images/project/ChatBot.png")
+  chatbot:require("../assets/images/project/ChatBot.png"),
+  signUpCheckBox:require("../assets/images/project/SignCheckBox.png"),
+  signUpCheckedBox:require("../assets/images/project/SignCheckedBox.png")
 };
 export default Icons;
