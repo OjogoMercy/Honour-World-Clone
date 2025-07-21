@@ -33,8 +33,7 @@ const slides = [
   },
 ];
 
-const IntroSlider = () => {
-  const navigation = useNavigation();
+const IntroSlider = ({navigation}) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleNext = () => {
@@ -93,7 +92,7 @@ const IntroSlider = () => {
         <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
           <Text style={styles.nextText}>Next</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.getStartedButton}>
+        <TouchableOpacity style={styles.getStartedButton} onPress={()=> navigation.navigate('BottomTab')}>
           <Text style={styles.startedText}>Get Started</Text>
         </TouchableOpacity>
       </View>
