@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Education = () => {
+const CGWallet = () => {
   return (
     <View>
-      <Text>Education</Text>
+      <Text>CGWallet</Text>
     </View>
   )
 }
 
-export default Education
+export default CGWallet
 
 const styles = StyleSheet.create({})
