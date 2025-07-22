@@ -39,7 +39,7 @@ const Icons = {
   checkedBox: require("../assets/images/project/Checked Box.png"),
   chatbot:require("../assets/images/project/ChatBot.png"),
   signUpCheckBox:require("../assets/images/project/SignCheckBox.png"),
-  signUpCheckedBox:require("../assets/images/project/SignCheckedBox.png")
+  signUpCheckedBox:require("../assets/images/project/SignCheckedBox.png"),
   home:require("../assets/images/project/navigation/home.png"),
   shop:require("../assets/images/project/navigation/Shop.png"),
   walletIcon:require("../assets/images/project/navigation/wallet.png")

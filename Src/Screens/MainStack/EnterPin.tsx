@@ -5,7 +5,9 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH, Sizes, Colors } from '@/Src/Constants/Them
 import OTPInputView from "react-native-otp-input";
 import {Entypo,Ionicons } from "@expo/vector-icons";
 import CustomButton from '@/Src/Components/CustomButton'
-const EnterPin = ({navigation}) => {
+import { useNavigation } from 'expo-router';
+const EnterPin = () => {
+    const navigation = useNavigation();
       const [pin, setPin] = useState("");
   return (
     <View

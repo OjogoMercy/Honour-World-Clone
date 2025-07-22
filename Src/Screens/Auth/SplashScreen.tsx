@@ -3,8 +3,10 @@ import React from 'react'
 import { useEffect } from 'react'
 import Images from '../../Constants/Images'
 import { Colors } from '../../Constants/Theme'
+import { useNavigation } from 'expo-router'
 
-const SplashScreen = ({navigation}) => {
+const SplashScreen = () => {
+  const navigation = useNavigation()
     useEffect(() => {
       setTimeout(() => {
         navigation.navigate('IntroSlider');

@@ -40,8 +40,6 @@ const Images = {
     waec: require("../assets/images/project/Waec_logo 1.png"),
     check: require("../assets/images/project/XMLID_1_.png"),
     profile:require("../assets/images/project/Profile.jpg"),
-   
-    
   nineMobile: require("../assets/images/project/Group 30.png"),
   finger: require("../assets/images/project/Group 45.png"),
   X: require("../assets/images/project/Group 50.png"),

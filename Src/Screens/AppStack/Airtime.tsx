@@ -8,8 +8,10 @@ import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "reac
 import FormInput from "@/Src/Components/FormInputs";
 import CustomButton from "@/Src/Components/CustomButton";
 import Beneficiary from "@/Src/Components/Beneficiary";
+import { useNavigation } from "expo-router";
 
-const Airtime = ({ navigation }) => {
+const Airtime = () => {
+  const navigation = useNavigation()
 
    const airtime = [
      { id: 1, label: "MTN", source: Images.MTN },

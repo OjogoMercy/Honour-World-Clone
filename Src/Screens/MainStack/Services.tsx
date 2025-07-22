@@ -11,8 +11,10 @@ import {
   View,
 } from "react-native";
 import Header from "@/Src/Components/Header";
+import { useNavigation } from "expo-router";
 
-const Services = ({ navigation }) => {
+const Services = () => {
+    const navigation = useNavigation();
   return (
     <View style={general.container}>
       <Header title={'Services'} customStyle={undefined} />
