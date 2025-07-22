@@ -1,7 +1,7 @@
 const Icons = {
   phone: require("../assets/images/project/default.png"),
   mark: require("../assets/images/project/Frame (1).png"),
-  eyeClosed: require("../assets/images/project/Frame 4.png"),
+  eyeClosed: require("../assets/images/project/EyeClosed.png"),
   charge: require("../assets/images/project/Frame 379 (5).png"),
   phone2: require("../assets/images/project/Frame 466.png"),
   network: require("../assets/images/project/Frame 469 (1).png"),
@@ -30,6 +30,16 @@ const Icons = {
     twitter: require("../assets/images/project/Vector (4).png"),
     line: require("../assets/images/project/Vector 8.png"),
   cancel: require("../assets/images/project/Vector.png"),
+  home: require("../assets/images/project/navigation/home.png"),
+  shop: require("../assets/images/project/navigation/Shop.png"),
+  walletIcon: require("../assets/images/project/navigation/wallet.png"),
+  Lock: require("../assets/images/project/Lock.png"),
+  eyeOpen: require("../assets/images/project/EyeOpen.png"),
+  checkBox: require("../assets/images/project/checkBox.png"),
+  checkedBox: require("../assets/images/project/Checked Box.png"),
+  chatbot:require("../assets/images/project/ChatBot.png"),
+  signUpCheckBox:require("../assets/images/project/SignCheckBox.png"),
+  signUpCheckedBox:require("../assets/images/project/SignCheckedBox.png")
   home:require("../assets/images/project/navigation/home.png"),
   shop:require("../assets/images/project/navigation/Shop.png"),
   walletIcon:require("../assets/images/project/navigation/wallet.png")

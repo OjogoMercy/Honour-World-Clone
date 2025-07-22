@@ -1,7 +1,7 @@
 const Images = {
   icon: require("../assets/images/icon.png"),
   questionMark: require("../assets/images/project/_.png"),
-  email: require("../assets/images/project/8-Email.png"),
+  email: require("../assets/images/project/Email.png"),
   contact: require("../assets/images/project/basil_contacts-solid.png"),
   budpay: require("../assets/images/project/BudPay-Logo3 1.png"),
   calendar: require("../assets/images/project/calendar.png"),
@@ -42,5 +42,21 @@ const Images = {
     profile:require("../assets/images/project/Profile.jpg"),
    
     
+  nineMobile: require("../assets/images/project/Group 30.png"),
+  finger: require("../assets/images/project/Group 45.png"),
+  X: require("../assets/images/project/Group 50.png"),
+  buyData: require("../assets/images/project/HONOUR SLIDE5 1.png"),
+  paystack: require("../assets/images/project/image 1.png"),
+  jamb: require("../assets/images/project/JAMB-Logo 1 (1).png"),
+  neco: require("../assets/images/project/JAMB-Logo 1.png"),
+  emoji: require("../assets/images/project/Layer_1 (1).png"),
+  arrowIn: require("../assets/images/project/Layer_1 (4).png"),
+  fingerPrint: require("../assets/images/project/material-symbols_fingerprint.png"),
+  airtel: require("../assets/images/project/path4042.png"),
+  thumbsUp: require("../assets/images/project/Thumbs Up.png"),
+  waec: require("../assets/images/project/Waec_logo 1.png"),
+  check: require("../assets/images/project/XMLID_1_.png"),
+  profile: require("../assets/images/project/Profile.jpg"),
+  PersonIcon:require("../assets/images/project/Group.png")
 };
 export default Images;
