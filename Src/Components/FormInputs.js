@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     marginBottom: Sizes.height * 0.02,
     marginTop: 5,
-    borderRadius: Sizes.FormInputsRadius,
+    borderRadius: Sizes.body2,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: Sizes.width * 0.02, // Adjusted for better spacing

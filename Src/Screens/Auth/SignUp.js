@@ -15,6 +15,7 @@ import FormInputs from "../../Components/FormInputs";
 import Icons from "../../Constants/Icons";
 import Images from "../../Constants/Images";
 import { Colors, Sizes } from "../../Constants/Theme";
+import CustomButton from "@/Src/Components/CustomButton";
 
 // SignIn component for user authentication
 // It includes input fields for phone number and password
@@ -61,7 +62,6 @@ const SignUp = () => {
   const validate = async () => {
     Keyboard.dismiss();
     let valid = true;
-
     if (!name.trim()) {
       handlerror("Please input full name", "name");
       valid = false;
@@ -116,7 +116,7 @@ const SignUp = () => {
 
     }
   };
-  
+
   // Saving in Local Storage
   const saveUserData = async () => {
     try {
@@ -258,10 +258,11 @@ const SignUp = () => {
             and Conditions and Policies
           </Text>
         </View>
-      </View>
-        <ButtonCom onPress={validate} text={"Sign Up"} />
+        </View>
 
-     
+       <CustomButton title={'Sign Up'} onPress={() => navigation.navigate('BottomTab')}/>
+
+
       {/* <TouchableOpacity style={styles.QueIcon}>
         <Image source={Images.questionMark} style={{ width: 15, height: 25 }} />
       </TouchableOpacity> */}
