@@ -33,6 +33,9 @@ export const Sizes = {
   profileBorder: screenHeight * 0.5,
   profileHeight: screenHeight * 0.06,
   profileWidth: screenWidth * 0.13,
+  tinyIcon: screenHeight * 0.025,
+  bigRadius: screenHeight * 0.03,
+  smallPadding: screenHeight * 0.007,
 
   // font sizes
   navTitle: screenHeight * 0.04375,

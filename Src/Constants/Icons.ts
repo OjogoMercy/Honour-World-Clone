@@ -25,10 +25,10 @@ const Icons = {
   whiteWatsapp: require("../assets/images/project/Layer_1.png"),
   post: require("../assets/images/project/Union.png"),
   dollar: require("../assets/images/project/Vector (1).png"),
-    transferUp: require("../assets/images/project/Vector (2).png"),
-    camera: require("../assets/images/project/Vector (3).png"),
-    twitter: require("../assets/images/project/Vector (4).png"),
-    line: require("../assets/images/project/Vector 8.png"),
+  transferUp: require("../assets/images/project/Vector (2).png"),
+  camera: require("../assets/images/project/Vector (3).png"),
+  twitter: require("../assets/images/project/Vector (4).png"),
+  line: require("../assets/images/project/Vector 8.png"),
   cancel: require("../assets/images/project/Vector.png"),
   home: require("../assets/images/project/navigation/home.png"),
   shop: require("../assets/images/project/navigation/Shop.png"),
@@ -37,11 +37,11 @@ const Icons = {
   eyeOpen: require("../assets/images/project/EyeOpen.png"),
   checkBox: require("../assets/images/project/checkBox.png"),
   checkedBox: require("../assets/images/project/Checked Box.png"),
-  chatbot:require("../assets/images/project/ChatBot.png"),
-  signUpCheckBox:require("../assets/images/project/SignCheckBox.png"),
-  signUpCheckedBox:require("../assets/images/project/SignCheckedBox.png"),
-  home:require("../assets/images/project/navigation/home.png"),
-  shop:require("../assets/images/project/navigation/Shop.png"),
-  walletIcon:require("../assets/images/project/navigation/wallet.png")
+  chatbot: require("../assets/images/project/ChatBot.png"),
+  signUpCheckBox: require("../assets/images/project/SignCheckBox.png"),
+  signUpCheckedBox: require("../assets/images/project/SignCheckedBox.png"),
+  tv: require("../assets/images/project/Frame 472.png"),
+  more: require("../assets/images/project/Frame 472 (1).png"),
+  
 };
 export default Icons;
