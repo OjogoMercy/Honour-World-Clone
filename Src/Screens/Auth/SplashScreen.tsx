@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
-import Colors from '@/Src/Constants/Colors'
-import Images from '@/Src/Constants/Images'
 import { useEffect } from 'react'
+import Images from '../../Constants/Images'
+import { Colors } from '../../Constants/Theme'
+import { useNavigation } from 'expo-router'
 
-const SplashScreen = ({navigation}) => {
+const SplashScreen = () => {
+  const navigation = useNavigation()
     useEffect(() => {
       setTimeout(() => {
         navigation.navigate('IntroSlider');
