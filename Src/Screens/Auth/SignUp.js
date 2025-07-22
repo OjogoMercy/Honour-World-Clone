@@ -19,7 +19,7 @@ import { Colors, Sizes } from "../../Constants/Theme";
 // SignIn component for user authentication
 // It includes input fields for phone number and password
 // and a checkbox for terms and conditions
-const SignIn = () => {
+const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -165,7 +165,7 @@ const SignIn = () => {
 
   const navigation = useNavigation();
 
-  // Navigate to SignIn screen when the component mounts
+  // Navigate to SignUp screen when the component mounts
   const [uncheck, setCheck] = useState(false);
   return (
     <>
@@ -259,26 +259,26 @@ const SignIn = () => {
           </Text>
         </View>
       </View>
-      <ButtonCom onPress={validate} text={"Sign Up"} />
+        <ButtonCom onPress={validate} text={"Sign Up"} />
 
      
       {/* <TouchableOpacity style={styles.QueIcon}>
         <Image source={Images.questionMark} style={{ width: 15, height: 25 }} />
       </TouchableOpacity> */}
     </View>
-     <FloatingMenu
+     {/* <FloatingMenu
         image1={Icons.whiteWhatsapp}
         image2={Icons.phone}
         image3={Icons.chatbot}
         PopText1={"WhatsApp"}
         PopText2={" Call"}
         PopText3={"Mail"}
-      />
+      /> */}
       </>
   );
 };
 
-export default SignIn;
+export default SignUp;
 
 const styles = StyleSheet.create({
   Page: {
