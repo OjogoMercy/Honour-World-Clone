@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import Colors from '@/Src/Constants/Colors'
 import Images from '@/Src/Constants/Images'
+import { Sizes, SCREEN_WIDTH, SCREEN_HEIGHT } from "../../Constants/Theme";
 import { useEffect } from 'react'
 
 const SplashScreen = ({navigation}) => {
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
         alignItems:"center"
     },
     logo:{
-        height:58, 
-        width:81
+        height:SCREEN_HEIGHT * 0.08, 
+        width:SCREEN_WIDTH * 0.20
     }
 })
