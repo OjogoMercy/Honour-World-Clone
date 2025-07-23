@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import { Colors, SCREEN_WIDTH, Sizes } from "../Constants/Theme";
+import { Colors, SCREEN_HEIGHT, SCREEN_WIDTH, Sizes } from "../Constants/Theme";
 const CustomButton = ({ title, onPress, style,textStyle }) => {
   return (
     <TouchableOpacity
@@ -18,10 +18,11 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH * 0.85,
     backgroundColor: Colors.primary,
     paddingVertical: SCREEN_WIDTH * 0.035,
-    borderRadius: Sizes.bigRadius,
+    borderRadius: Sizes.body1,
     alignSelf: "center",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: SCREEN_HEIGHT*0.03
   },
   text: {
     color: "white",

@@ -4,15 +4,24 @@
     "jsx": "react",
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
+<<<<<<< HEAD
     "expo-env.d.ts"
 , "Src/Screens/AutScreen/helpsam.js", "Src/Screens/AutScreen/IntroSlider.js"  ]
+=======
+    "expo-env.d.ts",
+    "Src/Constants/Theme.js",
+    "app/index.js",
+    "Src/Components/FormInputs.js",
+    "Src/Constants/Images.ts",
+    "Src/Constants/Icons.ts",
+    "Src/Components/ButtonCom.js"
+  ]
+>>>>>>> 474c8977ce46462eb8c21bb9af143ff18f36db38
 }
