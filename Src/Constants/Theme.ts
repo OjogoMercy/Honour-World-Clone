@@ -14,6 +14,7 @@ export const Colors = {
   lightBlue: "#5f97fe", //light blue
   veryLight: "#CDE1FF", //very light blue
   extraLight: "#F0FAFF",
+  dangerRed: "#F92525"
 };
 
 export const Sizes = {
@@ -57,15 +58,15 @@ export const Sizes = {
 
 // default colors
 
-// export const Fontfamilies = {
-//     // custom fonts
-//     regular: "GeneralSans-Regular",
-//     medium: "Poppins-Medium",
-//     semiBold: "Poppins-SemiBold",
-//     bold: "Bold",
-//     light: "Poppins-Light",
-//     extraLight: "Poppins-ExtraLight",
-// }
+export const Fontfamilies = {
+    // custom fonts
+    regular: "GeneralSans-Regular",
+    medium: "Poppins-Medium",
+    semiBold: "Poppins-SemiBold",
+    bold: "Bold",
+    light: "Poppins-Light",
+    extraLight: "Poppins-ExtraLight",
+}
 
 const appTheme = [Colors, Sizes];
 export default appTheme;

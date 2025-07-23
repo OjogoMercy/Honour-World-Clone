@@ -6,12 +6,12 @@ import Images from '@/Src/Constants/Images';
 import { useNavigation } from '@react-navigation/native';
 
 const paymentOptions = [
-  { id: '1', name: 'Honour World Wema Account', icon: Icons.wema, navIcon: Icons.go, banner: Images.wemacard, logo: Images.WemaLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding." },
-  { id: '2', name: 'Premium Trust Bank Linked Account', icon: Icons.square, navIcon: Icons.go, banner: Images.premcard, logo: Images.PremLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding." },
-  { id: '3', name: 'Wema Linked Account', icon: Icons.wema, navIcon: Icons.go, banner: Images.wemacard, logo: Images.WemaLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding." },
-  { id: '4', name: 'Sterling Linked Account', icon: Icons.dot, navIcon: Icons.go, banner: Images.stercard, logo: Images.SterLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding." },
-  { id: '5', name: 'Moniepoint Linked Account', icon: Images.moniepoint, navIcon: Icons.go, banner: Images.moniecard, logo: Images.MonieLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding." },
-  { id: '6', name: 'Credit/Debit Card', icon: Icons.card, navIcon: Icons.go },
+  { id: '1', name: 'Honour World Wema Account', icon: Icons.wema, navIcon: Icons.go, banner: Images.wemacard, logo: Images.WemaLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding.", info: "The service charge for funding any amount is a flat rate of #40", note: Images.caution },
+  { id: '2', name: 'Premium Trust Bank Linked Account', icon: Icons.square, navIcon: Icons.go, banner: Images.premcard, logo: Images.PremLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding.", info: "The service charge for funding any amount is a flat rate of #40", note: Images.caution },
+  { id: '3', name: 'Wema Linked Account', icon: Icons.wema, navIcon: Icons.go, banner: Images.wemacard, logo: Images.WemaLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding.", info: "The service charge for funding any amount is a flat rate of #40", note: Images.caution },
+  { id: '4', name: 'Sterling Linked Account', icon: Icons.dot, navIcon: Icons.go, banner: Images.stercard, logo: Images.SterLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding.", info: "The service charge for funding any amount is a flat rate of #40", note: Images.caution },
+  { id: '5', name: 'Moniepoint Linked Account', icon: Images.moniepoint, navIcon: Icons.go, banner: Images.moniecard, logo: Images.MonieLogo, body: "New Wema Bank account linked to Honour world Wallet ID. Pay to get instant wallet funding.", info: "The service charge for funding any amount is a flat rate of #40", note: Images.caution },
+  { id: '6', name: 'Credit/Debit Card', icon: Icons.card, navIcon: Icons.go, body: "All types of cards are accepted. Please select any of the payment gateways listed below:"},
 ];
 
 export default function FundWallet() {

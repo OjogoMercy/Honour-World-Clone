@@ -6,6 +6,7 @@ import  { Sizes, Colors } from "../Constants/Theme";
 import general from "../Constants/General";
 
 export default function Header({
+  label,
   title,
   showBack = true,
   customStyle,
@@ -21,7 +22,8 @@ export default function Header({
           style={general.backButton}
         >
           <Ionicons name="chevron-back" size={20} color="black" />
-          <Text style={general.backText}>Back</Text>
+          <Text style={general.backText}>{label
+            }</Text>
         </TouchableOpacity>
       )}
 

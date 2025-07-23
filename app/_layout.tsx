@@ -14,6 +14,7 @@ import SplashScreen from "@/Src/Screens/AutScreen/SplashScreen";
 import IntroSlider from "@/Src/Screens/AutScreen/IntroSlider";
 import React,{ useEffect } from "react";
 import CableTv from "@/Src/Screens/AppStack/CableTv";
+import FundWalletCardPay from "@/Src/Screens/MainStack/FundWalletCardPay";
 
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
@@ -32,9 +33,6 @@ export default function RootLayout() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="SplashScreen">
-          <Stack.Screen name="SplashScreen" component={SplashScreen} />
-          <Stack.Screen name="IntroSlider" component={IntroSlider} />
         <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="FundWallet">
           <Stack.Screen name="Index" component={index} />
           <Stack.Screen name="BottomTab" component={BottomTab} />
@@ -42,6 +40,7 @@ export default function RootLayout() {
           <Stack.Screen name="CableTv" component={CableTv} />
           <Stack.Screen name="FundWallet" component={FundWallet} />
           <Stack.Screen name="FundwalletPaymentOptions" component={FundwalletPaymentOptions} />
+          <Stack.Screen name="FundWalletCardPay" component={FundWalletCardPay}/>
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

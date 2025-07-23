@@ -39,46 +39,6 @@ const general = StyleSheet.create({
     color: "white",
   },
   cover: {
-    borderRadius: Sizes.radius,
-    container: {
-        flex: 1,
-        backgroundColor: "fff",
-        paddingHorizontal: 15,
-        paddingTop:40
-        
-    },
-    bigText: {
-        fontSize: Sizes.h3,
-        fontWeight: 'bold',
-        fontFamily:'bold'
-    },
-    row: {
-        flexDirection: 'row',
-        padding:Sizes.padding,
-        justifyContent: 'space-between',
-        alignItems:'center'
-    },
-    profile: {
-        height: Sizes.profileHeight,
-        width: Sizes.profileWidth,
-        borderRadius:Sizes.profileBorder
-    },
-    tinyText: {
-        fontSize: Sizes.tinyText,
-        color:'gray'
-    },
-    card: {
-        width: '100%',
-        height: '23%',
-        borderRadius: Sizes.radius,
-        backgroundColor: Colors.primary,
-        padding:Sizes.padding
-    },
-    text: {
-        fontSize: Sizes.body4,
-        color:'white'
-    },
-     cover: {
     borderRadius: Sizes.bigRadius,
     flexDirection: "row",
     alignItems: "center",
@@ -165,10 +125,8 @@ const general = StyleSheet.create({
   backText: {
     paddingLeft: 5,
   },
-});
-export default general;
 
-   dollarIcon: {
+    dollarIcon: {
         width: 80,
         height: 80,
         backgroundColor: Colors.secondary,
@@ -224,7 +182,7 @@ export default general;
      },
      
 
+});
 
-})
 
 export default general
