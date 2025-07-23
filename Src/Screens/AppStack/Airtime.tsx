@@ -4,7 +4,7 @@ import Images from "@/Src/Constants/Images";
 import { SCREEN_HEIGHT, SCREEN_WIDTH ,Sizes,Colors} from "@/Src/Constants/Theme";
 import { MaterialIcons, FontAwesome6 } from "@expo/vector-icons";
 import React, { useState } from "react";
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import FormInput from "@/Src/Components/FormInputs";
 import CustomButton from "@/Src/Components/CustomButton";
 import Beneficiary from "@/Src/Components/Beneficiary";
@@ -30,7 +30,7 @@ const Airtime = () => {
   const [phoneNumber,setPhoneNumber] = useState('')
   const [amount, setAmount] = useState("");
   return (
-    <View style={general.container}>
+    <ScrollView style={general.container}>
       <Header title={"Airtime"} customStyle={undefined} />
       <Text style={general.regularBold}>Services</Text>
       <View
@@ -93,11 +93,9 @@ const Airtime = () => {
       <Beneficiary/>
       <CustomButton
         title={"Make Transaction"}
-        onPress={() => navigation.navigate("MainNavigator", {
-          screen: "AirtimeConfirmation",
-        })}
+        onPress={() => navigation.navigate("MainNavigator", {screen: "AirtimeConfirmation"})}
         style={undefined} textStyle={undefined}      />
-    </View>
+    </ScrollView>
   );
 };
 

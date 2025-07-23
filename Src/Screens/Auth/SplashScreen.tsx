@@ -16,7 +16,7 @@ const SplashScreen = () => {
   return (
     <View style = {styles.page}>
       <Image
-      source={Images.icon}
+      source={Images.logo}
       style = {styles.logo} 
       />
     </View>

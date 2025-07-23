@@ -46,5 +46,6 @@ const Images = {
   profile: require("../assets/images/project/Profile.jpg"),
   PersonIcon: require("../assets/images/project/Group.png"),
   wallet: require("../assets/images/project/Wallet.png"),
+  logo:require('../assets/images/project/logo.png')
 };
 export default Images;

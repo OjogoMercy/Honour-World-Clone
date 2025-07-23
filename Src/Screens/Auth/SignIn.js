@@ -11,13 +11,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import ButtonCom from "../../Components/ButtonCom";
 import FloatingMenu from "../../Components/FloatingButton";
 import FormInputs from "../../Components/FormInputs";
 import Icons from "../../Constants/Icons";
 import Images from "../../Constants/Images";
 import { Colors, Sizes } from "../../Constants/Theme";
 import { StatusBar } from "expo-status-bar";
+import CustomButton from "@/Src/Components/CustomButton";
 // SignIn component for user authentication
 // It includes input fields for phone number and password
 // and a checkbox for terms and conditions
@@ -240,7 +240,7 @@ const SignIn = () => {
           Forgot Password?
         </Text>
       </View>
-      <ButtonCom onPress={handleSignIn} text={"Sign In"} />
+      <CustomButton onPress={handleSignIn} title={"Sign In"} />
       <View style={{ alignItems: "center", marginTop: Sizes.height * 0.02 }}>
         <Text style={[styles.belowText, { fontWeight: "600" }]}>
           Login with fingerPrint

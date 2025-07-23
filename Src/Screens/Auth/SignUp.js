@@ -1,3 +1,4 @@
+import CustomButton from "@/Src/Components/CustomButton";
 import { useNavigation } from "expo-router";
 import * as SecureStore from "expo-secure-store";
 import { useEffect, useState } from "react";
@@ -9,13 +10,10 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import ButtonCom from "../../Components/ButtonCom";
-import FloatingMenu from "../../Components/FloatingButton";
 import FormInputs from "../../Components/FormInputs";
 import Icons from "../../Constants/Icons";
 import Images from "../../Constants/Images";
 import { Colors, Sizes } from "../../Constants/Theme";
-import CustomButton from "@/Src/Components/CustomButton";
 
 // SignIn component for user authentication
 // It includes input fields for phone number and password
@@ -42,7 +40,6 @@ const SignUp = () => {
       ghanaRegex.test(phone) || saRegex.test(phone) || nigeriaRegex.test(phone)
     );
   };
-
   // Adding + format to phone number and remove the 0 at the front
   const formatPhoneNumber = (phone) => {
     let trimmed = phone.replace(/\s+/g, "").replace(/[^+\d]/g, ""); // remove spaces and special chars
@@ -50,7 +47,7 @@ const SignUp = () => {
     if (trimmed.startsWith("0")) {
       // Nigeria
       if (nigeriaRegex.test(trimmed)) return "+234" + trimmed.slice(1);
-      // Ghana
+      // Ghanae
       if (ghanaRegex.test(trimmed)) return "+233" + trimmed.slice(1);
       // SA
       if (saRegex.test(trimmed)) return "+27" + trimmed.slice(1);
@@ -113,10 +110,8 @@ const SignUp = () => {
       console.log("Valid form. Proceeding with data:", payload);
       // You can send `payload` to API here
       await SecureStore.setItemAsync("isLoggedInOnce", "true");
-
     }
   };
-
   // Saving in Local Storage
   const saveUserData = async () => {
     try {
@@ -138,15 +133,13 @@ const SignUp = () => {
     setPhone("");
     setEmail("");
     setPwd("");
-  },[]);
+  }, []);
 
   // Getting the Data from storage
   // Load user data on mount
   useEffect(() => {
     getUserData();
-  }, []);
-
-  // Function to load user data from AsyncStorage
+  }, []);  // Function to load user data from AsyncStorage
   const getUserData = async () => {
     try {
       const jsonValue = await SecureStore.getItemAsync("userData");
@@ -170,104 +163,108 @@ const SignUp = () => {
   return (
     <>
       {/* Main SignUp Page */}
-    <View style={styles.Page}>
-      <Image
-        source={require("../../assets/images/project/hwB logo.png")}
-        style={{
-          alignSelf: "center",
-          height: Sizes.IconsSizeHeight,
-          width: Sizes.IconsSizeWidth,
-          marginTop: Sizes.height * 0.08,
-        }}
-      />
-      <View>
-        <Text style={styles.HeaderText}> Welcome!</Text>
-        <Text style={styles.subHeaderText}>
-          Please provide the following details {"\n"} for your new account
-        </Text>
-        <View style={{ alignItems: "center", marginTop: Sizes.height * 0.05 }}>
-          <FormInputs
-            image={Images.PersonIcon}
-            placeHolder={"Full Name"}
-            keyboard={"default"}
-            value={name}
-            onChangeText={setName}
-            error={errors.name}
-            onFocus={() => {
-              handlerror(null, "name");
-            }}
-          />
-          <FormInputs
-            image={Images.email}
-            placeHolder={"E-mail"}
-            keyboard={"email-address"}
-            value={email}
-            onChangeText={setEmail}
-            error={errors.email}
-            onFocus={() => {
-              handlerror(null, "email");
-            }}
-          />
-          <FormInputs
-            image={Icons.phone}
-            placeHolder={"Phone Number"}
-            keyboard={"number-pad"}
-            value={phone}
-            onChangeText={setPhone}
-            error={errors.phone}
-            onFocus={() => {
-              handlerror(null, "phone");
-            }}
-          />
-          <FormInputs
-            image={Icons.Lock}
-            placeHolder={"Password"}
-            keyboard={"visible-password"}
-            image1={Icons.eyeClosed}
-            image2={Icons.eyeOpen}
-            value={pwd}
-            onChangeText={setPwd}
-            error={errors.pwd}
-            onFocus={() => {
-              handlerror(null, "pwd");
-            }}
-          />
-        </View>
-      </View>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginTop: Sizes.height * 0.01,
-        }}
-      >
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <TouchableOpacity onPress={() => setCheck(!uncheck)}>
-            <Image
-              source={uncheck ? Icons.signUpCheckedBox : Icons.signUpCheckBox}
-              style={{
-                height: uncheck ? 40 : 25,
-                width: 25,
-                alignSelf: "flex-start",
+      <View style={styles.Page}>
+        <Image
+          source={require("../../assets/images/project/hwB logo.png")}
+          style={{
+            alignSelf: "center",
+            height: Sizes.IconsSizeHeight,
+            width: Sizes.IconsSizeWidth,
+            marginTop: Sizes.height * 0.08,
+          }}
+        />
+        <View>
+          <Text style={styles.HeaderText}> Welcome!</Text>
+          <Text style={styles.subHeaderText}>
+            Please provide the following details {"\n"} for your new account
+          </Text>
+          <View
+            style={{ alignItems: "center", marginTop: Sizes.height * 0.05 }}
+          >
+            <FormInputs
+              image={Images.PersonIcon}
+              placeHolder={"Full Name"}
+              keyboard={"default"}
+              value={name}
+              onChangeText={setName}
+              error={errors.name}
+              onFocus={() => {
+                handlerror(null, "name");
               }}
             />
-          </TouchableOpacity>
-          <Text style={styles.remText}>
-            By creating your account you agree to our Terms{"\n"}
-            and Conditions and Policies
-          </Text>
+            <FormInputs
+              image={Images.email}
+              placeHolder={"E-mail"}
+              keyboard={"email-address"}
+              value={email}
+              onChangeText={setEmail}
+              error={errors.email}
+              onFocus={() => {
+                handlerror(null, "email");
+              }}
+            />
+            <FormInputs
+              image={Icons.phone}
+              placeHolder={"Phone Number"}
+              keyboard={"number-pad"}
+              value={phone}
+              onChangeText={setPhone}
+              error={errors.phone}
+              onFocus={() => {
+                handlerror(null, "phone");
+              }}
+            />
+            <FormInputs
+              image={Icons.Lock}
+              placeHolder={"Password"}
+              keyboard={"visible-password"}
+              image1={Icons.eyeClosed}
+              image2={Icons.eyeOpen}
+              value={pwd}
+              onChangeText={setPwd}
+              error={errors.pwd}
+              onFocus={() => {
+                handlerror(null, "pwd");
+              }}
+            />
+          </View>
         </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: Sizes.height * 0.01,
+          }}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <TouchableOpacity onPress={() => setCheck(!uncheck)}>
+              <Image
+                source={uncheck ? Icons.signUpCheckedBox : Icons.signUpCheckBox}
+                style={{
+                  height: uncheck ? 40 : 25,
+                  width: 25,
+                  alignSelf: "flex-start",
+                }}
+              />
+            </TouchableOpacity>
+            <Text style={styles.remText}>
+              By creating your account you agree to our Terms{"\n"}
+              and Conditions and Policies
+            </Text>
+          </View>
         </View>
 
-       <CustomButton title={'Sign Up'} onPress={() => navigation.navigate('BottomTab')}/>
+        <CustomButton
+          title={"Sign Up"}
+          onPress={() => navigation.navigate("BottomTab")}
+        />
 
-
-      {/* <TouchableOpacity style={styles.QueIcon}>
+        {/* <TouchableOpacity style={styles.QueIcon}>
         <Image source={Images.questionMark} style={{ width: 15, height: 25 }} />
       </TouchableOpacity> */}
-    </View>
-     {/* <FloatingMenu
+      </View>
+      {/* <FloatingMenu
         image1={Icons.whiteWhatsapp}
         image2={Icons.phone}
         image3={Icons.chatbot}
@@ -275,7 +272,7 @@ const SignUp = () => {
         PopText2={" Call"}
         PopText3={"Mail"}
       /> */}
-      </>
+    </>
   );
 };
 

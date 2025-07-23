@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const SliderHeader = () => {
+const ButtonComponent = () => {
   return (
     <View>
-      <Text>SliderHeader</Text>
+      <Text>ButtonComponent</Text>
     </View>
   )
 }
 
-export default SliderHeader
+export default ButtonComponent
 
 const styles = StyleSheet.create({})
