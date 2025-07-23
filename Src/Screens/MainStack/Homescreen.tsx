@@ -1,30 +1,31 @@
+import CustomButton from "@/Src/Components/CustomButton";
 import general from "@/Src/Constants/General";
 import Icons from "@/Src/Constants/Icons";
 import Images from "@/Src/Constants/Images";
 import {
   Colors,
-  SCREEN_HEIGHT,
-  SCREEN_WIDTH,
-  Sizes,
+  Sizes
 } from "@/Src/Constants/Theme";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
 import {
   Image,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,ScrollView
+  View
 } from "react-native";
 
 const Homescreen = ({ navigation }) => {
+  const name="Mercy"
   const [show, dontShow] = useState(true);
   const quickActions = [
     { label: "Airtime", icon: Icons.phone2, color: "#FF9800",Navigate:'Airtime' },
     { label: "Data", icon: Icons.network, color: "#0E86E1" ,Navigate:'Data'},
-    { label: "Cable TV", icon: Icons.tv, color: "#00BCD4",Navigate:'CableTV' },
+    { label: "Cable TV", icon: Icons.tv, color: "#00BCD4",Navigate:'CableTv' },
     { label: "More", icon: Icons.more, color: "#4CAF50",Navigate:'Services' },
   ];
   const dots = [1, 2, 3];
@@ -43,7 +44,7 @@ const Homescreen = ({ navigation }) => {
   <Image source={Images.profile} style={general.profile} />
         </TouchableOpacity>
         <View style={{ marginLeft: -40 }}>
-          <Text style={general.bigText}>Hi, Mercy</Text>
+          <Text style={general.bigText}>Hi, {name}</Text>
           <Text style={general.tinyText}>
             What bill would you like to pay today?
           </Text>
@@ -120,8 +121,14 @@ const Homescreen = ({ navigation }) => {
         <ScrollView showsVerticalScrollIndicator={false}>
       <Text style={{ marginTop: 20 }}>Quick Actions</Text>
       <View style={[general.row, { padding: Sizes.smallPadding }]}>
-        {quickActions.map((action) => (
-          <TouchableOpacity key={action.label} style={general.item} activeOpacity={0.1} onPress={()=> navigation.navigate('MainNavigator',{screen:action.Navigate})}>
+        {quickActions.map((action,index) => (
+          <TouchableOpacity key={action.label} style={general.item} activeOpacity={0.1}  onPress={() => {
+      if (index === 3) {
+        navigation.navigate('Services'); // Screen outside MainNavigator
+      } else {
+        navigation.navigate('MainNavigator', { screen: action.Navigate }); // Screen inside MainNavigator
+      }
+    }}>
             <View style={[general.iconContainer]}>
               <Image source={action.icon} style={[general.iconBox]} />
             </View>
@@ -143,6 +150,7 @@ const Homescreen = ({ navigation }) => {
         <Text style={{ fontFamily: 'Medium', fontSize: Sizes.h2, fontWeight: 'bold', alignSelf: 'center' }}>No Transaction</Text>
 <Text style={general.normalText}>Your recent transactions will appear 
 here when they are available</Text>
+<CustomButton title={'Start a Transaction'} onPress={()=> navigation.navigate('MainNavigator', {screen:'Transactions'})}/>
     </ScrollView>
     </View>
   );

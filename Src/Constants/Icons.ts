@@ -38,5 +38,6 @@ const Icons = {
   walletIcon: require("../assets/images/project/navigation/wallet.png"),
   tv: require("../assets/images/project/Frame 472.png"),
   more: require("../assets/images/project/Frame 472 (1).png"),
+  copy:require("../assets/images/project/Copy.png")
 };
 export default Icons;

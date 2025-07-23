@@ -11,24 +11,23 @@ export const Colors = {
   primary: "#2F75FD", //blue
   secondary: "#0F48B8", //dark-blue
   green: "#27ae60",
-  lightBlue:'#5f97fe', //light blue
-veryLight:'#CDE1FF', //very light blue
-
+  lightBlue: "#5f97fe", //light blue
+  veryLight: "#CDE1FF", //very light blue
+  extraLight: "#F0FAFF",
 };
 
 export const Sizes = {
   // global sizes
   base: screenHeight * 0.01, //for margin
   font: screenHeight * 0.0175, //basic font size
-  radius: screenHeight* 0.025, //fixed borderRadius
-  padding: screenHeight * 0.02, //for padding
+  radius: screenHeight * 0.02, //fixed borderRadius
+  padding: screenHeight * 0.025, //for padding
   profileBorder: screenHeight * 0.5,
   profileHeight: screenHeight * 0.05,
   profileWidth: screenWidth * 0.11,
   tinyIcon: screenHeight * 0.025,
-  bigRadius: screenHeight * 0.01,
+  bigRadius: screenHeight * 0.03,
   smallPadding: screenHeight * 0.007,
-  
 
   // font sizes
   navTitle: screenHeight * 0.04375,
@@ -45,11 +44,11 @@ export const Sizes = {
   body3: screenHeight * 0.02,
   body3a: screenHeight * 0.02,
   body3b: screenHeight * 0.022,
-  body4: screenHeight * 0.0170,
+  body4: screenHeight * 0.017,
   body5: screenHeight * 0.015,
   body6: screenHeight * 0.01,
   intro: screenHeight * 0.04,
-  tinyText:screenHeight * 0.012,
+  tinyText: screenHeight * 0.012,
 
   // app dimensions
   width,
