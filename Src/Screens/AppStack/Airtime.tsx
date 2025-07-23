@@ -7,11 +7,12 @@ import React, { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import FormInput from "@/Src/Components/FormInputs";
 import CustomButton from "@/Src/Components/CustomButton";
+import Beneficiary from "@/Src/Components/Beneficiary";
+import { useNavigation } from "expo-router";
 
-const Airtime = ({ navigation }) => {
-  const change = () => {
-   setToggle(!toggle)
-  }
+const Airtime = () => {
+  const navigation = useNavigation()
+
    const airtime = [
      { id: 1, label: "MTN", source: Images.MTN },
      { id: 2, label: "Airtel", source: Images.airtel },
@@ -28,7 +29,6 @@ const Airtime = ({ navigation }) => {
   ];
   const [phoneNumber,setPhoneNumber] = useState('')
   const [amount, setAmount] = useState("");
-  const [toggle, setToggle] = useState(false);
   return (
     <View style={general.container}>
       <Header title={"Airtime"} customStyle={undefined} />
@@ -89,23 +89,14 @@ const Airtime = ({ navigation }) => {
       <FormInput
         placeHolder={"Enter Recharge Amount"}
         value={amount}
-        onChangeText={setAmount}
-      />
-      <View style={styles.input}>
-        <Text >Save as Beneficiary</Text>
-        <TouchableOpacity onPress={change}>
-          <FontAwesome6 name={toggle ? "toggle-off" : "toggle-on"} size={ 24} color={Colors.primary} />
-        </TouchableOpacity>
-      </View>
+        onChangeText={setAmount} onPress={undefined} iconSource={undefined}      />
+      <Beneficiary/>
       <CustomButton
         title={"Make Transaction"}
-        onPress={() =>
-          navigation.navigate("MainNavigator", {
-            screen: "AirtimeConfirmation",
-          })
-        }
-        style={undefined}
-      />
+        onPress={() => navigation.navigate("MainNavigator", {
+          screen: "AirtimeConfirmation",
+        })}
+        style={undefined} textStyle={undefined}      />
     </View>
   );
 };
@@ -116,14 +107,14 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: Colors.extraLight,
     borderRadius: Sizes.radius,
-    padding: SCREEN_HEIGHT * 0.02,marginBottom:20,flexDirection:'row',justifyContent:'space-between'
+    padding: SCREEN_HEIGHT * 0.02,marginBottom:SCREEN_HEIGHT*0.01,flexDirection:'row',justifyContent:'space-between'
     
   },
   container: {
     flexWrap: "wrap",
     flexDirection: "row",
     justifyContent: "space-around",
-    padding: 20,
+    padding: Sizes.padding,
   },
   box: {
     width: "30%",

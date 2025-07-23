@@ -25,7 +25,7 @@ const Homescreen = ({ navigation }) => {
   const quickActions = [
     { label: "Airtime", icon: Icons.phone2, color: "#FF9800",Navigate:'Airtime' },
     { label: "Data", icon: Icons.network, color: "#0E86E1" ,Navigate:'Data'},
-    { label: "Cable TV", icon: Icons.tv, color: "#00BCD4",Navigate:'CableTV' },
+    { label: "Cable TV", icon: Icons.tv, color: "#00BCD4",Navigate:'CableTv' },
     { label: "More", icon: Icons.more, color: "#4CAF50",Navigate:'Services' },
   ];
   const dots = [1, 2, 3];
@@ -35,9 +35,11 @@ const Homescreen = ({ navigation }) => {
   return (
     <View style={general.container}>
       <StatusBar
-        backgroundColor={"transparent"}
-        translucent
-        barStyle={"dark-content"}
+        backgroundColor="white"
+        barStyle="dark-content"
+        translucent={false}
+        hidden={false}
+        networkActivityIndicatorVisible={true}
       />
       <View style={general.row}>
         <TouchableOpacity activeOpacity={0.3} onPress={()=> navigation.navigate('MainNavigator', {screen:'ProfileInfo'})}>

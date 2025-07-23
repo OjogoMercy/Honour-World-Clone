@@ -1,6 +1,6 @@
-import services from "@/Src/Constants/Data";
 import general from "@/Src/Constants/General";
 import { SCREEN_HEIGHT, SCREEN_WIDTH, Sizes } from "@/Src/Constants/Theme";
+import { services } from "@/Src/Constants/Data";
 import React from "react";
 import {
   FlatList,
@@ -10,14 +10,15 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import Header from "@/Src/Components/Header";
+import { useNavigation } from "expo-router";
 
-const Services = ({ navigation }) => {
+const Services = () => {
+    const navigation = useNavigation();
   return (
     <View style={general.container}>
-      <Text>Services</Text>
-      <Text style={[general.normalText, { fontSize: Sizes.body4,color:'black' }]}>
-        Enjoy our range of services designed to simplify your life{" "}
-      </Text>
+      <Header title={'Services'} customStyle={undefined} />
+      <Text style={[general.normalText, { fontSize: Sizes.body4,color:'black' }]}>Enjoy our range of services designed to simplify your life</Text>
       <FlatList
         data={services}
         numColumns={3}

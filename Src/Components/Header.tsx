@@ -2,7 +2,8 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
-import Theme, { Sizes,Colors } from "../Constants/Theme";
+import  { Sizes, Colors } from "../Constants/Theme";
+import general from "../Constants/General";
 
 export default function Header({
   title,
@@ -17,10 +18,10 @@ export default function Header({
         <TouchableOpacity
           activeOpacity={0.5}
           onPress={() => navigation.goBack()}
-          style={styles.backButton}
+          style={general.backButton}
         >
           <Ionicons name="chevron-back" size={20} color="black" />
-          <Text style={styles.backText}>Back</Text>
+          <Text style={general.backText}>Back</Text>
         </TouchableOpacity>
       )}
 
@@ -35,19 +36,12 @@ export default function Header({
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    paddingVertical: 10,
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
   },
-  backButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    width: "20%",
-  },
-  backText: {
-    paddingLeft: 5,
-  },
+ 
   titleWrapper: {
     flex: 1,
     alignItems: "center",
