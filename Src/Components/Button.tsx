@@ -5,7 +5,7 @@ import Theme, { Sizes } from '../Constants/Theme';
 const PrimaryButton = ({ title, onPress, style }) => {
   return (
     <TouchableOpacity style={[styles.button, style]} onPress={onPress} activeOpacity={0.8}>
-      <Text style={{color:Colors.secondary,fontSize:Sizes.body3}}>{title}Make Payment</Text>
+      <Text style={{color:Colors.secondary,fontSize:Sizes.body3,fontWeight:'bold'}}>{title}Make Payment</Text>
     </TouchableOpacity>
   );
 };
