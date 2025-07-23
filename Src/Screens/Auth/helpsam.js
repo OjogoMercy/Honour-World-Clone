@@ -79,6 +79,14 @@ const helpsam = () => {
     }else if (selectedTab === "Referral Bonus"){
          filterList = list3;
     };
+
+    const font  = {
+        h1:{
+            fontWeight:"bold",
+            fontSize:30,
+            color:"red"
+        }
+    }
     
   return (
     <View style = {styles.page}>
@@ -145,6 +153,7 @@ const helpsam = () => {
                     <Text style = {{color:"#19B832", fontSize:12}}>{item.status}</Text>
                 </View>
                 </View>
+                <Text style = {[...font]}>fehgicjrjg</Text>
             </View>
         )
       }}

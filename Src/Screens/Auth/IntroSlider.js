@@ -73,7 +73,7 @@ const IntroSlider = () => {
   };
 
   const onDone = () => {
-    navigation.navigate('');
+    navigation.navigate('helpsam');
   };
 
   return (
