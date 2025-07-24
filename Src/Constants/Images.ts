@@ -1,5 +1,9 @@
+import { goBack } from "expo-router/build/global-state/routing";
+
 const Images = {
-  icon: require("../assets/images/project/icons (3).png"),
+  Bluearrow: require("../assets/images/project/bluearrow.png"),
+  goBack: require("../assets/images/project/goBack.png"),
+  icon: require("../assets/images/project/logo.png"),
   slide1: require("../assets/images/project/Slide1.png"),
   slide2: require("../assets/images/project/slide2.png"),
   slide3: require("../assets/images/project/slide3.png"),

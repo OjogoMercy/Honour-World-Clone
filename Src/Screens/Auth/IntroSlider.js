@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StatusBar, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, Image, StatusBar, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import Colors from '@/Src/Constants/Colors';
 import Images from '@/Src/Constants/Images';
@@ -73,7 +73,7 @@ const IntroSlider = () => {
   };
 
   const onDone = () => {
-    navigation.navigate('helpsam');
+    navigation.navigate('SignIn');
   };
 
   return (
@@ -93,9 +93,11 @@ const IntroSlider = () => {
         </View>
       )}
       renderDoneButton={() => (
+        <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
         <View style={styles.getStartedButton}>
           <Text style={{ color:Colors.White,fontWeight: '600',textAlign:"center"}}>Get Started</Text>
         </View>
+        </TouchableOpacity>
         
       )}
       bottomButton

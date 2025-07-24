@@ -13,6 +13,10 @@ import React, { useEffect } from "react";
 import SignIn from "@/Src/Screens/Auth/SignIn";
 import SignUp from "@/Src/Screens/Auth/SignUp";
 import helpsam from "../Src/Screens/Auth/helpsam"
+import PersonalInfo from "@/Src/Screens/MainStack/PersonalInfo";
+import Settings from "@/Src/Screens/MainStack/Settings";
+import ResetPassword from "@/Src/Screens/MainStack/ResetPassword"
+import AccountSecurity from "@/Src/Screens/MainStack/AccountSecurity";
 const Stack = createNativeStackNavigator();
 export default function RootLayout() {
   // Load custom fonts using useFonts hook
@@ -35,6 +39,9 @@ export default function RootLayout() {
           initialRouteName="SplashScreen"
         >
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
+          <Stack.Screen name="ResetPassword" component={ResetPassword} />
+          <Stack.Screen name="Settings" component={Settings} />
+          <Stack.Screen name="AccountSecurity" component={AccountSecurity} />
           <Stack.Screen name="IntroSlider" component={IntroSlider} />
           <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="MainNavigator" component={MainNavigator} />
