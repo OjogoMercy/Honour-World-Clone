@@ -27,9 +27,8 @@ export default function FundwalletPaymentOptions() {
   return (
     <View style={General.container}>
         <Header
-        label={"Fund Wallet"}
-        customStyle={{width: SCREEN_WIDTH * 1, marginTop: 20}}
-        />
+        title={"Fund Wallet"}
+        customStyle={{ width: SCREEN_WIDTH * 1 }} label={undefined}        />
         <View>
           <Text style={[General.subFundwalletText, {textAlign: "left", color: Colors.primary, fontFamily: Fontfamilies.bold, fontSize: Sizes.h3}]}>{method.name}</Text>
         <Text style={{fontSize: Sizes.body4, marginVertical: 20}}>{method.body}</Text>

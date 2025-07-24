@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
-import  { Sizes, Colors } from "../Constants/Theme";
+import  { Sizes, Colors, SCREEN_WIDTH } from "../Constants/Theme";
 import general from "../Constants/General";
 
 export default function Header({
@@ -31,7 +31,6 @@ export default function Header({
         <Text style={styles.title}>{title}</Text>
       </View>
 
-      {!showBack && <View style={styles.spacer} />}
     </View>
   );
 }
@@ -43,19 +42,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
   },
- 
+
   titleWrapper: {
-    flex: 1,
+    position: "absolute",
+    left: 0,
+    right: 0,
     alignItems: "center",
     justifyContent: "center",
   },
   title: {
     color: Colors.primary,
     fontSize: Sizes.body3,
-    fontFamily: 'Bold',
-    marginRight:5
-  },
-  spacer: {
-    width: "25%",
+    fontFamily: "Bold",
+    textAlign: "center",
   },
 });
