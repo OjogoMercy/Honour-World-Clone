@@ -42,6 +42,7 @@ const Icons = {
   signUpCheckedBox: require("../assets/images/project/SignCheckedBox.png"),
   tv: require("../assets/images/project/Frame 472.png"),
   more: require("../assets/images/project/Frame 472 (1).png"),
+  BlueIcon: require("../assets/images/project/hwB logo.png"),
   
 };
 export default Icons;

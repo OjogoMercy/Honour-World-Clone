@@ -25,7 +25,7 @@ const FormInput = ({ value, onChangeText, onPress ,iconSource,placeHolder}) => {
 const styles = StyleSheet.create({
   container: {
     width:SCREEN_WIDTH*0.9,
-    height:SCREEN_HEIGHT* 0.06,
+    height:SCREEN_HEIGHT* 0.04,
     backgroundColor: '#f5faff',
     paddingHorizontal:SCREEN_WIDTH*0.03,
     flexDirection: 'row',

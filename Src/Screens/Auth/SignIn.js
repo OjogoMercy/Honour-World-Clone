@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as LocalAuthentication from "expo-local-authentication";
 import { useNavigation } from "expo-router";
 import * as SecureStore from "expo-secure-store";
+import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
 import {
   Alert,
@@ -11,46 +12,22 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import ButtonCom from "../../Components/ButtonCom";
-import FloatingMenu from "../../Components/FloatingButton";
+import CustomButton from "../../Components/CustomButton";
 import FormInputs from "../../Components/FormInputs";
 import Icons from "../../Constants/Icons";
 import Images from "../../Constants/Images";
 import { Colors, Sizes } from "../../Constants/Theme";
-import { StatusBar } from "expo-status-bar";
 // SignIn component for user authentication
 // It includes input fields for phone number and password
 // and a checkbox for terms and conditions
 const SignIn = () => {
-  //   const handleSignIn = async () => {
-  //   try {
-  //     const savedUserData = await AsyncStorage.getItem("userData");
-
-  //     if (!savedUserData) {
-  //       console.log("No user found. Please sign up first.");
-  //       return;
-  //     }
-
-  //     const parsedUser = JSON.parse(savedUserData);
-
-  //     if (phone === parsedUser.phone && pwd === parsedUser.password) {
-  //       console.log("Login successful");
-  //       // Navigate to home/dashboard or wherever
-  //       navigation.replace("Home"); // or your desired screen
-  //     } else {
-  //       console.log("Invalid phone or password");
-  //     }
-  //   } catch (error) {
-  //     console.log("Error during login: ", error);
-  //   }
-  // };
   const handleSignIn = async () => {
     try {
       // Save current input values before attempting login
       await AsyncStorage.setItem("tempPhone", phone);
       await AsyncStorage.setItem("tempPwd", pwd);
 
-      const savedUserData = await AsyncStorage.getItem("userData");
+      const savedUserData = await SecureStore.getItemAsync("userData");
 
       if (!savedUserData) {
         console.log("No user found. Please sign up first.");
@@ -75,14 +52,14 @@ const SignIn = () => {
         await AsyncStorage.setItem("isLoggedInOnce", "true");
         await SecureStore.setItemAsync("isLoggedInOnce", "true");
 
-        // Clear the input values from AsyncStorage
-        await AsyncStorage.removeItem("tempPhone");
-        await AsyncStorage.removeItem("tempPwd");
-        // also clear from UI
-        setPhone("");
-        setPwd("");
+        // // Clear the input values from AsyncStorage
+        // await AsyncStorage.removeItem("tempPhone");
+        // await AsyncStorage.removeItem("tempPwd");
+        // // also clear from UI
+        // setPhone("");
+        // setPwd("");
 
-        navigation.replace("Homescreen");
+        navigation.replace("BottomTab"); // Navigate to the home screen or dashboard
       } else {
         console.log("Invalid phone or password");
         Alert.alert("Login Failed", "Invalid phone number or password.");
@@ -92,6 +69,16 @@ const SignIn = () => {
       Alert.alert("Login Error", error.message || "Something went wrong.");
     }
   };
+ 
+  useEffect(() => {
+    const fillTempData = async () => {
+      const storedPhone = await AsyncStorage.getItem("tempPhone");
+      // const storedPwd = await AsyncStorage.getItem("tempPwd");
+      if (storedPhone) setPhone(storedPhone);
+      // if (storedPwd) setPwd(storedPwd);
+    };
+    fillTempData();
+  }, []);
   useEffect(() => {
     const checkLoginHistory = async () => {
       const loggedInBefore = await AsyncStorage.getItem("isLoggedInOnce");
@@ -121,15 +108,15 @@ const SignIn = () => {
           const jsonValue = await SecureStore.getItemAsync("userData");
           if (jsonValue != null) {
             const userData = JSON.parse(jsonValue);
+            console.log("User data retrieved:", userData);
             // Navigate to Home or Dashboard
-            navigation.replace("Homescreen");
+            navigation.replace("BottomTab");
           }
         }
       }
     }
   };
 
-  
   // Biometric Validation
   const handleBiometricAuth = async () => {
     const compatible = await LocalAuthentication.hasHardwareAsync();
@@ -155,13 +142,17 @@ const SignIn = () => {
       const parsedUser = savedUserData ? JSON.parse(savedUserData) : null;
 
       if (parsedUser) {
-        navigation.replace("Homescreen");
+        navigation.replace("BottomTab");
         console.log("Biometric login success");
       } else {
         alert("No account found. Please sign up first.");
       }
-    } else {
-      alert("Fingerprint Authentication failed.");
+    }
+    if (!biometricAuth.success) {
+      Alert.alert(
+        "Authentication Failed",
+        biometricAuth.error || "Fingerprint not recognized."
+      );
     }
   };
 
@@ -170,6 +161,15 @@ const SignIn = () => {
   const [uncheck, setCheck] = useState(false);
   const [phone, setPhone] = useState("");
   const [pwd, setPwd] = useState("");
+  const [autoAuthDone, setAutoAuthDone] = useState(false);
+
+  // useEffect(() => {
+  //   if (!autoAuthDone) {
+  //     checkBiometrics();
+  //     setAutoAuthDone(true);
+  //   }
+  // }, []);
+
   return (
     <View style={styles.Page}>
       <StatusBar
@@ -177,14 +177,14 @@ const SignIn = () => {
         backgroundColor={Colors.secondary}
         translucent={false}
       />
-        
+
       <Image
-        source={require("../../assets/images/project/hwB logo.png")}
+        source={Icons.BlueIcon}
         style={{
           alignSelf: "center",
-          height: Sizes.IconsSizeHeight,
-          width: Sizes.IconsSizeWidth,
-          marginTop: Sizes.height * 0.08,
+          height: Sizes.height * 0.06,
+          width: Sizes.width * 0.2,
+          marginTop: Sizes.height * 0.1,
         }}
       />
       <View>
@@ -192,7 +192,7 @@ const SignIn = () => {
         <Text style={styles.subHeaderText}>
           Please sign in to continue with {"\n"}your account
         </Text>
-        <View style={{ alignItems: "center", marginTop: Sizes.height * 0.05 }}>
+        <View style={{ alignItems: "center", marginTop: Sizes.height * 0.04 }}>
           <FormInputs
             image={Icons.phone}
             placeHolder={"Phone Number"}
@@ -216,7 +216,6 @@ const SignIn = () => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
-          marginTop: Sizes.height * 0.01,
         }}
       >
         <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -224,24 +223,33 @@ const SignIn = () => {
             <Image
               source={uncheck ? Icons.checkedBox : Icons.checkBox}
               style={{
-                height: 25,
-                width: 25,
+                height: Sizes.height * 0.025,
+                width: Sizes.height * 0.025,
                 alignSelf: "flex-start",
               }}
             />
           </TouchableOpacity>
-          <Text style={[styles.remText, { fontWeight: "900" }]}>
-            Remember Password
-          </Text>
+          <Text style={styles.remText}>Remember Password</Text>
         </View>
-        <Text
-          style={[styles.remText, { color: Colors.primary, fontWeight: "900" }]}
-        >
-          Forgot Password?
-        </Text>
+        <TouchableOpacity onPress={() => navigation.navigate("EnterPin")}>
+          <Text style={[styles.forgotText, { color: Colors.primary }]}>
+            Forgot Password?
+          </Text>
+        </TouchableOpacity>
       </View>
-      <ButtonCom onPress={handleSignIn} text={"Sign In"} />
-      <View style={{ alignItems: "center", marginTop: Sizes.height * 0.02 }}>
+
+      <CustomButton
+        title={"Sign In "}
+        onPress={() => handleSignIn()}
+        textStyle={{ fontSize: Sizes.h6, fontFamily: "Bold" }}
+        style={{
+          width: Sizes.width * 0.9,
+          marginTop: Sizes.height * 0.055,
+          marginHorizontal: Sizes.width * 0.025,
+        }}
+      />
+
+      <View style={{ alignItems: "center", marginTop: Sizes.height * 0.05 }}>
         <Text style={[styles.belowText, { fontWeight: "600" }]}>
           Login with fingerPrint
         </Text>
@@ -256,34 +264,36 @@ const SignIn = () => {
             }}
           />
         </TouchableOpacity>
-
-        <Text style={styles.SignUpText}>
-          Don't have an account?-{" "}
+        <View
+          style={{
+            justifyContent: "center",
+            flexDirection: "row",
+            alignItems: "center",
+            marginTop: Sizes.height * 0.035,
+          }}
+        >
+          <Text style={styles.SignUpText}>Don't have an account? -{"  "}</Text>
           <Text
             onPress={() => navigation.navigate("SignUp")}
             style={{
               color: Colors.primary,
-              fontWeight: "bold",
+              fontFamily: "Bold",
               textDecorationLine: "underline",
             }}
           >
             Sign Up
           </Text>
-        </Text>
+        </View>
       </View>
 
-      <FloatingMenu
+      {/* <FloatingMenu
         image1={Icons.whiteWhatsapp}
         image2={Icons.phone}
         image3={Icons.chatbot}
         PopText1={"WhatsApp"}
         PopText2={" Call"}
         PopText3={"Mail"}
-      />
-
-      {/* <TouchableOpacity style={styles.QueIcon}>
-        <Image source={Images.questionMark} style={{ width: 15, height: 25 }} />
-      </TouchableOpacity> */}
+      /> */}
     </View>
   );
 };
@@ -297,33 +307,36 @@ const styles = StyleSheet.create({
     paddingHorizontal: Sizes.width * 0.05,
   },
   HeaderText: {
-    fontSize: Sizes.h1,
-    fontFamily: "GeneralSans-Semibold",
+    fontSize: Sizes.h2,
+    fontFamily: "Bold",
     textAlign: "center",
-    fontWeight: "700",
     marginTop: Sizes.height * 0.04,
   },
   subHeaderText: {
     textAlign: "center",
-    marginTop: Sizes.height * 0.01,
+    marginTop: Sizes.height * 0.02,
     fontSize: Sizes.h6,
-    fontFamily: "GeneralSans-Regular",
+    fontFamily: "Regular",
   },
   remText: {
-    fontSize: Sizes.h7,
-    fontFamily: "GeneralSans-Regular",
+    fontSize: Sizes.h8,
+    fontFamily: "Medium",
     marginLeft: Sizes.width * 0.02,
   },
+  forgotText: {
+    fontSize: Sizes.h8,
+    fontFamily: "Medium",
+    marginLeft: Sizes.width * 0.02,
+    fontWeight: "700",
+  },
   belowText: {
-    fontSize: Sizes.h7,
-    fontFamily: "GeneralSans-Regular",
+    fontSize: Sizes.h8,
+    fontFamily: "Medium",
     marginTop: Sizes.width * 0.01,
   },
   SignUpText: {
-    fontFamily: "GeneralSans-Regular",
-    fontSize: Sizes.h6,
-    fontWeight: "600",
-    marginTop: Sizes.height * 0.035,
+    fontFamily: "Medium",
+    fontSize: Sizes.h7,
   },
   // QueIcon: {
   //   backgroundColor: Colors.primary,

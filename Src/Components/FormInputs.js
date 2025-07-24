@@ -33,7 +33,7 @@ const FormInputs = ({
               ? Colors.red
               : isFocus
               ? Colors.secondary
-              : Colors.primary,
+              : Colors.black,
           },
         ]}
       >
@@ -46,7 +46,7 @@ const FormInputs = ({
           style={{
             width: Sizes.width * 0.67, // Adjusted to fit the layout
             height: Sizes.height * 0.065,
-            fontFamily: "GeneralSans-Regular",
+            fontFamily: "Regular",
             paddingHorizontal: 10,
             fontSize: Sizes.h6,
           }}
@@ -93,7 +93,7 @@ const FormInputs = ({
             color: Colors.red,
             fontSize: Sizes.h7,
             marginTop: 3,
-            fontFamily: "GeneralSans-Semibold",
+            fontFamily: "Medium",
           }}
         >
           {error}
@@ -108,14 +108,15 @@ export default FormInputs;
 const styles = StyleSheet.create({
   formInput: {
     width: Sizes.width * 0.9,
-    height: Sizes.height * 0.065,
+    height: Sizes.height * 0.06,
     borderWidth: Sizes.width * 0.0035, // Adjusted for better visibility
     borderColor: "#000",
     marginBottom: Sizes.height * 0.02,
     marginTop: 5,
-    borderRadius: Sizes.body2,
+    borderRadius: Sizes.height * 0.01,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: Sizes.width * 0.02, // Adjusted for better spacing
+    marginHorizontal: Sizes.width * 0.025, // Adjusted for better spacing
   },
 });

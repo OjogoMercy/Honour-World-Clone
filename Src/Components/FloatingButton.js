@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import {
   Animated,
   Dimensions,
@@ -15,14 +15,22 @@ const FloatingMenu = ({ image1, image2, image3, PopText1,PopText2,PopText3 }) =>
   const [isOpen, setIsOpen] = useState(false);
   const animation = useRef(new Animated.Value(0)).current;
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    Animated.timing(animation, {
-      toValue: isOpen ? 0 : 1,
-      duration: 250,
-      useNativeDriver: true,
-    }).start();
-  };
+  // const toggleMenu = useCallback() => {
+  //   setIsOpen(!isOpen);
+  //   Animated.timing(animation, {
+  //     toValue: isOpen ? 0 : 1,
+  //     duration: 250,
+  //     useNativeDriver: true,
+  //   }).start();
+  // };
+const toggleMenu = useCallback(() => {
+  setIsOpen((prev) => !prev);
+  Animated.timing(animation, {
+    toValue: isOpen ? 0 : 1,
+    duration: 250,
+    useNativeDriver: true,
+  }).start();
+}, [isOpen]);
 
   // Animated styles
   const menuTranslateY = animation.interpolate({
@@ -52,7 +60,9 @@ const FloatingMenu = ({ image1, image2, image3, PopText1,PopText2,PopText3 }) =>
             style={[styles.overlay, { opacity: overlayOpacity }]}
           />
         </TouchableOpacity>
-      )}
+      )};
+      
+      
 
       <View style={styles.container}>
         {/* Menu Items */}

@@ -1,7 +1,10 @@
+import CustomButton from "@/Src/Components/CustomButton";
+import Header from "@/Src/Components/Header";
 import { useNavigation } from "expo-router";
 import * as SecureStore from "expo-secure-store";
 import { useEffect, useState } from "react";
 import {
+  Alert,
   Image,
   Keyboard,
   StyleSheet,
@@ -9,14 +12,10 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import ButtonCom from "../../Components/ButtonCom";
-import FloatingMenu from "../../Components/FloatingButton";
 import FormInputs from "../../Components/FormInputs";
 import Icons from "../../Constants/Icons";
 import Images from "../../Constants/Images";
 import { Colors, Sizes } from "../../Constants/Theme";
-import CustomButton from "@/Src/Components/CustomButton";
-
 // SignIn component for user authentication
 // It includes input fields for phone number and password
 // and a checkbox for terms and conditions
@@ -26,6 +25,9 @@ const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [pwd, setPwd] = useState("");
   const [errors, setError] = useState({});
+  const navigation = useNavigation();
+  const [uncheck, setCheck] = useState(false);
+
   const handlerror = (errorMessage, input) => {
     setError((prevState) => ({ ...prevState, [input]: errorMessage }));
   };
@@ -100,6 +102,10 @@ const SignUp = () => {
       );
       valid = false;
     }
+    if (!uncheck) {
+      Alert.alert("❌", "Accept our Terms and Conditions before proceeding");
+      valid = false;
+    }
 
     if (valid) {
       await saveUserData(); // Save to local storage
@@ -110,10 +116,33 @@ const SignUp = () => {
         phone: formattedPhone,
         password: pwd,
       };
+      console.log(payload);
+      navigation.navigate("OTP");
+      // Alert.alert(
+      //   "Sign Up Successful",
+      //   "Your account has been created successfully.Sign in to continue.",
+      //   [
+      //     {
+      //       text: "OK",
+      //       onPress: () => {
+      //         // Navigate to the next screen or perform any action
+      //         navigation.navigate("OTP");
+      //       },
+      //     },
+      //      {
+      //       text: "Cancel",
+      //       onPress: () => {
+      //         // Navigate to the next screen or perform any action
+      //         navigation.navigate("SignIn");
+      //       },
+      //     },
+      //   ],
+      //   { cancelable: false }
+      // );
+      // Log the payload for debugging
       console.log("Valid form. Proceeding with data:", payload);
       // You can send `payload` to API here
-      await SecureStore.setItemAsync("isLoggedInOnce", "true");
-
+      // await SecureStore.setItemAsync("isLoggedInOnce", "true");
     }
   };
 
@@ -138,12 +167,6 @@ const SignUp = () => {
     setPhone("");
     setEmail("");
     setPwd("");
-  },[]);
-
-  // Getting the Data from storage
-  // Load user data on mount
-  useEffect(() => {
-    getUserData();
   }, []);
 
   // Function to load user data from AsyncStorage
@@ -156,118 +179,152 @@ const SignUp = () => {
         setEmail(user.email || "");
         setPhone(user.phone || "");
         setPwd(user.password || "");
+        // setName("");
+        // setPhone("");
+        // setEmail("");
+        // setPwd("");
         console.log("Retrieved user:", user);
       }
     } catch (error) {
       console.log("Error reading user data: ", error);
     }
   };
+  // Getting the Data from storage
+  // Load user data on mount
+  useEffect(() => {
+    getUserData();
+  }, []);
 
-  const navigation = useNavigation();
-
-  // Navigate to SignUp screen when the component mounts
-  const [uncheck, setCheck] = useState(false);
   return (
     <>
       {/* Main SignUp Page */}
-    <View style={styles.Page}>
-      <Image
-        source={require("../../assets/images/project/hwB logo.png")}
-        style={{
-          alignSelf: "center",
-          height: Sizes.IconsSizeHeight,
-          width: Sizes.IconsSizeWidth,
-          marginTop: Sizes.height * 0.08,
-        }}
-      />
-      <View>
-        <Text style={styles.HeaderText}> Welcome!</Text>
-        <Text style={styles.subHeaderText}>
-          Please provide the following details {"\n"} for your new account
-        </Text>
-        <View style={{ alignItems: "center", marginTop: Sizes.height * 0.05 }}>
-          <FormInputs
-            image={Images.PersonIcon}
-            placeHolder={"Full Name"}
-            keyboard={"default"}
-            value={name}
-            onChangeText={setName}
-            error={errors.name}
-            onFocus={() => {
-              handlerror(null, "name");
-            }}
-          />
-          <FormInputs
-            image={Images.email}
-            placeHolder={"E-mail"}
-            keyboard={"email-address"}
-            value={email}
-            onChangeText={setEmail}
-            error={errors.email}
-            onFocus={() => {
-              handlerror(null, "email");
-            }}
-          />
-          <FormInputs
-            image={Icons.phone}
-            placeHolder={"Phone Number"}
-            keyboard={"number-pad"}
-            value={phone}
-            onChangeText={setPhone}
-            error={errors.phone}
-            onFocus={() => {
-              handlerror(null, "phone");
-            }}
-          />
-          <FormInputs
-            image={Icons.Lock}
-            placeHolder={"Password"}
-            keyboard={"visible-password"}
-            image1={Icons.eyeClosed}
-            image2={Icons.eyeOpen}
-            value={pwd}
-            onChangeText={setPwd}
-            error={errors.pwd}
-            onFocus={() => {
-              handlerror(null, "pwd");
-            }}
-          />
-        </View>
-      </View>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginTop: Sizes.height * 0.01,
-        }}
-      >
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <TouchableOpacity onPress={() => setCheck(!uncheck)}>
-            <Image
-              source={uncheck ? Icons.signUpCheckedBox : Icons.signUpCheckBox}
-              style={{
-                height: uncheck ? 40 : 25,
-                width: 25,
-                alignSelf: "flex-start",
+      <View style={styles.Page}>
+        <Header
+          customStyle={{ top: Sizes.height * 0.1, left: Sizes.height * 0.02 }}
+        />
+        <Image
+          source={Icons.BlueIcon}
+          style={{
+            alignSelf: "center",
+            height: Sizes.height * 0.06,
+            width: Sizes.width * 0.2,
+          }}
+        />
+
+        <View>
+          <Text style={styles.HeaderText}> Welcome!</Text>
+          <Text style={styles.subHeaderText}>
+            Please provide the following details {"\n"} for your new account
+          </Text>
+          <View
+            style={{ alignItems: "center", marginTop: Sizes.height * 0.04 }}
+          >
+            <FormInputs
+              image={Images.PersonIcon}
+              placeHolder={"Full Name"}
+              keyboard={"default"}
+              value={name}
+              onChangeText={setName}
+              error={errors.name}
+              onFocus={() => {
+                handlerror(null, "name");
               }}
             />
-          </TouchableOpacity>
-          <Text style={styles.remText}>
-            By creating your account you agree to our Terms{"\n"}
-            and Conditions and Policies
-          </Text>
+            <FormInputs
+              image={Images.email}
+              placeHolder={"E-mail"}
+              keyboard={"email-address"}
+              value={email}
+              onChangeText={setEmail}
+              error={errors.email}
+              onFocus={() => {
+                handlerror(null, "email");
+              }}
+            />
+            <FormInputs
+              image={Icons.phone}
+              placeHolder={"Phone Number"}
+              keyboard={"number-pad"}
+              value={phone}
+              onChangeText={setPhone}
+              error={errors.phone}
+              onFocus={() => {
+                handlerror(null, "phone");
+              }}
+            />
+            <FormInputs
+              image={Icons.Lock}
+              placeHolder={"Password"}
+              keyboard={"visible-password"}
+              image1={Icons.eyeClosed}
+              image2={Icons.eyeOpen}
+              value={pwd}
+              onChangeText={setPwd}
+              error={errors.pwd}
+              onFocus={() => {
+                handlerror(null, "pwd");
+              }}
+            />
+          </View>
         </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: Sizes.height * 0.01,
+          }}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <TouchableOpacity onPress={() => setCheck(!uncheck)}>
+              <Image
+                source={uncheck ? Icons.signUpCheckedBox : Icons.signUpCheckBox}
+                style={{
+                  height: uncheck ? 40 : 25,
+                  width: 25,
+                  alignSelf: "flex-start",
+                }}
+              />
+            </TouchableOpacity>
+            <Text style={styles.remText}>
+              By creating your account you agree to our{" "}
+              <Text
+                style={{
+                  color: Colors.primary,
+                  textDecorationLine: "underline",
+                }}
+              >
+                Terms{"\n"}
+                and Conditions{" "}
+              </Text>
+              and
+              <Text
+                style={{
+                  color: Colors.primary,
+                  textDecorationLine: "underline",
+                }}
+              >
+                {" "}
+                Policies
+              </Text>
+            </Text>
+          </View>
         </View>
-
-       <CustomButton title={'Sign Up'} onPress={() => navigation.navigate('BottomTab')}/>
-
-
-      {/* <TouchableOpacity style={styles.QueIcon}>
+        <CustomButton
+          title={"Sign Up "}
+          onPress={() => validate()}
+          textStyle={{ fontSize: Sizes.h6, fontFamily: "Bold" }}
+          style={{
+            width: Sizes.width * 0.9,
+            marginTop: Sizes.height * 0.05,
+            marginHorizontal: Sizes.width * 0.025,
+          }}
+        />
+        {/* <TouchableOpacity style={styles.QueIcon}>
         <Image source={Images.questionMark} style={{ width: 15, height: 25 }} />
       </TouchableOpacity> */}
-    </View>
-     {/* <FloatingMenu
+      </View>
+      {/* <FloatingMenu
         image1={Icons.whiteWhatsapp}
         image2={Icons.phone}
         image3={Icons.chatbot}
@@ -275,7 +332,7 @@ const SignUp = () => {
         PopText2={" Call"}
         PopText3={"Mail"}
       /> */}
-      </>
+    </>
   );
 };
 
@@ -286,23 +343,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.Background,
     paddingHorizontal: Sizes.width * 0.05,
+    paddingVertical: Sizes.height * 0.1,
   },
   HeaderText: {
-    fontSize: Sizes.h1,
-    fontFamily: "GeneralSans-Semibold",
+    fontSize: Sizes.h2,
+    fontFamily: "Bold",
     textAlign: "center",
-    fontWeight: "700",
     marginTop: Sizes.height * 0.04,
   },
   subHeaderText: {
     textAlign: "center",
-    marginTop: Sizes.height * 0.01,
+    marginTop: Sizes.height * 0.02,
     fontSize: Sizes.h6,
-    fontFamily: "GeneralSans-Regular",
+    fontFamily: "Regular",
   },
   remText: {
-    fontSize: Sizes.h7,
-    fontFamily: "GeneralSans-Regular",
+    fontSize: Sizes.h8,
+    fontFamily: "Medium",
     marginLeft: Sizes.width * 0.02,
   },
   belowText: {

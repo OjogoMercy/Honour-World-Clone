@@ -94,7 +94,7 @@ const IntroSlider = ({navigation}) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.getStartedButton}
-          onPress={() => navigation.navigate("SignUp")}
+          onPress={() => navigation.navigate("SignIn")}
         >
           <Text style={styles.startedText}>Get Started</Text>
         </TouchableOpacity>
