@@ -45,7 +45,7 @@ const Homescreen = ({ navigation }) => {
         <TouchableOpacity activeOpacity={0.3} onPress={()=> navigation.navigate('MainNavigator', {screen:'ProfileInfo'})}>
   <Image source={Images.profile} style={general.profile} />
         </TouchableOpacity>
-        <View style={{ marginLeft: -40 }}>
+        <View>
           <Text style={general.bigText}>Hi, {name}</Text>
           <Text style={general.tinyText}>
             What bill would you like to pay today?

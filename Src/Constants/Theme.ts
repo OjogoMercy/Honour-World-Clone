@@ -29,8 +29,8 @@ export const Sizes = {
   // global sizes
   base: screenHeight * 0.01, //for margin
   font: screenHeight * 0.0175, //basic font size
-  radius: screenHeight * 0.02, //fixed borderRadius
-  padding: screenHeight * 0.025, //for padding
+  radius: screenHeight * 0.015, //fixed borderRadius
+  padding: screenHeight * 0.02, //for padding
   profileBorder: screenHeight * 0.5,
   profileHeight: screenHeight * 0.06,
   profileWidth: screenWidth * 0.13,
