@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StatusBar, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import Colors from '@/Src/Constants/Colors';
+import { Colors } from '../../Constants/Theme';
 import Images from '@/Src/Constants/Images';
 import { Sizes, SCREEN_WIDTH, SCREEN_HEIGHT } from "../../Constants/Theme"
 import { useNavigation } from 'expo-router';
