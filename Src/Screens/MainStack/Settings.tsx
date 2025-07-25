@@ -3,7 +3,7 @@ import React from 'react'
 import {SCREEN_HEIGHT, SCREEN_WIDTH, Sizes } from "../../Constants/Theme";
 import Images from '@/Src/Constants/Images';
 import Icons from '@/Src/Constants/Icons';
-import Colors from '@/Src/Constants/Colors';
+import { Colors } from '../../Constants/Theme';
 import { useNavigation } from 'expo-router';
 import { goBack } from 'expo-router/build/global-state/routing';
 
