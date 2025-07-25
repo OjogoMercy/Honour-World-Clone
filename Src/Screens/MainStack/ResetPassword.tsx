@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import FormInput from '@/Src/Components/FormInput'
-import Colors from '@/Src/Constants/Colors'
+import { Colors } from '../../Constants/Theme'
 import Icons from '@/Src/Constants/Icons'
 import {SCREEN_HEIGHT, SCREEN_WIDTH, Sizes } from "../../Constants/Theme";
 import Images from '@/Src/Constants/Images'
