@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { useEffect } from 'react'
+import { Sizes, SCREEN_WIDTH, SCREEN_HEIGHT } from "../../Constants/Theme";
 import Images from '../../Constants/Images'
 import { Colors } from '../../Constants/Theme'
 import { useNavigation } from 'expo-router'
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
         alignItems:"center"
     },
     logo:{
-        height:58, 
-        width:81
+        height:SCREEN_HEIGHT * 0.08, 
+        width:SCREEN_WIDTH * 0.20
     }
 })

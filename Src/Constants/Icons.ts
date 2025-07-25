@@ -1,4 +1,6 @@
 const Icons = {
+  toggle:require("../assets/images/project/toggle.png"),
+  toggleoff:require("../assets/images/project/toggleoff.png"),
   phone: require("../assets/images/project/default.png"),
   go: require("../assets/images/project/Livello_1.png"),
   card: require("../assets/images/project/Card.png"),
