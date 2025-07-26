@@ -117,7 +117,7 @@ const SignUp = () => {
         password: pwd,
       };
       console.log(payload);
-      navigation.navigate("OTP");
+      navigation.navigate("OTP",{});
       // Alert.alert(
       //   "Sign Up Successful",
       //   "Your account has been created successfully.Sign in to continue.",

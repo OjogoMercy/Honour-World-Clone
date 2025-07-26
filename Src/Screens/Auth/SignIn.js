@@ -184,7 +184,7 @@ const SignIn = () => {
           alignSelf: "center",
           height: Sizes.height * 0.06,
           width: Sizes.width * 0.2,
-          marginTop: Sizes.height * 0.1,
+          
         }}
       />
       <View>
@@ -305,6 +305,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.Background,
     paddingHorizontal: Sizes.width * 0.05,
+    paddingVertical:Sizes.height * 0.1,
   },
   HeaderText: {
     fontSize: Sizes.h2,
