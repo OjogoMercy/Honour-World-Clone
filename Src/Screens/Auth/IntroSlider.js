@@ -95,7 +95,7 @@ const IntroSlider = () => {
       renderDoneButton={() => (
         <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
         <View style={styles.getStartedButton}>
-          <Text style={{ color:Colors.White,fontWeight: '600',textAlign:"center"}}>Get Started</Text>
+          <Text style={{ color:Colors.white,fontWeight: '600',textAlign:"center"}}>Get Started</Text>
         </View>
         </TouchableOpacity>
         
