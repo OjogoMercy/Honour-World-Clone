@@ -24,7 +24,7 @@ const PersonalInfo = () => {
         </View>
         <Text style = {{color:Colors.primary, textAlign:"center", fontWeight:"bold"}}>Reset Password</Text>
         <View style = {{flex:1, marginTop:SCREEN_HEIGHT * 0.05}}>
-    <FormInput placeHolder={"Password"} icon = {Icons.Lock} icon2 = {Icons.eyeClosed}/>
+    <FormInput placeHolder={"Password"} icon={Icons.Lock} icon2={Icons.eyeClosed} value={undefined} onChangeText={undefined} onPress={undefined} iconSource={undefined}/>
    <FormInput  placeHolder={"New Password"}icon = {Icons.Lock}icon2 = {Icons.eyeClosed}/>
     <FormInput  placeHolder={"Confirm New Password"}icon = {Icons.Lock} icon2 = {Icons.eyeClosed}/>
     </View>

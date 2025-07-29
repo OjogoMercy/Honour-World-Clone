@@ -174,8 +174,7 @@ const SignIn = () => {
     <View style={styles.Page}>
       <StatusBar
         style="dark"
-        backgroundColor={Colors.secondary}
-        translucent={false}
+        backgroundColor={Colors.white}
       />
         
       <Image
