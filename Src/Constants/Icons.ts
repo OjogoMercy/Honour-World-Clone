@@ -43,6 +43,7 @@ const Icons = {
   tv: require("../assets/images/project/Frame 472.png"),
   more: require("../assets/images/project/Frame 472 (1).png"),
   BlueIcon: require("../assets/images/project/hwB logo.png"),
+  fingePrintAccess: require("../assets/images/project/Finger ID Access.png"),
   
 };
 export default Icons;

@@ -79,13 +79,13 @@ const SignIn = () => {
     };
     fillTempData();
   }, []);
-  useEffect(() => {
-    const checkLoginHistory = async () => {
-      const loggedInBefore = await AsyncStorage.getItem("isLoggedInOnce");
-      setShowFingerprint(loggedInBefore === "true");
-    };
-    checkLoginHistory();
-  }, []);
+  // useEffect(() => {
+  //   const checkLoginHistory = async () => {
+  //     const loggedInBefore = await AsyncStorage.getItem("isLoggedInOnce");
+  //     setShowFingerprint(loggedInBefore === "true");
+  //   };
+  //   checkLoginHistory();
+  // }, []);
   // Function to handle biometric authentication
   // It checks if the user has logged in before and if biometrics are available
   // If successful, it retrieves user data and navigates to the home screen
