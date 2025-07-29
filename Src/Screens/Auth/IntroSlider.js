@@ -1,34 +1,45 @@
-import React from 'react';
-import { View, Text, Image, StatusBar, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
-import AppIntroSlider from 'react-native-app-intro-slider';
-import { Colors } from '../../Constants/Theme';
-import Images from '@/Src/Constants/Images';
-import { Sizes, SCREEN_WIDTH, SCREEN_HEIGHT } from "../../Constants/Theme"
-import { useNavigation } from 'expo-router';
-
+import Images from "@/Src/Constants/Images";
+import { useNavigation } from "expo-router";
+import React from "react";
+import {
+  Image,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import AppIntroSlider from "react-native-app-intro-slider";
+import {
+  Colors,
+  SCREEN_HEIGHT,
+  SCREEN_WIDTH,
+  Sizes,
+} from "../../Constants/Theme";
 
 const slides = [
   {
-    key: '1',
-    title: 'Buy Cheap and Affordable ',
-    highlight: 'Mobile Data',
-    text: 'Get data of all networks to keep surfing the internet.',
+    key: "1",
+    title: "Buy Cheap and Affordable ",
+    highlight: "Mobile Data",
+    text: "Get data of all networks to keep surfing the internet.",
     image: Images.slide1,
   },
   {
-    key: '2',
-    title: 'Pay for ',
-    highlight: 'Utility Bills',
-    line2: 'Seamlessly',
-    text: 'Purchase different subscriptions for different cable/TV providers',
+    key: "2",
+    title: "Pay for ",
+    highlight: "Utility Bills",
+    line2: "Seamlessly",
+    text: "Purchase different subscriptions for different cable/TV providers",
     image: Images.slide2,
   },
   {
-    key: '3',
-    title: 'Swap',
-    highlight: 'Airtime to Cash',
-    line2: 'On-The-Go',
-    text: 'Recharged excess? Be Calm! You can convert your airtime to cash easily',
+    key: "3",
+    title: "Swap",
+    highlight: "Airtime to Cash",
+    line2: "On-The-Go",
+    text: "Recharged excess? Be Calm! You can convert your airtime to cash easily",
     image: Images.slide3,
   },
 ];
@@ -40,40 +51,54 @@ const IntroSlider = () => {
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar backgroundColor={Colors.primary} barStyle="light-content" />
-        <View style = {styles.body}>
-         <View 
-          style={{
-            alignSelf: 'center',
-            padding: 20,
-            borderRadius: 20,
-          }}
-        >
-          <Image
-            source={item.image}
-            style={{ height: 250, width: 250 }}
-            resizeMode="contain"
-          />
-        </View>
-        <View style = {{marginBottom:90 }}>
-        <View style={{ height: SCREEN_HEIGHT * 0.12, width: SCREEN_WIDTH * 0.75, alignSelf: 'center' }}>
-          <Text style={{ fontSize: Sizes.h1, fontWeight: 'bold', textAlign: 'center', color:Colors.black }}>
-            {item.title}
-            <Text style={{ color: Colors.primary }}> {item.highlight}</Text>
-            {item.line2 && <Text> {item.line2}</Text>}
-          </Text>
-        </View>
-        <View style={{ height: 60, width: 260, alignSelf: 'center' }}>
-          <Text style={{ fontSize: Sizes.h3, textAlign: 'center' }}>{item.text}</Text>
-        </View>
-        </View>
+        <View style={styles.body}>
+          <View
+            style={{
+              alignSelf: "center",
+              padding: 20,
+              borderRadius: 20,
+            }}
+          >
+            <Image
+              source={item.image}
+              style={{ height: 250, width: 250 }}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={{ marginBottom: 90 }}>
+            <View
+              style={{
+                height: SCREEN_HEIGHT * 0.12,
+                width: SCREEN_WIDTH * 0.75,
+                alignSelf: "center",
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: Sizes.h1,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  color: Colors.black,
+                }}
+              >
+                {item.title}
+                <Text style={{ color: Colors.primary }}> {item.highlight}</Text>
+                {item.line2 && <Text> {item.line2}</Text>}
+              </Text>
+            </View>
+            <View style={{ height: 60, width: 260, alignSelf: "center" }}>
+              <Text style={{ fontSize: Sizes.h3, textAlign: "center" }}>
+                {item.text}
+              </Text>
+            </View>
+          </View>
         </View>
       </SafeAreaView>
-   
     );
   };
 
   const onDone = () => {
-    navigation.navigate('HomeScreen');
+    navigation.navigate("HomeScreen");
   };
 
   return (
@@ -85,20 +110,39 @@ const IntroSlider = () => {
       showNextButton={true}
       nextLabel="Next"
       doneLabel="Get Started"
-      activeDotStyle={{ backgroundColor: Colors.primary, width: 30,marginBottom:10 }}
-      dotStyle={{ backgroundColor:"#CDE1FF", marginBottom:10 }}
-       renderNextButton={() => (
+      activeDotStyle={{
+        backgroundColor: Colors.primary,
+        width: 30,
+        marginBottom: 10,
+      }}
+      dotStyle={{ backgroundColor: "#CDE1FF", marginBottom: 10 }}
+      renderNextButton={() => (
         <View style={styles.nextButton}>
-          <Text style={{ color: Colors.primary,fontWeight: '600',textAlign:"center"}}>Next</Text>
+          <Text
+            style={{
+              color: Colors.primary,
+              fontWeight: "600",
+              textAlign: "center",
+            }}
+          >
+            Next
+          </Text>
         </View>
       )}
       renderDoneButton={() => (
-        <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
-        <View style={styles.getStartedButton}>
-          <Text style={{ color:Colors.white,fontWeight: '600',textAlign:"center"}}>Get Started</Text>
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("BottomTab")}>
+          <View style={styles.getStartedButton}>
+            <Text
+              style={{
+                color: Colors.white,
+                fontWeight: "600",
+                textAlign: "center",
+              }}
+            >
+              Get Started
+            </Text>
+          </View>
         </TouchableOpacity>
-        
       )}
       bottomButton
     />
@@ -109,12 +153,12 @@ export default IntroSlider;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: Colors.primary,
   },
   backgroundBox: {
-    position: 'absolute',
+    position: "absolute",
     top: 100,
     width: SCREEN_WIDTH,
     height: SCREEN_HEIGHT * 0.85,
@@ -128,16 +172,16 @@ const styles = StyleSheet.create({
     marginTop: 500,
   },
   activityIndicator: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 30,
   },
   dots: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 6,
   },
   buttonGroup: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 12,
   },
   nextButton: {
@@ -149,8 +193,8 @@ const styles = StyleSheet.create({
     width: 150,
     backgroundColor: Colors.White,
     marginRight: 10,
-    alignSelf:"center",
-    marginBottom:50
+    alignSelf: "center",
+    marginBottom: 50,
   },
   getStartedButton: {
     backgroundColor: Colors.primary,
@@ -158,17 +202,17 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    alignSelf:"center",
-    marginBottom:50
+    alignSelf: "center",
+    marginBottom: 50,
   },
-  body:{
-     backgroundColor: 'white',
-    height: SCREEN_HEIGHT *0.9,
+  body: {
+    backgroundColor: "white",
+    height: SCREEN_HEIGHT * 0.9,
     borderTopLeftRadius: 40,
     paddingHorizontal: 45,
-     justifyContent: 'center',
+    justifyContent: "center",
     borderTopRightRadius: 40,
-    marginTop:70,
-    paddingBottom:50
-  }
+    marginTop: 70,
+    paddingBottom: 50,
+  },
 });
