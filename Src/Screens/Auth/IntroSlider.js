@@ -56,7 +56,7 @@ const IntroSlider = () => {
         </View>
         <View style = {{marginBottom:90 }}>
         <View style={{ height: SCREEN_HEIGHT * 0.12, width: SCREEN_WIDTH * 0.75, alignSelf: 'center' }}>
-          <Text style={{ fontSize: Sizes.h1, fontWeight: 'bold', textAlign: 'center', color:Colors.Black }}>
+          <Text style={{ fontSize: Sizes.h1, fontWeight: 'bold', textAlign: 'center', color:Colors.black }}>
             {item.title}
             <Text style={{ color: Colors.primary }}> {item.highlight}</Text>
             {item.line2 && <Text> {item.line2}</Text>}
@@ -73,7 +73,7 @@ const IntroSlider = () => {
   };
 
   const onDone = () => {
-    navigation.navigate('SignIn');
+    navigation.navigate('HomeScreen');
   };
 
   return (
