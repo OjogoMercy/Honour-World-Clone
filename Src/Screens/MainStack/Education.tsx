@@ -21,7 +21,7 @@ const Education = () => {
         data={data}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.contain} onPress={()=> navigation.navigate()}>
+          <TouchableOpacity style={styles.contain} onPress={()=> navigation.navigate('EducationDetails')}>
             <Image source={item.Image} style={{ width: 40, height: 40, marginRight: 10 }} />
             <Text style={{ fontSize: 16 }}>{item.name}</Text>
           </TouchableOpacity>

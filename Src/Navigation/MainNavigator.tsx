@@ -20,6 +20,7 @@ import EnterPin from "../Screens/MainStack/EnterPin";
 import TransactionSuccesful from "../Screens/MainStack/TransactionSuccesful";
 import FundWalletCardPay from "../Screens/MainStack/FundWalletCardPay";
 import FundwalletPaymentOptions from "@/Src/Screens/MainStack/FundwalletPaymentOptions";
+import EducationDetails from "../Screens/MainStack/EducationDetails";
 
 const Stack = createNativeStackNavigator();
 export default function MainNavigator() {
@@ -54,6 +55,7 @@ export default function MainNavigator() {
         component={FundwalletPaymentOptions}
       />
       <Stack.Screen name="FundWalletCardPay" component={FundWalletCardPay} />
+      <Stack.Screen name="EducationDetails" component={EducationDetails} />
     </Stack.Navigator>
   );
 }
