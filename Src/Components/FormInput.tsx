@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: Sizes.radius,
     marginVertical:Sizes.base,
-    borderWidth: SCREEN_HEIGHT * 0.002
+    borderWidth: SCREEN_HEIGHT * 0.001
   },
   input: {
     flex: 1,
