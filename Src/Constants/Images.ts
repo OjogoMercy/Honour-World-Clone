@@ -1,11 +1,16 @@
+import { goBack } from "expo-router/build/global-state/routing";
+
 const Images = {
-  icon: require("../assets/images/project/icons (3).png"),
+  Bluearrow: require("../assets/images/project/bluearrow.png"),
+  goBack: require("../assets/images/project/goBack.png"),
+  icon: require("../assets/images/project/logo.png"),
   slide1: require("../assets/images/project/Slide1.png"),
   slide2: require("../assets/images/project/slide2.png"),
   slide3: require("../assets/images/project/slide3.png"),
+  caution: require("../assets/images/project/caution.png"),
+  cp: require("../assets/images/project/cp.png"),
   questionMark: require("../assets/images/project/_.png"),
-  phone: require("../assets/images/project/default.png"),
-  email: require("../assets/images/project/Email.png"),
+  email: require("../assets/images/project/8-Email.png"),
   contact: require("../assets/images/project/basil_contacts-solid.png"),
   budpay: require("../assets/images/project/BudPay-Logo3 1.png"),
   calendar: require("../assets/images/project/calendar.png"),
@@ -23,7 +28,11 @@ const Images = {
   prime: require("../assets/images/project/Frame 379 (3).png"),
   starTimes: require("../assets/images/project/Frame 379 (4).png"),
   jos: require("../assets/images/project/Frame 379.png"),
-  moniepoint: require("../assets/images/project/Group (4).png"),
+  moniepoint: require("../assets/images/project/Subtract.png"),
+  WemaLogo: require("../assets/images/project/Group (2).png"),
+  SterLogo: require("../assets/images/project/Group (1).png"),
+  PremLogo: require("../assets/images/project/Group (3).png"),
+  MonieLogo: require("../assets/images/project/Group (4).png"),
   arrowC: require("../assets/images/project/Group (5).png"),
   instagram: require("../assets/images/project/Group (6).png"),
   whatsApp: require("../assets/images/project/Group (7).png"),
@@ -46,5 +55,10 @@ const Images = {
   profile: require("../assets/images/project/Profile.jpg"),
   PersonIcon: require("../assets/images/project/Group.png"),
   wallet: require("../assets/images/project/Wallet.png"),
+  logo: require("../assets/images/project/logo.png"),
+  wemacard: require("../assets/images/project/wemacard.png"),
+  premcard: require("../assets/images/project/premcard.png"),
+  stercard: require("../assets/images/project/stercard.png"),
+  moniecard: require("../assets/images/project/moniecard.png"),
 };
 export default Images;

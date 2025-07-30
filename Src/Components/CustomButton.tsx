@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Colors, SCREEN_HEIGHT, SCREEN_WIDTH, Sizes } from "../Constants/Theme";
-const CustomButton = ({ title, onPress, style,textStyle }) => {
+const CustomButton = ({ title, onPress, style, textStyle }) => {
   return (
     <TouchableOpacity
       style={[styles.button, style]}
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: SCREEN_HEIGHT*0.03
+    marginTop: SCREEN_HEIGHT*0.01
   },
   text: {
     color: "white",
