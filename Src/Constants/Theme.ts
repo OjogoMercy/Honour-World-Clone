@@ -2,12 +2,9 @@ import { Dimensions } from "react-native";
 import FormInputs from "../Components/FormInputs";
 const { width, height } = Dimensions.get("window");
 
-// const screenWidth = Math.round(Dimensions.get("window").width);
-// const screenHeight = Math.round(Dimensions.get("window").height);
 const screenWidth = Math.round(width);
 const screenHeight = Math.round(height);
 
-// export const SCREEN_WIDTH = Dimensions.get("window").width;
 export const SCREEN_WIDTH =width;
 export const SCREEN_HEIGHT =height;
 
@@ -22,7 +19,8 @@ export const Colors = {
   black: "#000000", //black
   gray: "#808080", //gray
   red:"#b40c0cff",
-  dangerRed: "#F92525"
+  dangerRed: "#F92525",
+  white:'#fff'
 };
 
 export const Sizes = {
