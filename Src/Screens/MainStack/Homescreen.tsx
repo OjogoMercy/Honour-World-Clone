@@ -1,5 +1,5 @@
 import CustomButton from "@/Src/Components/CustomButton";
-import general from "@/Src/Constants/General";
+import general from '../../Constants/General'
 import Icons from "@/Src/Constants/Icons";
 import Images from "@/Src/Constants/Images";
 import {
