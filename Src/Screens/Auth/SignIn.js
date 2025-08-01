@@ -239,7 +239,7 @@ const SignIn = () => {
           Forgot Password?
         </Text>
       </View>
-      <CustomButton onPress={handleSignIn} title={"Sign In"} />
+      <CustomButton onPress={() => navigation.navigate('BottomTab')} title={"Sign In"} />
       <View style={{ alignItems: "center", marginTop: Sizes.height * 0.02 }}>
         <Text style={[styles.belowText, { fontWeight: "600" }]}>
           Login with fingerPrint

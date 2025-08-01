@@ -130,7 +130,7 @@ const IntroSlider = () => {
         </View>
       )}
       renderDoneButton={() => (
-        <TouchableOpacity onPress={() => navigation.navigate("BottomTab")}>
+        <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
           <View style={styles.getStartedButton}>
             <Text
               style={{
