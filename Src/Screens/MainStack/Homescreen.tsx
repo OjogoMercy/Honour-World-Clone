@@ -1,5 +1,5 @@
 import CustomButton from "@/Src/Components/CustomButton";
-import general from "@/Src/Constants/General";
+import general from '../../Constants/General'
 import Icons from "@/Src/Constants/Icons";
 import Images from "@/Src/Constants/Images";
 import {
@@ -33,7 +33,7 @@ const Homescreen = ({ navigation }) => {
     dontShow(!show);
   };
   return (
-    <View style={general.container}>
+    <View style={general.container}>       
       <StatusBar
         backgroundColor="white"
         barStyle="dark-content"
