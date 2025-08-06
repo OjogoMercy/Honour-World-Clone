@@ -119,7 +119,6 @@ const ProfileScreen = () => {
             <Text>{item.subtitle}</Text>
             </View>
             </View>
-
             <Image
             source={Icons.chevron}
             style={{height:20, width:20}}
@@ -131,12 +130,6 @@ const ProfileScreen = () => {
      <View style = {{marginBottom:70}}>
       <View style = {{height: "39", backgroundColor:'#3D6EF7', width:200, alignSelf:"center", justifyContent:"center", borderRadius:30,}}>
        <TouchableOpacity>
-        {/* <View>
-        <Image 
-        source={Icons.arrow}
-        style={{height:20, width:20}}
-        />
-        </View> */}
   <Text style={{textAlign: "center", fontSize:12, color: "white"}}>Upgrade to Reseller</Text>
 </TouchableOpacity>
 </View>
