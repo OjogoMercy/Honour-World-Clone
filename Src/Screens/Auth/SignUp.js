@@ -40,10 +40,8 @@ const SignUp = () => {
       ghanaRegex.test(phone) || saRegex.test(phone) || nigeriaRegex.test(phone)
     );
   };
-  // Adding + format to phone number and remove the 0 at the front
   const formatPhoneNumber = (phone) => {
-    let trimmed = phone.replace(/\s+/g, "").replace(/[^+\d]/g, ""); // remove spaces and special chars
-
+    let trimmed = phone.replace(/\s+/g, "").replace(/[^+\d]/g, "");
     if (trimmed.startsWith("0")) {
       // Nigeria
       if (nigeriaRegex.test(trimmed)) return "+234" + trimmed.slice(1);
@@ -52,10 +50,8 @@ const SignUp = () => {
       // SA
       if (saRegex.test(trimmed)) return "+27" + trimmed.slice(1);
     }
-
     return trimmed;
   };
-
   const validate = async () => {
     Keyboard.dismiss();
     let valid = true;
