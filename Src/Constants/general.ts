@@ -125,7 +125,6 @@ const general = StyleSheet.create({
   backText: {
     paddingLeft: 5,
   },
-
   dollarIcon: {
     width: 80,
     height: 80,
